@@ -1,0 +1,60 @@
+%\documentclass{brownthesis_EB}
+
+\documentclass[final, oneside]{brownthesis_EB}
+%\usepackage{suthesis-2e}
+
+%\usepackage{Sections/CV/simplecv} %for CV section
+\usepackage{Preamble}
+
+
+  
+\begin{document}
+    \frontmatter
+    \title{How to Write Theses\\
+        With Two-Line Titles}
+    \author{Eric Burdette}
+    \degrees{B.~S., University of Minnesota - Twin Cities, 2013}
+    \dept{Earth, Environmental, and Planetary Sciences}
+    \principaladvisor{(Greg Hirth)}
+    \reader{(Reid Cooper)}
+    \reader{(Chris Huber)}
+    \reader{(Yan Liang)}
+    \reader{(Nick Beeler)}
+    \dean{(Andrew G. Campbell)}
+    %\abstract{What an abstract!}
+    %\abstractpage
+    %\abstractpage
+    \beforepreface
+    \prefacesection{Curriculum Vita}
+        % \begin{figure}
+        %     \centering
+        %     \includegraphics{Sections/CV/Simple_CV_EB.pdf}
+        %     \label{fig:my_label}
+        % \end{figure}
+        
+    \prefacesection{Acknowledgements}
+        I would like to thank Rig 1... and coffee...
+    \afterpreface
+
+    \mainmatter
+    \chapter*{Introduction}
+        \subfile{Sections/Introduction/Introduction.tex}
+        
+    \chapter{Chapter 1: Enhanced Dehydration Weakening of Antigorite Driven by Slow Shear Heating: Insights from High-Pressure Experiments with a Modified Apparatus Stiffness}
+        \subfile{Sections/Chapter1/ShearHeating_maintext.tex}
+        %\subfile{Sections/Chapter1/ShearHeating_suppinfo.tex}
+    
+    \chapter{Chapter 2: Antigorite Creep at Subduction Conditions: Long Duration, High Accuracy Rheological Tests On Intact Cores Using Re-Designed Griggs Assemblies}
+        \subfile{Sections/Chapter2/EB_AtgCreep_MainText.tex}
+    
+    
+    \chapter*{Conclusion Section}
+         \section{test}
+    \appendix
+    \chapter{A Long Proof}
+     ...
+    %\bibliographystyle{plain}
+    %\bibliography{Feb19_refs_2.bib}
+    
+    
+\end{document}

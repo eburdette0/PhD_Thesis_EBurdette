@@ -1,0 +1,614 @@
+%% March 2018
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AGUJournalTemplate.tex: this template file is for articles formatted with LaTeX
+%
+% This file includes commands and instructions
+% given in the order necessary to produce a final output that will
+% satisfy AGU requirements, including customized APA reference formatting.
+%
+% You may copy this file and give it your
+% article name, and enter your text.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PLEASE DO NOT USE YOUR OWN MACROS
+% DO NOT USE \newcommand, \renewcommand, or \def, etc.
+%
+% FOR FIGURES, DO NOT USE \psfrag or \subfigure.
+% DO NOT USE \psfrag or \subfigure commands.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Step 1: Set the \documentclass
+%
+% There are two options for article format:
+%
+% PLEASE USE THE DRAFT OPTION TO SUBMIT YOUR PAPERS.
+% The draft option produces double spaced output.
+%
+
+%% To submit your paper:
+%\documentclass[draft,linenumbers]{agujournal2018}  %%%%%%%%%%switch this back for linenumbers
+\documentclass[draft]{agujournal2018}
+\usepackage{apacite}
+\usepackage{url} %this package should fix any errors with URLs in refs.
+
+%%%%%%%
+% \usepackage{trackchanges}
+% uncomment the line above to use the TrackChanges package to mark revisions if needed.
+% The trackchanges package adds five new LaTeX commands:
+%
+%  \note[editor]{The note}
+%  \annote[editor]{Text to annotate}{The note}
+%  \add[editor]{Text to add}
+%  \remove[editor]{Text to remove}
+%  \change[editor]{Text to remove}{Text to add}
+%
+% complete documentation is here: http://trackchanges.sourceforge.net/
+%%%%%%%
+
+\draftfalse
+
+% Now, type in the journal name: \journalname{<Journal Name>}
+
+% ie, \journalname{Journal of Geophysical Research}
+%% Choose from this list of Journals:
+%
+% JGR-Atmospheres
+% JGR-Biogeosciences
+% JGR-Earth Surface
+% JGR-Oceans
+% JGR-Planets
+% JGR-Solid Earth
+% JGR-Space Physics
+% Global Biochemical Cycles
+% Geophysical Research Letters
+% Paleoceanography
+% Radio Science
+% Reviews of Geophysics
+% Tectonics
+% Space Weather
+% Water Resource Research
+% Geochemistry, Geophysics, Geosystems
+% Journal of Advances in Modeling Earth Systems (JAMES)
+% Earth's Future
+% Earth and Space Science
+% Geohealth
+%
+
+\journalname{Journal of Geophysical Research}
+
+
+\begin{document}
+
+%% ------------------------------------------------------------------------ %%
+%  Title
+%
+% (A title should be specific, informative, and brief. Use
+% abbreviations only if they are defined in the abstract. Titles that
+% start with general keywords then specific terms are optimized in
+% searches)
+%
+%% ------------------------------------------------------------------------ %%
+
+% Example: \title{This is a test title}
+
+\title{Low Temperature Plastic Deformation of Confined Olivine With Free Surfaces}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  AUTHORS AND AFFILIATIONS
+%
+%% ------------------------------------------------------------------------ %%
+
+% Authors are individuals who have significantly contributed to the
+% research and preparation of the article. Group authors are allowed, if
+% each author in the group is separately identified in an appendix.)
+
+% List authors by first name or initial followed by last name and
+% separated by commas. Use \affil{} to number affiliations, and
+% \thanks{} for author notes.
+% Additional author notes should be indicated with \thanks{} (for
+% example, for current addresses).
+
+% Example: \authors{A. B. Author\affil{1}\thanks{Current address, Antartica}, B. C. Author\affil{2,3}, and D. E.
+% Author\affil{3,4}\thanks{Also funded by Monsanto.}
+
+\authors{Eric Burdette, Cameron Meyers, and Greg Hirth}
+
+
+%\affiliation{1}{Brown University}
+% \affiliation{2}{Second Affiliation}
+% \affiliation{3}{Third Affiliation}
+% \affiliation{4}{Fourth Affiliation}
+
+\affiliation{1}{Department of Earth, Environmental and Planetary Sciences, Brown University, Providence, RI, USA}
+%(repeat as many times as is necessary)
+
+%% Corresponding Author:
+% Corresponding author mailing address and e-mail address:
+
+% (include name and email addresses of the corresponding author.  More
+% than one corresponding author is allowed in this LaTeX file and for
+% publication; but only one corresponding author is allowed in our
+% editorial system.)
+
+% Example: \correspondingauthor{First and Last Name}{email@address.edu}
+
+\correspondingauthor{Eric Burdette}{eric\_burdette@brown.edu}
+
+%% Keypoints, final entry on title page.
+
+% Example:
+% \begin{keypoints}
+% \item	List up to three key points (at least one is required)
+% \item	Key Points summarize the main points and conclusions of the article
+% \item	Each must be 100 characters or less with no special characters or punctuation
+% \end{keypoints}
+
+%  List up to three key points (at least one is required)
+%  Key Points summarize the main points and conclusions of the article
+%  Each must be 100 characters or less with no special characters or punctuation
+
+\begin{keypoints}
+    \item Porosity-free sintered olivine pillars were deformed at stresses up to 4 GPa at room temperature and 600°C.
+    \item Kinks dominate surface microstructure, with many tightly spaced bands in optimally oriented bands.
+\end{keypoints}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  ABSTRACT
+%
+% A good abstract will begin with a short description of the problem
+% being addressed, briefly describe the new data or analyses, then
+% briefly states the main conclusion(s) and how they are supported and
+% uncertainties.
+%% ------------------------------------------------------------------------ %%
+
+%% \begin{abstract} starts the second page
+
+\begin{abstract}
+
+\end{abstract}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  TEXT
+%
+%% ------------------------------------------------------------------------ %%
+
+
+\section{Introduction}
+    To understand the spatial and temporal distribution of earthquakes in the mantle lithosphere, as well as the processes responsible for the wide spectrum of fault slip behaviors, it is important to constrain rheological properties of olivine aggregates. Seismicity in the oceanic lithosphere is generally limited to depths at which the temperature is less than approximately 600°C. Seismic behavior is possible when the friction coefficient decreases with increasing sliding velocity (i.e., velocity weakening behavior characterized by rate-and-state friction). Laboratory studies on olivine friction at low normal stress demonstrate a transition from velocity weakening to velocity strengthening with an increase in temperature from 800 to 1000°C (Boettcher et al., 2007; King and Marone, 2012). Recent analyses of mantle fault rocks from oceanic transform faults provides evidence of fluid penetration facilitated by brittle deformation at temperatures up to ~900°C – consistent with observations of seismicity in the mantle at transform faults at similar temperatures (Kuna et al., 2019; McGuire et al., 2012; Roland et al., 2012). These observations have motivated analyses highlighting the importance of strain rate and temperature on lithosphere rheology near the brittle-plastic transition (e.g., Molnar, 2020).
+    
+    A fundamental issue related to this problem is the magnitude of stresses supported by  the mantle lithosphere near the brittle-plastic transition. Comparisons of geophysical data with geodynamic models suggest stresses do not exceed ~300 MPa (Zhang, Craig), a value far less than predicted by applying standard friction laws at the depth limit of seismicity (e.g., Kohlstedt et al., 1995). At these conditions, olivine aggregates are generally interpreted to deform by low-temperature plasticity (sometimes called Peierls creep) – a process that is rate-limited by dislocation glide. Laboratory tests and theory indicate that the yield strength for dislocation glide is considerably lower than the steady-state flow stress (e.g., Idrissi et al., 2016; Hansen et al., 2019), leading to more sophisticated analyses of strain hardening and grain-size effects (i.e. Hall-Petch) on dislocation glide in olivine. By accounting for these factors, the extrapolation of lab data can align with the geodynamic constraints for the stress magnitude if one considers low strain (i.e., prior to significant strain hardening) and low strain rate deformation (e.g., Hansen et al., 2019). However, this data is collected in relatively short times, making extrapolation uncertainty large, and recovered samples do not preserve microstructure and deformation mechanisms that lead to proposed strain hardening and laws.
+    To better constrain low temperature plasticity mechanisms in olivine, we developed a new Griggs-apparatus assembly to deform strong pillars in hydraulic oil and loose graphite confining media which preserve pre-polished sample surfaces. The recovered samples illustrate activity of orientation-dependent kinking and grain interactions which is discussed below.
+
+\section{Materials and Methods}
+
+    \subsection{Materials}
+        The samples used in our preliminary work were synthesized by evacuated hot pressing powdered San Carlos olivine in a Paterson-type gas-medium apparatus at 1250 °C and 300 MPa confining pressure. Active evacuation of the pore spaces leads to samples with <0.0001 porosity (Meyers et al., 2017, AGU abstract), such that they have high fracture toughness, enabling low-temperature plasticity at high confining pressures.
+        Mean grain size is 10 $\mu$m.
+        
+        Multiple rectangular pillars are cut from a single cylindrical hot-pressed sample. They are then squared and polished to 0.1 $\mu$m surface finish with diamond lapping paper. 
+        
+    \subsection{Methods}
+        Two new cell assemblies were designed for this work. The first relies on BUNA rubber seals to contain hydraulic oil inside the pressure vessel at room temperature (Figure \ref{fig:AssembliesRT}). Alignment of the pistons and sample are critical for even stress application so several additional elements are included 
+        The second assembly adapts a standard assembly used for high temperature (600°C) creep tests by placing the sample pillar between alumina pistons inside an annealed brass sleeve. The sleeve has a drilled round hole whose diameter is slightly larger than the corner-to-corner distance of the pillar placed inside it. The space between the pillar and the sleeve is filled with loose graphite powder and the entire brass capsule is placed inside a standard annealed silver jacket. The brass prevents pre-loading of the sample during pressurization and anneals/weakens at high temperature to apply confining pressure and allow deformation of the sample. The brass jacket protects potentially brittle samples during decompression. The jacket is ground/machined off after deformation, and the pillar surfaces are protected by the graphite powder which can be brushed off.
+        
+        Stress and displacement are determined using the methods described in Matej Pec's Rig 1.3 program (https://sites.google.com/site/rigprogram/home) and constant stress deformation methods described in Chapter 2.
+
+\section{Results}
+    \subsection{Mechanical Results}
+        Broadly our results agree with Hansen et al 2019.  We record yielding at ~2.4 GPa at room temperature, and strength at 600°C similar to that recorded by Hansen et al (2019) (Figure \ref{fig:Druiventak}). At 2.25 GPa pressure samples are clearly less brittle, yielding and hardening for much longer than the fracture at 1 GPa (Figure \ref{fig:Load-Displacement}). In all cases the samples approach brittle failure, with microcracks decorating grain boundaries (Figure \ref{fig:OpticalKinks}). Our results are significantly stronger than Druiventak et al (2011), likely because natural dunites contain alteration phases at grains boundaries which could weaken them.
+        
+    \subsection{Microstructure}
+        Because samples were initially lapped below 0.1 um roughness with colloidal silica, so optically visible changes represent changes in surface topography induced by deformation. Samples were characterized optically first (Figure \ref{fig:OpticalKinks}). The images show light and dark bands throughout single grains. The bands are mostly oriented perpendicular to the axial compression direction. Cracks are prevalent throughout the images, found almost exclusively along grain boundaries.
+        Grains were also characterized with a Brukers AXS atomic force microscope and ultrasharp contact tips. The images show 'steps' at a smaller scale than was optically visible (Figure \ref{fig:AFMmap}). A transect perpendicular to the bands shows the existence of sharp corners on these steps, and similar angles throughout the set of about 5 degrees. Some of these steps are on the order of 1 nm potentially constituting single slip bands.
+        
+\section{Discussion}
+    \subsection{Kinks}
+        Nucleation of pairs of dislocations in the direction of axial compression could form dipole pairs which expand until they reach the edges of the sample and form kinks (Figure \ref{fig:StepwiseKink}). The low angles we record in AFM support this hypothesis, although EBSD and TEM will be needed to characterize dislocation density variation with depth to verify the model.
+        
+    \subsection{Mechanical strength}
+        These experiments show that even at room temperature, olivine can deform by dislocation motion in polycrystalline samples. The observed deformation is clearly strongly orientation dependent, which could pose problems for extrapolating single-crystal mechanisms to polycrystalline samples. We plan to continue examining hardening and long-term creep rate in future studies.
+    
+
+\section{Conclusions}
+        Here we deformed vacuum-sintered olivine at room temperature and 600°C in novel assemblies to preserve surface features. The samples had strengths similar to Hansen et al (2019), and show a clear surface pattern indicating orientation-dependent kinking was active.
+    
+    \begin{enumerate}
+        \item Kink bands dominate room temperature deformation in olivine.
+        \item Small features on the order of one burgers vector are present on the surface, possibly representing the termination of single-dislocation slip bands.
+        \item Features are strongly orientation dependent, suggesting activation of a single slip system in olivine.
+    \end{enumerate}
+
+%Text here ===>>>
+
+%%
+
+%  Numbered lines in equations:
+%  To add line numbers to lines in equations,
+%  \begin{linenomath*}
+%  \begin{equation}
+%  \end{equation}
+%  \end{linenomath*}
+
+
+
+%% Enter Figures and Tables near as possible to where they are first mentioned:
+%
+% DO NOT USE \psfrag or \subfigure commands.
+%
+% Figure captions go below the figure.
+% Table titles go above tables;  other caption information
+%  should be placed in last line of the table, using
+% \multicolumn2l{$^a$ This is a table note.}
+%
+%----------------
+% EXAMPLE FIGURE
+%
+% \begin{figure}[h]
+% \centering
+% when using pdflatex, use pdf file:
+% \includegraphics[width=20pc]{figsamp.pdf}
+%
+% when using dvips, use .eps file:
+% \includegraphics[width=20pc]{figsamp.eps}
+%
+% \caption{Short caption}
+% \label{figone}
+%  \end{figure}
+%
+% ---------------
+% EXAMPLE TABLE
+%
+% \begin{table}
+% \caption{Time of the Transition Between Phase 1 and Phase 2$^{a}$}
+% \centering
+% \begin{tabular}{l c}
+% \hline
+%  Run  & Time (min)  \\
+% \hline
+%   $l1$  & 260   \\
+%   $l2$  & 300   \\
+%   $l3$  & 340   \\
+%   $h1$  & 270   \\
+%   $h2$  & 250   \\
+%   $h3$  & 380   \\
+%   $r1$  & 370   \\
+%   $r2$  & 390   \\
+% \hline
+% \multicolumn{2}{l}{$^{a}$Footnote text here.}
+% \end{tabular}
+% \end{table}
+
+%% SIDEWAYS FIGURE and TABLE
+% AGU prefers the use of {sidewaystable} over {landscapetable} as it causes fewer problems.
+%
+% \begin{sidewaysfigure}
+% \includegraphics[width=20pc]{figsamp}
+% \caption{caption here}
+% \label{newfig}
+% \end{sidewaysfigure}
+%
+%  \begin{sidewaystable}
+%  \caption{Caption here}
+% \label{tab:signif_gap_clos}
+%  \begin{tabular}{ccc}
+% one&two&three\\
+% four&five&six
+%  \end{tabular}
+%  \end{sidewaystable}
+
+%% If using numbered lines, please surround equations with \begin{linenomath*}...\end{linenomath*}
+%\begin{linenomath*}
+%\begin{equation}
+%y|{f} \sim g(m, \sigma),
+%\end{equation}
+%\end{linenomath*}
+
+%%% End of body of article
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional Appendix goes here
+%
+% The \appendix command resets counters and redefines section heads
+%
+% After typing \appendix
+%
+%\section{Here Is Appendix Title}
+% will show
+% A: Here Is Appendix Title
+%
+%\appendix
+%\section{Here is a sample appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Optional Glossary, Notation or Acronym section goes here:
+%
+%%%%%%%%%%%%%%
+% Glossary is only allowed in Reviews of Geophysics
+%  \begin{glossary}
+%  \term{Term}
+%   Term Definition here
+%  \term{Term}
+%   Term Definition here
+%  \term{Term}
+%   Term Definition here
+%  \end{glossary}
+
+%
+%%%%%%%%%%%%%%
+% Acronyms
+%   \begin{acronyms}
+%   \acro{Acronym}
+%   Definition here
+%   \acro{EMOS}
+%   Ensemble model output statistics
+%   \acro{ECMWF}
+%   Centre for Medium-Range Weather Forecasts
+%   \end{acronyms}
+
+%
+%%%%%%%%%%%%%%
+% Notation
+%   \begin{notation}
+%   \notation{$a+b$} Notation Definition here
+%   \notation{$e=mc^2$}
+%   Equation in German-born physicist Albert Einstein's theory of special
+%  relativity that showed that the increased relativistic mass ($m$) of a
+%  body comes from the energy of motion of the body—that is, its kinetic
+%  energy ($E$)—divided by the speed of light squared ($c^2$).
+%   \end{notation}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  ACKNOWLEDGMENTS
+%
+% The acknowledgments must list:
+%
+% >>>>	A statement that indicates to the reader where the data
+% 	supporting the conclusions can be obtained (for example, in the
+% 	references, tables, supporting information, and other databases).
+%
+% 	All funding sources related to this work from all authors
+%
+% 	Any real or perceived financial conflicts of interests for any
+%	author
+%
+% 	Other affiliations for any author that may be perceived as
+% 	having a conflict of interest with respect to the results of this
+% 	paper.
+%
+%
+% It is also the appropriate place to thank colleagues and other contributors.
+% AGU does not normally allow dedications.
+
+
+\acknowledgments
+
+
+%% ------------------------------------------------------------------------ %%
+%% References and Citations
+
+\bibliography{Feb19_refs_2.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BibTeX is preferred:
+%
+% \bibliography{<name of your .bib file>}
+%
+% no need to specify bibliographystyle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Please use ONLY \citet and \citep for reference citations.
+% DO NOT use other cite commands (e.g., \cite, \citeyear, \nocite, \citealp, etc.).
+%% Example \citet and \citep:
+%  ...as shown by \citet{Boug10}, \citet{Buiz07}, \citet{Fra10},
+%  \citet{Ghel00}, and \citet{Leit74}.
+
+%  ...as shown by \citep{Boug10}, \citep{Buiz07}, \citep{Fra10},
+%  \citep{Ghel00, Leit74}.
+
+%  ...has been shown \citep [e.g.,][]{Boug10,Buiz07,Fra10}.
+
+\section{Figures}
+
+\begin{figure}[ht]
+  \includegraphics[width=\textwidth]{Figures/Pillar Assembly1_biglabels.pdf}
+  \caption{Schematic of Modified assembly for olivine pillar deformation at room temperature}
+  \label{fig:AssembliesRT}
+\end{figure}
+
+
+\begin{figure}[ht]
+  \includegraphics[width=\textwidth]{Figures/Druiventaketal_datasets_summary+yield2.pdf}
+  \caption{Strength and yield data for olivine deformation. Diamonds are pillar experiments, star is  published in the thesis of Brooks Proctor. a) is colored by temperature.}
+  \label{fig:Druiventak}
+\end{figure}
+
+\begin{figure}[ht]
+  \includegraphics[width=\textwidth]{Figures/Ol_PillarMechDataRT.png}
+  \caption{Room temperature deformation data for two olivine pillars}
+  \label{fig:ConstStrainrateRT}
+\end{figure}
+
+\begin{figure}[ht]
+  \includegraphics[width=\textwidth]{Figures/Olivine_optical_kinks_Cam.png}
+  \caption{Optical image of olivine surface recovered after room temperature deformation. Cracks are common along grain boundaries, and optical topography contrast is due to misorientation of kink bands to the surrounding surface. Compression direction is vertical.}
+  \label{fig:OpticalKinks}
+\end{figure}
+
+\begin{figure}[ht]
+  \includegraphics[width=\textwidth]{Figures/AFM_image2516_1.png}
+  \caption{AFM image of a deformed grainwith stepwise kink bands. Many small features are visible that cannot be resolved optically.}
+  \label{fig:AFMmap}
+\end{figure}
+
+\begin{figure}[ht]
+  \includegraphics[width=\textwidth]{Figures/Annotated_kink_profile.png}
+  \caption{Profile along transect perpendicular to kink bands in Figure \ref{fig:AFMmap}. Topography is exaggerated, and steps as small as 1 nm are resolved in the trace.}
+  \label{fig:AFMProfile}
+\end{figure}
+
+\begin{figure}[ht]
+  \includegraphics[width=\textwidth]{Figures/Stepwise_kinking_Diagram.png}
+  \caption{Diagram showing schematically ho kinks produce the surface topography }
+  \label{fig:StepwiseKink}
+\end{figure}
+
+%%https://www.tablesgenerator.com/latex_tables
+
+
+
+\end{document}
+
+
+
+More Information and Advice:
+
+%% ------------------------------------------------------------------------ %%
+%
+%  SECTION HEADS
+%
+%% ------------------------------------------------------------------------ %%
+
+% Capitalize the first letter of each word (except for
+% prepositions, conjunctions, and articles that are
+% three or fewer letters).
+
+% AGU follows standard outline style; therefore, there cannot be a section 1 without
+% a section 2, or a section 2.3.1 without a section 2.3.2.
+% Please make sure your section numbers are balanced.
+% ---------------
+% Level 1 head
+%
+% Use the \section{} command to identify level 1 heads;
+% type the appropriate head wording between the curly
+% brackets, as shown below.
+%
+%An example:
+%\section{Level 1 Head: Introduction}
+%
+% ---------------
+% Level 2 head
+%
+% Use the \subsection{} command to identify level 2 heads.
+%An example:
+%\subsection{Level 2 Head}
+%
+% ---------------
+% Level 3 head
+%
+% Use the \subsubsection{} command to identify level 3 heads
+%An example:
+%\subsubsection{Level 3 Head}
+%
+%---------------
+% Level 4 head
+%
+% Use the \subsubsubsection{} command to identify level 3 heads
+% An example:
+%\subsubsubsection{Level 4 Head} An example.
+%
+%% ------------------------------------------------------------------------ %%
+%
+%  IN-TEXT LISTS
+%
+%% ------------------------------------------------------------------------ %%
+%
+% Do not use bulleted lists; enumerated lists are okay.
+% \begin{enumerate}
+% \item
+% \item
+% \item
+% \end{enumerate}
+%
+%% ------------------------------------------------------------------------ %%
+%
+%  EQUATIONS
+%
+%% ------------------------------------------------------------------------ %%
+
+% Single-line equations are centered.
+% Equation arrays will appear left-aligned.
+
+Math coded inside display math mode \[ ...\]
+ will not be numbered, e.g.,:
+ \[ x^2=y^2 + z^2\]
+
+ Math coded inside \begin{equation} and \end{equation} will
+ be automatically numbered, e.g.,:
+ \begin{equation}
+ x^2=y^2 + z^2
+ \end{equation}
+
+
+% To create multiline equations, use the
+% \begin{eqnarray} and \end{eqnarray} environment
+% as demonstrated below.
+\begin{eqnarray}
+  x_{1} & = & (x - x_{0}) \cos \Theta \nonumber \\
+        && + (y - y_{0}) \sin \Theta  \nonumber \\
+  y_{1} & = & -(x - x_{0}) \sin \Theta \nonumber \\
+        && + (y - y_{0}) \cos \Theta.
+\end{eqnarray}
+
+%If you don't want an equation number, use the star form:
+%\begin{eqnarray*}...\end{eqnarray*}
+
+% Break each line at a sign of operation
+% (+, -, etc.) if possible, with the sign of operation
+% on the new line.
+
+% Indent second and subsequent lines to align with
+% the first character following the equal sign on the
+% first line.
+
+% Use an \hspace{} command to insert horizontal space
+% into your equation if necessary. Place an appropriate
+% unit of measure between the curly braces, e.g.
+% \hspace{1in}; you may have to experiment to achieve
+% the correct amount of space.
+
+
+%% ------------------------------------------------------------------------ %%
+%
+%  EQUATION NUMBERING: COUNTER
+%
+%% ------------------------------------------------------------------------ %%
+
+% You may change equation numbering by resetting
+% the equation counter or by explicitly numbering
+% an equation.
+
+% To explicitly number an equation, type \eqnum{}
+% (with the desired number between the brackets)
+% after the \begin{equation} or \begin{eqnarray}
+% command.  The \eqnum{} command will affect only
+% the equation it appears with; LaTeX will number
+% any equations appearing later in the manuscript
+% according to the equation counter.
+%
+
+% If you have a multiline equation that needs only
+% one equation number, use a \nonumber command in
+% front of the double backslashes (\\) as shown in
+% the multiline equation above.
+
+% If you are using line numbers, remember to surround
+% equations with \begin{linenomath*}...\end{linenomath*}
+
+%  To add line numbers to lines in equations:
+%  \begin{linenomath*}
+%  \begin{equation}
+%  \end{equation}
+%  \end{linenomath*}
+
+
+

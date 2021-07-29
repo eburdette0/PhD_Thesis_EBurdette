@@ -1,0 +1,35 @@
+
+%\documentclass{article}
+\documentclass[../main.tex]{subfiles}
+%\graphicspath{{\subfix{.../images/}}}
+
+% Choose bibliography style for formatting list of publications
+%\usepackage[style=ieee,url=false,doi=true,maxbibnames=99,sorting=ydnt,dashed=false]{biblatex}
+\bibliography{papers}
+
+% Choose theme, e.g. black, RedViolet, ForestGreen, MidnightBlue
+\def\theme{black}
+
+% More predefined colors can be found in 
+% https://en.wikibooks.org/wiki/LaTeX/Colors
+
+%\usepackage{simplecv}
+
+\boldname{Burdette}{Eric}{P.}
+
+\begin{document}
+
+% Heading
+\headinginline{Eric Burdette}{
+    324 Brook Street\\
+    Providence, RI 02912\\
+    Email: \email{eric\_burdette@brown.edu}\\
+    ORCID: 0000-0002-7940-2031\\
+}
+
+% Page One
+\import{Sections/CV/CVsections/}{education.tex}
+\import{Sections/CV/CVsections/}{experience.tex}
+\import{Sections/CV/CVsections/}{publications.tex}
+
+\end{document}

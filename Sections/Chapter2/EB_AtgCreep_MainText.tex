@@ -1,0 +1,514 @@
+%% March 2018
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AGUJournalTemplate.tex: this template file is for articles formatted with LaTeX
+%
+% This file includes commands and instructions
+% given in the order necessary to produce a final output that will
+% satisfy AGU requirements, including customized APA reference formatting.
+%
+% You may copy this file and give it your
+% article name, and enter your text.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PLEASE DO NOT USE YOUR OWN MACROS
+% DO NOT USE \newcommand, \renewcommand, or \def, etc.
+%
+% FOR FIGURES, DO NOT USE \psfrag or \subfigure.
+% DO NOT USE \psfrag or \subfigure commands.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Step 1: Set the \documentclass
+%
+% There are two options for article format:
+%
+% PLEASE USE THE DRAFT OPTION TO SUBMIT YOUR PAPERS.
+% The draft option produces double spaced output.
+%
+
+%% To submit your paper:
+%\documentclass[draft,linenumbers]{agujournal2018}  %%%%%%%%%%switch this back for linenumbers
+%\documentclass[draft]{agujournal2018}
+%\usepackage{apacite}
+%\usepackage{url} %this package should fix any errors with URLs in refs.
+
+%%%%%%%
+% \usepackage{trackchanges}
+% uncomment the line above to use the TrackChanges package to mark revisions if needed.
+% The trackchanges package adds five new LaTeX commands:
+%
+%  \note[editor]{The note}
+%  \annote[editor]{Text to annotate}{The note}
+%  \add[editor]{Text to add}
+%  \remove[editor]{Text to remove}
+%  \change[editor]{Text to remove}{Text to add}
+%
+% complete documentation is here: http://trackchanges.sourceforge.net/
+%%%%%%%
+
+%\draftfalse
+
+% Now, type in the journal name: \journalname{<Journal Name>}
+
+% ie, \journalname{Journal of Geophysical Research}
+%% Choose from this list of Journals:
+%
+% JGR-Atmospheres
+% JGR-Biogeosciences
+% JGR-Earth Surface
+% JGR-Oceans
+% JGR-Planets
+% JGR-Solid Earth
+% JGR-Space Physics
+% Global Biochemical Cycles
+% Geophysical Research Letters
+% Paleoceanography
+% Radio Science
+% Reviews of Geophysics
+% Tectonics
+% Space Weather
+% Water Resource Research
+% Geochemistry, Geophysics, Geosystems
+% Journal of Advances in Modeling Earth Systems (JAMES)
+% Earth's Future
+% Earth and Space Science
+% Geohealth
+%
+
+%\journalname{Geophysical Research Letters}
+
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+%% ------------------------------------------------------------------------ %%
+%  Title
+%
+% (A title should be specific, informative, and brief. Use
+% abbreviations only if they are defined in the abstract. Titles that
+% start with general keywords then specific terms are optimized in
+% searches)
+%
+%% ------------------------------------------------------------------------ %%
+
+% Example: \title{This is a test title}
+
+%\title{Antigorite Creep at Subduction Conditions: Long Duration, High Accuracy Rheological Tests On Intact Cores Using Re-Designed Griggs Assemblies}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  AUTHORS AND AFFILIATIONS
+%
+%% ------------------------------------------------------------------------ %%
+
+% Authors are individuals who have significantly contributed to the
+% research and preparation of the article. Group authors are allowed, if
+% each author in the group is separately identified in an appendix.)
+
+% List authors by first name or initial followed by last name and
+% separated by commas. Use \affil{} to number affiliations, and
+% \thanks{} for author notes.
+% Additional author notes should be indicated with \thanks{} (for
+% example, for current addresses).
+
+% Example: \authors{A. B. Author\affil{1}\thanks{Current address, Antartica}, B. C. Author\affil{2,3}, and D. E.
+% Author\affil{3,4}\thanks{Also funded by Monsanto.}
+
+\authors{Eric Burdette and Greg Hirth}
+
+
+%\affiliation{1}{Brown University}
+% \affiliation{2}{Second Affiliation}
+% \affiliation{3}{Third Affiliation}
+% \affiliation{4}{Fourth Affiliation}
+
+\affiliation{1}{Department of Earth, Environmental and Planetary Sciences, Brown University, Providence, RI, USA}
+%(repeat as many times as is necessary)
+
+%% Corresponding Author:
+% Corresponding author mailing address and e-mail address:
+
+% (include name and email addresses of the corresponding author.  More
+% than one corresponding author is allowed in this LaTeX file and for
+% publication; but only one corresponding author is allowed in our
+% editorial system.)
+
+% Example: \correspondingauthor{First and Last Name}{email@address.edu}
+
+%\correspondingauthor{Eric Burdette}{eric\_burdette@brown.edu}
+
+%% Keypoints, final entry on title page.
+
+% Example:
+% \begin{keypoints}
+% \item	List up to three key points (at least one is required)
+% \item	Key Points summarize the main points and conclusions of the article
+% \item	Each must be 100 characters or less with no special characters or punctuation
+% \end{keypoints}
+
+%  List up to three key points (at least one is required)
+%  Key Points summarize the main points and conclusions of the article
+%  Each must be 100 characters or less with no special characters or punctuation
+
+\begin{keypoints}
+\item Antigorite was deformed at constant stress to low strain 
+\item Slip along basal planes and kinks allow plastic deformation
+\item Peierls creep laws describe deformation rheology well
+\end{keypoints}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  ABSTRACT
+%
+% A good abstract will begin with a short description of the problem
+% being addressed, briefly describe the new data or analyses, then
+% briefly states the main conclusion(s) and how they are supported and
+% uncertainties.
+%% ------------------------------------------------------------------------ %%
+
+%% \begin{abstract} starts the second page
+
+\doublespacing
+
+\begin{abstract}
+A redesigned Griggs-type assembly and apparatus was used to deform antigorite under constant stress creep  conditions at low temperature, low strain rate, and high pressure. Antigorite was deformed at constant temperatures between 75°C and 550°C, acquiring 8-12 rheology results per temperature. The microstructure of samples recovered after deformation highlights the importance of kinks to antigorite plasticity. Rheology data is optimally fit with a barrier-controlled plasticity law whose mechanisms agree physically with a kink-limited glide/slip deformation mechanism. When applied to natural settings, the extrapolated viscosity agrees well with predictions from subduction models.
+
+
+\end{abstract}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  TEXT
+%
+%% ------------------------------------------------------------------------ %%
+
+
+\section{Introduction}
+
+    Subduction zones are among the most seismically active areas on earth. The wide spectrum of brittle and ductile behavior in the nearby mantle and downgoing slab control seismic coupling, deep fluid transport, and mantle convection. The interplay between rheology and metamorphic reactions is key to understanding tectonic dynamics and evolution at depth. To explain a range of observations at subductions zones (e.g., heat flow, location of volcanic front, slab seismicity, seismic structure of the mantle wedge), thermal models require slab decoupling down to a depth of ~80 km \citep[e.g.][]{Wada2008, syracuse2010global}. Owing to its relative weakness, the presence of serpentine along the interface has been called on to promote this decoupling \citep[e.g.][]{Wada2009}. In altered oceanic lithosphere and mantle wedge, antigorite is the stable serpentine polytype at these high pressure/high temperature conditions \citep{wunder1997antigorite, schwartz2013pressure}.
+    
+    The rheology of antigorite at high pressure has been investigated in a wide range of experimental studies \citep[e.g.][]{Hilairet2007,Auzende2015, Proctor2016, hirauchi2020semi}. Flow laws constrained by strain rate stepping experiments from these studies show evidence for both power-law creep behavior (stress to n, with $n~3$) and/or greater stress-dependence consistent with low-temperature plasticity or semi-brittle flow ($n>20$).  Such large variation in estimated stress-dependence leads to large uncertainties when extrapolating flow laws to the relevant geologic conditions. A promising way to distinguish the relative importance of these mechanisms is conducting low strain rate creep tests at high pressure over a range of temperatures. Creep tests are advantageous because nominal steady state behavior can be achieved at low strain, allowing quantification of flow laws over a wider range of strain rates (almost all previously published data were collected at strain rates greater than $10^{-6}\ 1/s$).
+    
+    We conducted creep tests on solid cores of mesh-textured antigorite at constant differential stress. To improve the resolution of both stress and strain rate we redesigned the dynamic seals, sample assembly, and mechanical control of a Griggs-type deformation apparatus for the temperature conditions where antigorite is stable. The microstructure recovered after deformation illustrates the importance of kinking and basal slip, rather than a solely dislocation glide deformation mechanism in serpentinite bodies \citep[c.f.][]{Auzende2015deformation, Amigeut2014deformation}.
+
+
+\section{Materials, Cell Designs, Methods, and Data Analysis}
+
+    \subsection{Materials and Sample Preparation}
+        Antigorite samples were cored from a serpentinite collected from the Nagasaki metamorphic belt in Japan; this material (which was also used in the studies of \citet{Proctor2015} and \citet{Okazaki2016}) is predominantly antigorite (~98\%) with minor diopside, spinel and magnetite.  
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{Figures/AntigoriteCreepAssemblies.pdf}
+  \caption{Sample assemblies used in this work. From left to right: High temperature partially molten salt assembly, teflon lined liquid metal assembly, low melt eutectic assembly (externally heated).}
+  \label{fig:AntigoriteCreepAssemblies}
+\end{figure}
+
+    \subsection{Sample Assembly}
+        Samples were jacketed in thin copper or silver sleeves and deformed at 1 GPa confining pressure in one of three types of modified Griggs-type deformation assemblies, depending on the experimental temperature (Figure \ref{fig:AntigoriteCreepAssemblies}). For experiments at T$=$75°C, a weak Bi-Sn-Pb eutectic alloy was cast into a tube filling the space between samples and the pressure vessel walls (Figure \ref{fig:AntigoriteCreepAssemblies}c). When the entire pressure vessel is heated above 70°C by flowing hot water through the standard cooling rings, the alloy becomes very weak and presents low resistance to sample expansion and piston advancement (further details are provided in the supplemental information). For T=200°C, a modified molten salt assembly was fabricated with molten Bi-Sn alloy replacing salt, and machined teflon replacing pyrophyllite (Figure \ref{fig:AntigoriteCreepAssemblies}b). For T$>$400°C, a eutectic partial melt salt (0.15AlCl3-0.85NaCl mol) was used in a molten salt assembly (Figure \ref{fig:AntigoriteCreepAssemblies}a). 
+        
+        The nearly fluid nature of these confining media necessitated the use of central axial thermocouples. Thermal modeling (see supplement) and previous studies \citep{kirby1984deformation} indicate that the axial thermocouple measures a slightly colder area of the sample column, representing a more reliable, but also lower bound on the sample temperature. In addition, moving the thermocouple out of the 100°C/mm gradient between the sample and furnace wall improved reliability of temperature determination.
+        
+        Low apparatus friction is critical for characterizing samples with large stress sensitivity. To decrease friction, we replaced the typical beveled mitre-ring seal used in Griggs-type apparatuses with a tight-tolerance polished carbide bushing and Graphite-filled PEEK O-ring/washer (Figure \ref{fig:AntigoriteCreepAssemblies}). This design limits extrusion of seal material and promotes excellent piston alignment. We tested and calibrated the new design by conducting tests on brass using paraffin wax as a confining medium (Figure S10). With these improvements, both the magnitude and rate-dependence of cell friction was reduced by approximately a factor of five.
+        
+    \subsection{Stress Stepping Methods and Calibration}
+        In all creep experiments on antigorite cores, the deformation piston was first advanced until it “hit” the sample and loaded to starting stress. The sample was then allowed to creep at constant load for 2-24 hours to ensure salt was expelled. For each subsequent load step, strain rate was monitored and allowed to stabilize after reaching target load (see supplement text SXX4 for details). 
+        To test the performance of the new assemblies, we also conducted stress stepping creep tests on Westerly Granite at 200 MPa and 70°C in a low temperature assembly and compared the results to published data acquired in a gas-confining medium apparatus \citep{brantut2012micromechanics}. Our data compare favorably and show that we can accurately measure  strain rate down to at least $5*10^{-8}$/s. For this calibration test, we recorded acoustic emissions, and observed that event frequency increased proportional to strain rate with 500 collected events (Figure S1).
+        Post-processing reveals that Antigorite may behave differently than materials deforming by mode 1 microcrack opening (granites/sandstones) and continuously harden with increasing strain. The hardening is discussed briefly later in microstructural context, and more thoroughly in text SXX3.
+        
+\begin{table}\label{table:AtgCreepExpts}
+\caption{Experiments}
+\centering
+    \begin{tabular}{llllll}
+    \hline
+    Experiment & Sample & Temperature (°C) & Pressure (MPa) & Confining Media & Strain \\
+    \hline
+    W2394-75   & Westerly Granite & 75 & 200& 95C Alloy & 0.04   \\
+    W2424-550  & Antigorite & 550 & 1000 & NaCl-AlCl3 & 0.02   \\
+    W2439-400  & Antigorite & 400 & 1000 & NaCl-AlCl3 & 0.04   \\
+    W2441-75   & Antigorite & 75 & 1000 & 95C Alloy & 0.05   \\
+    W2447-200  & Antigorite & 200 & 1000 & 60:40 Bi:Sn & 0.04   \\
+    W2526-480  & Antigorite & 480 & 1000 & NaCl-AlCl3 & 0.01   \\
+    W2521-75   & Antigorite & 75 & 1000 & Hydraulic Oil & 0.03   \\
+    W2520-520  & Antigorite & 520 & 1000 & NaCl-AlCl3 & 0.02   \\
+    \hline
+    %\multicolumn{2}{l}{$^{a}$Footnote text here.}
+    \end{tabular}
+\end{table}
+
+    \subsection{Acoustic Data}
+        While we did collect acoustic data during antigorite creep, emissions were only observed during pressurization. This result is consistent with the results of previous studies on deformation of antigorite \citep{Escartin1997,Okazaki2016,Gasc2017faulting, Ferrand2017}
+        
+    
+\section{Results}
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{Figures/Mechanical_combo.pdf}
+    \caption{a) Comparison of normalized stress in this work to data of \citet{brantut2012micromechanics}Brantut et al. 2012. b) Final strain rate plotted against applied differential stress (this study, circles). Lines are Peierls fits for each temperature. Data of \citet{Hilairet2007} is included as open inverted triangles for reference.  c) Plot of linearized Peierls’ creep energy for experimental data. The best fit line has a Peierls stress of 2.55GPa, inner exponent of 1.00, outer exponent 1.60. the best fit line has activation enthalpy of 111 kJ/mol, and a pre-exponential constant of $e^{-7.10}$. d) Plots of extrapolated viscosity vs. stress to subduction conditions.}
+    \label{fig:Mechanical_combo}
+\end{figure}
+
+    \subsection{Mechanical Results}
+        The analysis of mechanical data demonstrates that the stress-sensitivity of strain rate decreases with increasing temperature. Data were collected at each temperature by varying applied stress and observing strain rate stabilize over time. When points from a single temperature are plotted as the log of strain rate against the log of stress, they have a consistent slope (stress exponent “n”), which varies with temperature between 5 and 21. Data at the highest temperatures also show decrease in n at the lowest strain rate. 
+        
+\begin{figure}
+  \includegraphics[width=5.25in]{Figures/All_Antig_microstructure.pdf}
+  \caption{a) Image showing both macroscopic color image of damage (light color), and backscatter SEM image of the 200°C creep sample. The visible structures in SEM are X-shaped structures of opposing antigorite foliation. The poor orientation leads to kinking at the intersection of opposing grains and delamination opening upon decompression around the kinked structures. b) Backscatter SEM image of x-shaped structures in the 200 °C creep sample. Poor orientation of the pictured grains forces kinking at the intersection, and eventual tearing when easy kinking is exhausted. C-axis (along sheet) deformation is required for this structure to form. Delamination cracks open after decompression due to residual stress. c) SEM Image of low temperature antigorite deformation microstructures. Tight kinks, with angles 2-3x higher temperatures are highlighted by black lines following the sheet basal planes. d) SEM Image of structures in the sample deformed at 400°C. Arrows denote movement of poorly oriented grains along a cracked slip surface. Stress is concentrated at the intersection of the grains, resulting in four tight kinks. Note that kink angle and delamination decrease rapidly with distance from the intersection in contrast to lower temperature microstructure. Differential stress is vertical in all images.}
+  \label{fig:All_Antig_microstructure}
+\end{figure}
+
+    \subsection{Microstructure}
+        Antigorite is known to deform by nominally non-dilatant brittle deformation mechanisms at confining pressures above 50 MPa \citep{Escartin1997,david2018absence}.  We collected acoustic emission data during the antigorite creep experiments, and as would be expected emissions were only observed during pressurization/depressurization (furnace/pyrophyllite cracking). This is in stark contrast to westerly granite experiments where we observe hundreds of emissions during creep due to crack opening and propagation. In addition, recent studies of antigorite’s shear velocity evolution during deformation \citet{david2018absence} confirm its non-dilatant nature and implies that opening of shear cracks and voids in solid samples happens after depressurization, so we consider recovered microstructure with that in mind.
+        
+        The original microstructure of cored samples shows a generally isotropic mesh texture defined by antigorite grains oriented dominantly around 45 degrees to the axial compression direction (Figure SXX5). There is no macroscopic foliation, and the grains appear to be "cross-stitched". The mesh texture is not visible in backscattered electron images of undeformed cores. However, it becomes visible after deformation as shear cracks open during decompression. Basal slip along the antigorite grains leads to contact interactions between grains in the opposing sheets of the mesh texture, whose recoverable microstructure varies with temperature. Sample scale photos of the deformed samples are presented in Figure SXXX.
+        
+        First, cores deformed at 75°C have deformation localized into a 0.11 mm wide, banded structure oriented 35 degrees from the axial compression direction. Within the localized zone , we observed $<200 µm$ long fractures and a high density of relatively tight kinks (Figure \ref{fig:All_Antig_microstructure}b); surprisingly, there is little other evidence for comminution/damage in the localized zone. We define kink angle as deviation from an unkinked plane (180 degrees less/minus the inner angle between visible cleavage planes) so that slight bending corresponds to a small kink angle. The average kink angle at 75°C is 54° (29 measurements, minimum 40°, maximum 68°). This is approximately the period doubling angle observed in polygonal serpentinite samples (spiral/tube sheet growth with kinks) \citep{grobety2003polytypes}.
+        
+        The cores run at 200°C also displays deformation localized at 35 degrees to axial compression, but the “fault zone” is wider (1-2 mm width, Figure \ref{fig:All_Antig_microstructure}a). No deformation-induced fractures longer than 100 µm are present. Instead, deformation is accommodated by kinking. Kinks appear at the intersection of poorly oriented grains whose sheets have clearly slipped along basal cleavage during deformation. When the offset in the direction normal to the kink plane is small (see Figure \ref{fig:All_Antig_microstructure}b, similar to action of scissors), the sheets remain kinked and intact along their length. In cases where offset if larger, they tear at the kink apex. Average kink angle in these X-shaped structures is 23° (9 measurements, minimum 15°, maximum 33°), approximately half the angle observed at 75°C. 
+        
+        At 400°C the deformation becomes much more distributed. Kinks and microcracks are evenly distributed in the deformed part of the sample. A lack of strain localization in core samples deformed to low strain at 400°C is consistent with previous work \citep{Chernak2010}. The same X-shaped structures are also present in the most deformed parts of the sample, but they are also less densely spaced than observed at lower temperature – and accordingly there are fewer kinks in the sample deformed at 400°C. The kink angles are quite variable and also vary as a function of distance from the stress concentrating feature (Figure \ref{fig:All_Antig_microstructure}c). The average kink angle less than 10 µm from the feature is ~45 degrees, while the kink angles 20 µm away are 10-20°. This observation suggests that the kink bands grow outward with increasing deformation at the stress-concentrating slip point.
+        
+        Samples deformed at 550°C also have the same X-shaped structures and microcracks a distribution of deformation similar to the 400°C sample However, we did not observe any kinks. Some slight bending of grains is observed, but only at very small scales ($<1µm$). Where these small bends in the grains appear (supplement Figure SXX5 W2424\_zoom005), they do not have a clear apex like lower temperate samples. This observation suggests thermal activation of some reaction/recovery mechanism “healing” the kinks and basal slip occurring. 
+
+ 
+
+\section{Discussion}
+
+    \subsection{Low Temperature Plasticity Similarity}
+        The constant stress creep data in figure \ref{fig:Mechanical_combo} define a continuous stress dependence at each temperature. The systematic variation among temperatures well described by a creep law used for obstacle-controlled glide of dislocations that must “cut through” obstacles like precipitate particles in hardened metals. We suspect that antigorite deformation fits this deformation rate equation so well because of the similarity of interactions of basal slip in optimally orientation (high resolved shear stress on basal planes) with poorly oriented grains. 
+        Additionally, low temperature plastic deformation is often accompanied by hardening, or build up of an internal stress \citep[e.g.][]{hansen2019low}. Post-processing of data in this study reveals that unlike our westerly granite tests, antigorite strain rate continues to decrease slowly with increasing strain. The hardening suggests interaction of kinks or exhaustion of easy kinking, but does not appear to be significant enough to affect our flow law determination (see supplement).  More study is needed of slip on planar antigorite (if it can be grown or fabricated) at variable pressure to constrain the magnitude of individual contributions of basal slip and kinking/rotation to flow and hardening of serpentinite.
+    
+    \subsection{Flow Law}
+        Reduction of the stress sensitivity/stress exponent with increasing temperature is consistent with exponential low temperature plasticity or “barrier controlled” creep laws where the “barrier height” is lowered by thermal activation.  Microstructural observations suggest the barrier mechanism involves kinking of the antigorite grains.  That law has the form \citep{frost1982deformation}:
+        \begin{equation}
+            \dot{\epsilon}=A\exp\left(
+                \frac{-\Delta G}{RT}\left(
+                    1-\left(\frac{\sigma}{\tau_p}
+                        \right)^p
+                    \right)^q
+                \right)
+        \end{equation}
+        Fitting data to the law is very sensitive to changes in the exponents. Typically data do not extend to low enough strains rates to constrain p and q (e.g. Evans and Goetze (1979)) and these parameters are often assumed to both have values of 1 as suggested by theory \citep{frost1982deformation}. In this case data at $10^{-8}$ and $10^{-9}$ do constrain the exponents (see supplement) so we were able to invert for parameters on all data from 75°C to 550°C. The best fit is a constant Peierls stress ($\tau_p$) of $2.54\pm0.03$ GPa inner exponent p of 1, outer exponent q of $1.59\pm0.04$, an average activation enthalpy of $111\pm1.2$ kJ/mol, and a pre-exponential constant A of exp($-7.10\pm0.1$).
+        
+    \subsection{Deformation Mechanisms in Undamaged Antigorite}
+        The most critical aspects of the current work are constant stress testing and using dense antigorite cores. Typical constant strain rate experiments capture strength response of an evolving microstructure that is complicated by antigorite’s anisotropic sheet structure. Powdered material is not effectively densified and sintered below dehydration temperatures \citep{burdette2020enhanced} and deformation includes compaction events even at 1 GPa confining pressure. Constant stress testing of solid cores captures rheology at very low strain and can be used to examine mechanical response at a microstructural “snapshot”. As a result, we are testing the rheological behavior (involving crack/kink nucleation and growth) of the nominally undamaged rock, rather than the response of a “cold pressed gouge” that experienced sheet tearing and comminution which occur after easy kinking is exhausted. Here we show in more detail how the kinking mechanism fits into broader study of antigorite deformation.
+                
+        Some of the earliest serpentinite deformation work notes kinks in the fault zone.  \citet{Raleigh1965} write “Study of thin sections show that in the ductile specimens serpentinite grains throughout the deformed zone have become bent or kinked. In the transitional specimens, the faults consist of narrow zones of strongly reoriented serpentinite grains; some grains lying outside the faults appear to have been plastically deformed, but the majority of these are adjacent to the fault zones. In brittle specimens, there is no evidence of plastic deformation outside of a very narrow band of highly oriented serpentinite present in places along the fault.”  Their transition microstructures were due to increasing pressure at room temperature, instead of increasing temperature at constant pressure, but these microstructural changes are similar to the transitions we observe with increasing temperature at higher confining pressure.
+        
+        More recent work highlights activity of a key mechanism to form kinks: slip along the basal cleavage plane. \citet{Escartin1997} measured volumetric strain in foliated antigorite and found that deformation was nominally non-dilatant (cracks are not opening, but rather sliding during deformation). In addition, their microstructural characterization shows cracks form within their specimens almost exclusively along the (001) plane of the antigorite sheets, further supporting the activity of basal sliding. Non-dilatant shear deformation is also consistent with the lack of acoustic emissions due to the microcracking and clear formation of shear cracks we observe in this study. \citet{david2018absence} confirm the non-dilatant behavior in a more recent study with seismic velocity, and further show some of the plastic deformation behavior of the cores is reversible, as would be expected for a material deforming by low temperature plasticity mechanisms with a strain-hardened back stress. In an expanded study \citep{david2020sliding} that included experiments at confining pressures up to 1 GPa, they concluded a similar shear-crack mechanism can explain the reversible deformation and pressure dependence to 1 GPa.
+        
+        The observation of non-dilatant shear deformation suggests the possibility of basal dislocations, but they have not been observed in TEM or indentation studies. \citet{hansen2020insight} nanoindent antigorite, but only observe a “paucity” of crystal plastic deformation to ~6 GPa. Similarly, in TEM experiments of antigorite grains (push-pull style tension), \citet{idrissi2020situ} observe deforming antigorite grains in real time up to 800 MPa, but do not observe moving dislocations that other materials display \citep[e.g. olivine of][]{idrissi2016low}, and instead observe grain boundary sliding.
+        
+        If antigorite deforms dominantly by grain boundary/basal fracture slip, then it needs rotation mechanisms to satisfy the volume-preserving Von Mises criterion. [REF??] This is accomplished by the kinks observed in Figure \ref{fig:All_Antig_microstructure}. Our nominally isotropic antigorite starting material does not have the continuous “bladed band” structure present in many other serpentinites \citep{Escartin1997}, and instead has many sets of nearly perpendicular antigorite grains, which we call “cross-stitched”. This cross-stitched microstructure is possibly the hardest orientation because basal slip is regularly impeded by grains perpendicular to the slip direction. As Figure \ref{fig:All_Antig_microstructure} shows, this is accommodated by kinking and tearing of the perpendicular grains.
+        
+        
+    \subsection{Comparison to Other Materials}
+        Some other materials have sheet structures with similarly high creep strength and reversible grain boundary deformation. They show a strong dependence of behavior on grain size and have clearly observable kinked strictures after indentation and deformation. At very high temperatures (~1150°C) they undergo a transition in material behavior to a diffusion creep process with a power law exponent of $~2\pm0.5$ \citep{barsoum2011elastic}.  We tested Antigorite at very low strain rates ($10^{-9} 1/s$) as close to the dehydration temperature as possible (480-520°C). While we do observe a change in power law exponent, mechanical data fits the low temperature plasticity law extrapolated from our other creep data well.
+        
+    \subsection{Temperature Sensitivity of Kinking}
+        While obstacle-controlled glide offers an explanation for the temperature sensitivity of strain rate, it does not fully explain a key feature of the microstructure: reduced prevalence of kinks and smaller kink angles at higher temperature. At 75°C, high kink density is preserved in the sample with very sharp apexes (Figure \ref{fig:All_Antig_microstructure}). At 400°C kinks are “wavy”, and are much less dense. Examination of samples deformed to higher strain in other studies show a transition to strain localization on sharp faults with slickensides above 550°C \citep{Chernak2010}. The common feature in this works' temperature series is increased orientation (CPO) and rotation of the antigorite grains at high temperature into the shear plane that does not tear them at high strain. The mechanism of recovery or recrystallization that allows grain rotation by either healing or recrystallizing kinks is still unknown but will be important to understand in future studies. 
+        
+    \subsection{Implications of Temperature Sensitive Grain Rotation}
+        The kink rotation mechanism may also explain some seismicity. If a shear fault forms and causes alignment around its core, shear stress could drop precipitously once stress concentration on very poorly aligned grains reaches the level required to tear them, leading to rupture on a planar surface with only a few strong patches which fail together.  In addition, rotating grains into basal orientations parallel to fault slip would lead to localized low permeability, strongly enhancing the effectiveness of shear heating and dehydration weakening. These mechanisms could explain recently noted acoustic emissions of antigorite-olivine mixtures \citep{Ferrand2017}.
+        
+    \subsection{Geodynamic Implications of Flow Law Parameter Results}
+        The work of \citet{wada2008weakening} on subducting slab modeling suggests strength of a 100m thick layer of weak material at the slab surface would need viscosity between $10^{18}$ and $10^{19} Pa \cdot s$ to match heat flow measurements of mantle decoupling depths. At 400°C and stress of 50 MPa, our results predict a viscosity of $10^{19.1} Pa \cdot s$ and at 500°C they predict viscosity of $10^{18.0} Pa \cdot s$. The form of the low temperature plasticity law suggests that a temperature dependent viscosity without rate dependence is appropriate for most low stress modeling situations. 
+        \begin{equation}
+            \frac{\sigma}{\dot{\epsilon}}=C\exp\left(
+                \frac{\Delta G}{RT}
+                \right)
+        \end{equation}
+        The constants for this law are $C=e^{24.23\pm0.26}, \Delta G=111\pm1.2$ kJ/mol. The viscosity formulation above avoids the low stress viscosity decrease inherent in this formulation of the barrier controlled law as stress approaches zero (thermal activation does not approach zero as stress approaches zero). In some formulations the decreasing viscosity is tempered by a stress squared term related to dislocation density, which might be analogous to shear crack density in antigorite, but we do not attempt to incorporate that into this formulation. Additionally some pressure dependence of antigorite strength exists, but it is modest ($<100$ MPa/GPa) so it is not included here \citep{Proctor2016}.
+        It is important to note that rheology examined here is limited to low strain ($<5\%$). Competition between the hypothesized temperature activated recovery (which requires long times) and hardening due to increasing kink density at low stress and high strain ($>20\%$) could alter extrapolated viscosity.
+
+\section{Conclusions}
+    In this study we redesigned a Griggs-type apparatus and assembly for constant stress creep testing of antigorite at low temperature, low strain rate, and high pressure.  Antigorite was tested at temperatures between 75°C and 550°C, acquiring 8-12 rheology results per temperature. The microstructure of samples recovered after deformation highlights the importance of kinks to antigorite deformation. The subsequent rheology data suggests a barrier-controlled creep, further supporting kinks as the rate-limiting deformation mechanism.  When extrapolated to subduction conditions, the data fit surprisingly well to requirements of subduction models, resolving a long-standing mystery.
+    
+    \begin{enumerate}
+        \item We designed and tested a new Griggs assembly for low temperature constant stress testing.
+        \item We tested solid cores of nominally isotropic antigorite at varying temperature, from 75°C to 550°C, acquiring 8-12 rheology results per temperature. 
+        \item Microstructural observations suggest localization in antigorite is due to basal sliding and kinking which accommodates grain rotation toward preferred high shear stress orientations.
+        \item Data fits well to barrier-controlled plasticity laws, consistent with the kink-limited microstructure.
+        \item Rheology extrapolates well to subduction zones despite higher strength than previous testing.
+    \end{enumerate}
+
+%Text here ===>>>
+
+%%
+
+%  Numbered lines in equations:
+%  To add line numbers to lines in equations,
+%  \begin{linenomath*}
+%  \begin{equation}
+%  \end{equation}
+%  \end{linenomath*}
+
+
+
+%% Enter Figures and Tables near as possible to where they are first mentioned:
+%
+% DO NOT USE \psfrag or \subfigure commands.
+%
+% Figure captions go below the figure.
+% Table titles go above tables;  other caption information
+%  should be placed in last line of the table, using
+% \multicolumn2l{$^a$ This is a table note.}
+%
+%----------------
+% EXAMPLE FIGURE
+%
+% \begin{figure}[h]
+% \centering
+% when using pdflatex, use pdf file:
+% \includegraphics[width=20pc]{figsamp.pdf}
+%
+% when using dvips, use .eps file:
+% \includegraphics[width=20pc]{figsamp.eps}
+%
+% \caption{Short caption}
+% \label{figone}
+%  \end{figure}
+%
+% ---------------
+% EXAMPLE TABLE
+%
+% \begin{table}
+% \caption{Time of the Transition Between Phase 1 and Phase 2$^{a}$}
+% \centering
+% \begin{tabular}{l c}
+% \hline
+%  Run  & Time (min)  \\
+% \hline
+%   $l1$  & 260   \\
+%   $l2$  & 300   \\
+%   $l3$  & 340   \\
+%   $h1$  & 270   \\
+%   $h2$  & 250   \\
+%   $h3$  & 380   \\
+%   $r1$  & 370   \\
+%   $r2$  & 390   \\
+% \hline
+% \multicolumn{2}{l}{$^{a}$Footnote text here.}
+% \end{tabular}
+% \end{table}
+
+%% SIDEWAYS FIGURE and TABLE
+% AGU prefers the use of {sidewaystable} over {landscapetable} as it causes fewer problems.
+%
+% \begin{sidewaysfigure}
+% \includegraphics[width=20pc]{figsamp}
+% \caption{caption here}
+% \label{newfig}
+% \end{sidewaysfigure}
+%
+%  \begin{sidewaystable}
+%  \caption{Caption here}
+% \label{tab:signif_gap_clos}
+%  \begin{tabular}{ccc}
+% one&two&three\\
+% four&five&six
+%  \end{tabular}
+%  \end{sidewaystable}
+
+%% If using numbered lines, please surround equations with \begin{linenomath*}...\end{linenomath*}
+%\begin{linenomath*}
+%\begin{equation}
+%y|{f} \sim g(m, \sigma),
+%\end{equation}
+%\end{linenomath*}
+
+%%% End of body of article
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional Appendix goes here
+%
+% The \appendix command resets counters and redefines section heads
+%
+% After typing \appendix
+%
+%\section{Here Is Appendix Title}
+% will show
+% A: Here Is Appendix Title
+%
+%\appendix
+%\section{Here is a sample appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Optional Glossary, Notation or Acronym section goes here:
+%
+%%%%%%%%%%%%%%
+% Glossary is only allowed in Reviews of Geophysics
+%  \begin{glossary}
+%  \term{Term}
+%   Term Definition here
+%  \term{Term}
+%   Term Definition here
+%  \term{Term}
+%   Term Definition here
+%  \end{glossary}
+
+%
+%%%%%%%%%%%%%%
+% Acronyms
+%   \begin{acronyms}
+%   \acro{Acronym}
+%   Definition here
+%   \acro{EMOS}
+%   Ensemble model output statistics
+%   \acro{ECMWF}
+%   Centre for Medium-Range Weather Forecasts
+%   \end{acronyms}
+
+%
+%%%%%%%%%%%%%%
+% Notation
+%   \begin{notation}
+%   \notation{$a+b$} Notation Definition here
+%   \notation{$e=mc^2$}
+%   Equation in German-born physicist Albert Einstein's theory of special
+%  relativity that showed that the increased relativistic mass ($m$) of a
+%  body comes from the energy of motion of the body—that is, its kinetic
+%  energy ($E$)—divided by the speed of light squared ($c^2$).
+%   \end{notation}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  ACKNOWLEDGMENTS
+%
+% The acknowledgments must list:
+%
+% >>>>	A statement that indicates to the reader where the data
+% 	supporting the conclusions can be obtained (for example, in the
+% 	references, tables, supporting information, and other databases).
+%
+% 	All funding sources related to this work from all authors
+%
+% 	Any real or perceived financial conflicts of interests for any
+%	author
+%
+% 	Other affiliations for any author that may be perceived as
+% 	having a conflict of interest with respect to the results of this
+% 	paper.
+%
+%
+% It is also the appropriate place to thank colleagues and other contributors.
+% AGU does not normally allow dedications.
+
+
+\acknowledgments
+We thank Nicolas Bantut for his 
+Nicolas, Manu, Hannah, Cam?, Keishi for material?
+
+
+\subfile{EB_AtgCreep_SuppInfo.tex}
+\subfile{EB_AtgCreep_x620Appendix.tex}
+
+
+\singlespacing
+\bibliographystyle{apalike}
+\bibliography{Feb19_refs_2.bib}
+
+
+\end{document}

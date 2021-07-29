@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, graphics, setspace, parskip}
+
+%\geometry{letterpaper, margin=1in}
+
+\begin{document}
+
+For a confined, axially loaded piston with a plane whose normal is rotated $\psi$ from the compression axis (Karato 2008):
+
+\begin{equation}
+    \tau =\frac{\sigma_1-\sigma_3}{2} \sin(2\psi)
+\end{equation}
+
+\begin{equation}
+    \sigma_n=\frac{\sigma_1+\sigma_3}{2}-\frac{\sigma_1-\sigma_3}{2} \cos(2\psi)
+\end{equation}
+
+
+\begin{equation}
+    \sigma_n=\frac{\sigma_1+\sigma_3}{2}-\frac{\tau}{\sin(2\psi)} \cos(2\psi)
+\end{equation}
+
+\begin{equation}
+    \sigma_n=\frac{\tau}{\sin(2\psi)}+\frac{\sigma_3}{2}+\frac{\sigma_3}{2}-\frac{\tau}{\sin(2\psi)} \cos(2\psi)
+\end{equation}
+
+\begin{equation}
+    \sigma_n= \sigma_3 + \tau\frac{1-\cos{2\psi}}{\sin{2\psi}}
+\end{equation}
+
+\begin{equation}
+    \cos{2\psi}=1-2\sin^2{\psi}
+\end{equation}
+
+\begin{equation}
+    \sin{2\psi}=2\sin{\psi}\cos{\psi}
+\end{equation}
+
+\begin{equation}
+    \sigma_n= \sigma_3 + \tau \tan{\psi}
+\end{equation}
+
+\end{document}
