@@ -113,7 +113,7 @@
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/Creep Plot 9-20 comparison Annotatedv0.2.pdf}
   \caption{
-  Compilation of other high pressure experimental antigorite deformation results plotted over results form the current study. Both cores \citep{hirauchi2020semi,Chernak2010,Escartin1997} and gouge \citep{Chernak2010,Proctor2016,Okazaki2016} are plotted.
+  Compilation of other high pressure experimental antigorite deformation results plotted over results form the current study. Both cores \citep{hirauchi2020semi, Chernak2010, Escartin1997} and gouge \citep{Chernak2010, Proctor2016, Okazaki2016} are plotted.
   }
   \label{fig:CH2s_Data_Comparison_supplement}
 \end{figure}
@@ -140,7 +140,7 @@
 \end{figure}
 
 
-\subsection{Mechanical Data Calculations}
+\subsection{Mechanical Data Calculations} \label{CH2s_mechcalcs}
     The Griggs apparatus has both external load and displacement sensors which need to be corrected to find load and displacement on the sample inside the pressure vessel. Differential stress is determined by subtracting a "hit point" stress (hydrostatic pressure+friction) from the externally measured load. Displacement is determined by subtracting displacement absorbed by the column in compression \citep{burdette2020enhanced}, and referenced relative to the "hit point".
     \begin{equation}
         x_{sample} = x_{LVDT2} - \frac{\sigma_{1, external}}{k_{lower_column}}
@@ -158,7 +158,7 @@
     To calculate strain rates during post-processing, we used the first derivative of a first order Savitzky-Golay filter (moving line fit) over a moving time window chosen for each step. For strain rates above $10^{-6} 1/s$, the window could be as short as 100 seconds, while the lowest strain rates require 10000 seconds. Strain rates chosen for flow law fits were the final point that was not influence by a disturbance or loading to the next stress. Wherever strain rate is plotted as a continuous function of time (S6-7), a single window length was chosen over the whole plot to best display data. 
     
 
-\subsection{Hardening During Stress Steps}
+\subsection{Hardening During Stress Steps} \label{CH2s_hardening_discussion}
 
     It is important to note that within strain steps samples clearly harden over time (S\ref{fig:CH2s_Load-Time-Fast}). This is expected to some extent from other descriptions/results of brittle creep and high temperature creep tests where primary, secondary, and tertiary creep phases can be identified. For westerly granite calibration tests (S\ref{fig:CH2s_Westerly_Supplement}), at each step samples clearly reach constant strain rates after relatively small strains (~0.2\%). Post-processing of antigorite data shows that it may continue to harden over similar 0.2\% strain steps (depicted in data for W2447-200 (S\ref{fig:CH2s_Load-Time-Fast})). This decay is not obvious in live displays of data because it requires more processing power to smooth and compute than our rig control PC has available. 
     
@@ -202,7 +202,7 @@
 
 
 
-\subsection{Uncertainty introduced due to hardening}
+\subsection{Uncertainty introduced due to hardening} \label{CH2s_hardening_uncertainty}
     The ratio of initial/final strain seems to be similar at most strains. This makes ratio/increment (hardening slope) much larger at small strain. Hardening literature plots the change as $d\sigma/d\epsilon$ vs. $\sigma$ \citep{kocks2003physics}. It's unclear if that's appropriate for materials with pressure-dependent strength. 
     
     To assess the potential uncertainty introduced into the flow law by choosing final instead of initial strain rates, we re-plotted the fit for initial strain rates (Figure \ref{fig:CH2s_Hardening_Uncertainty}). Because change is a similar factor of ~2 for most steps, the fit exponent and Peirels stresses don’t change significantly while pre-exponential and activation energy change by ~5\%. An example with the same exponents and peierls stress is plotted in Figure S10.
@@ -215,7 +215,7 @@
   \label{fig:CH2s_Hardening_Uncertainty}
 \end{figure}
 
-\subsection{Flow Law Fit Methodology}
+\subsection{Flow Law Fit Methodology} \label{CH2s_flowlawfit}
     A Peierls' flow law was fit to stress vs. log(strainrate) using a Markov-chain Monte-Carlo (MCMC-NUTS) optimizer due to the small local discontinuities in the fit. Results with errors are presented in Table SXX1 and figure S\ref{fig:CH2s_KDE_plot}.
     \begin{table}[ht]
     \begin{tabular}{lllll}
@@ -246,7 +246,7 @@
   \label{fig:CH2s_Fitcompare-moredata}
 \end{figure}
 
-\subsection{Griggs Rig Friction/Accuracy Measurement}
+\subsection{Griggs Rig Friction/Accuracy Measurement} \label{CH2s_frictiontesting}
 
     Several tests were completed to compare the new carbide bushing seal to the old mitre ring seal. We first deformed 360 grade brass rod, cut to simulate samples and confined by paraffin wax. The assembly was externally heated using hot water (same method as low temperature metal assembly), and repeatedly "hit" at different temperatures. (Figure \ref{fig:CH2s_Brass-Wax}) 
     We found that the squeezing force measured during “run-in”/"hit"  roughly follows predictions for “squeeze flow” rheometry. When the viscosity of the squeezed fluid decreases (in this case by heating the wax), the force for a given piston separation decreases.
@@ -256,7 +256,7 @@
     To further test the ability to match the results of high temperature assemblies to room temperature assemblies, we loaded fused silica at 700°C in a standard, mitre-ring assembly and in a hydraulically confined assembly at low pressure (Figure \ref{fig:CH2s_WC-FS_elastic}). The results compare well, with the elastic modulus of the fused silica at high temperature matching the elastic modulus at low temperature. This indicates that we can compare all assemblies used in this study to each other and older results at similar conditions.
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{Figures/Proposal_WaxCombo_small.pdf}
+  \includegraphics[width=\textwidth]{Sections/Chapter2/Figures/Proposal_WaxCombo_small_clip.pdf}
   \caption{Tests comparing old mitre ring seals to new carbide bushing seal friction during run-in through paraffin wax, and during deformation in contact with the grade 360 brass. Improvement in both static friction and rate dependent friction is 3-5x. Viscosity of run-in or “hit” material affects friction determination (lower zoomed rate steps).
   }
   \label{fig:CH2s_Brass-Wax}
@@ -265,34 +265,49 @@
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/WC-FS_oil_HT.pdf}
-  \caption{Elastic tests of fused silica at room temperature in hydraulic oil and a solid salt assembly at 700°C with traditional packing rings. Despite the differences in friction and hit quality, CH2s_load-displacement data match at high loads indicating correct calibration of our load and displacement transducers in both new and old assemblies.
-  }
+  \caption{Elastic tests of fused silica at room temperature in hydraulic oil and a solid salt assembly at 700°C with traditional packing rings. Despite the differences in friction and hit quality, load and displacement data match at high loads indicating correct calibration of our load and displacement transducers in both new and old assemblies.}
   \label{fig:CH2s_WC-FS_elastic}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{Figures/Thermal Model with TC_bp1.pdf}
-    \caption{Thermal model results. Methods are detailed in Moarefvand et al (in press))}
+    \includegraphics[width=\textwidth]{Sections/Chapter2/Figures/Thermal Model with TC_bp1 - Copy.pdf}
+    \caption{Thermal model results. Methods are detailed in Moarefvand et al (in press)}
     \label{fig:CH2s_ThermalModel}
 \end{figure}
 
 
-\begin{table}
-\label{CH2s_CreepFitPoints}
-\centering
-\begin{tabular}{lllllll}
-\hline
-Initial Strainrate (1/s) & Final Strainrate (1/s) & Initial Strain & Final Strain & Stress (MPa) & T(C)    & Experiment \\
-\hline
-3.20E-06           & 2.85E-06         & 0.0001         & 0.0015       & 1800   & 75   & W2441      \\
-7.80E-07           & 7.63E-07         & 0.0015         & 0.0022       & 1750   & 75   & W2441      \\
-3.90E-06           & 3.87E-06         & 0.0022         & 0.0031       & 1800   & 75   & W2441      \\
-7.53E-07           & 7.53E-07         & 0.0031         & 0.00345      & 1750   & 75   & W2441      \\
-4.00E-07           & 2.75E-07         & 0.00345        & 0.0036       & 1700   & 75   & W2441      \\
-9.00E-07           & 6.75E-07         & 0.0036         & 0.004        & 1750   & 75   & W2441      \\
-4.00E-06           & 1.60E-06         & 0.004          & 0.0064       & 1775   & 75   & W2441      \\
-6.80E-06           & 3.60E-06         & 0.0064         & 0.01         & 1800   & 75   & W2441      \\
+\begin{longtable}[c]{| m{0.65in} | m{0.65in} | c | c | c | c | c |}
+    \caption{test \label{tab:CH2s_CreepFitPoints}}\\
+
+    %\centering
+    %\begin{tabular}{m{0.65in} m{0.65in} m{0.55in} m{0.55in} m{0.55in} m{0.45in} m{0.55in}}
+    \hline
+    Initial Strainrate (1/s) & Final Strainrate (1/s) & Initial Strain & Final Strain & Stress (MPa) & T (°C)    & Experiment \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \multicolumn{7}{|c|}{Continuation of Table \ref{tab:CH2s_CreepFitPoints}}\\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \multicolumn{7}{| c |}{End of Table}\\
+    \hline\hline
+    \endlastfoot
+ 
+3.20E-06 & 2.85E-06 & 0.0001         & 0.0015       & 1800   & 75   & W2441      \\
+7.80E-07 & 7.63E-07 & 0.0015         & 0.0022       & 1750   & 75   & W2441      \\
+3.90E-06 & 3.87E-06 & 0.0022         & 0.0031       & 1800   & 75   & W2441      \\
+7.53E-07 & 7.53E-07 & 0.0031         & 0.00345      & 1750   & 75   & W2441      \\
+4.00E-07 & 2.75E-07 & 0.00345        & 0.0036       & 1700   & 75   & W2441      \\
+9.00E-07 & 6.75E-07 & 0.0036         & 0.004        & 1750   & 75   & W2441      \\
+4.00E-06 & 1.60E-06 & 0.004          & 0.0064       & 1775   & 75   & W2441      \\
+6.80E-06 & 3.60E-06 & 0.0064         & 0.01         & 1800   & 75   & W2441      \\
 9.40E-06           & 5.36E-06         & 0.01           & 0.016        & 1825   & 75   & W2441      \\
 1.30E-05           & 7.15E-06         & 0.016          & 0.024        & 1850   & 75   & W2441      \\
 1.42E-05           & 8.30E-06         & 0.024          & 0.034        & 1875   & 75   & W2441      \\
@@ -363,8 +378,8 @@ Initial Strainrate (1/s) & Final Strainrate (1/s) & Initial Strain & Final Strai
 1.50E-08           & 9.00E-09         & 0.0032         & 0.0036       & 595    & 480  & W2526      \\
 1.90E-08           & 1.50E-08         & 0.0036         & 0.004        & 695    & 480  & W2526      \\
 3.50E-08           & 3.00E-08         & 0.004          & 0.0044       & 795    & 480  & W2526      \\
-\end{tabular}
-\end{table}
+%\end{tabular}
+\end{longtable} 
 
 
 \end{document}
