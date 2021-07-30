@@ -102,42 +102,7 @@
 % %Copy/paste for multiples of each file type as needed.
 
 
-\begin{figure}
-  \includegraphics[width=\textwidth]{Figures/W2383_Creep_Comparison-w-Data.pdf}
-  \caption{
-  a) Comparison of normalized stress in this work to data of \citet{brantut2012micromechanics}. b) Data recorded during the creep test on Westerly granite. Points denote measured strain rate after sample have settled to a constant rate. Acoustic emission (AE) data are counts/hits of events recorded during the experiment.
-  }
-  \label{fig:CH2s_Westerly_Supplement}
-\end{figure}
 
-\begin{figure}
-  \includegraphics[width=\textwidth]{Figures/Creep Plot 9-20 comparison Annotatedv0.2.pdf}
-  \caption{
-  Compilation of other high pressure experimental antigorite deformation results plotted over results form the current study. Both cores \citep{hirauchi2020semi, Chernak2010, Escartin1997} and gouge \citep{Chernak2010, Proctor2016, Okazaki2016} are plotted.
-  }
-  \label{fig:CH2s_Data_Comparison_supplement}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{Figures/Keishi_W15190914.jpg}
-  \caption{Thin section cross-polarized image of undeformed mesh texture. Compression of samples was in the vertical direction.
-  }
-  \label{fig:CH2s_ThinSection_Supplement}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{Figures/All_cutopen.pdf}
-  \caption{Images of antigorite core macrostructure. light/white portions of samples have shear microcracks.
-  }
-  \label{fig:CH2s_Macrostructure_Supplement}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=\textwidth]{Figures/W2424_zoom005.pdf}
-  \caption{Gentle curvature of sheets recovered from 550°C sample.
-  }
-  \label{fig:CH2s_550C_Kinks_Supplement}
-\end{figure}
 
 
 \subsection{Mechanical Data Calculations} \label{CH2s_mechcalcs}
@@ -155,8 +120,43 @@
     
     Note that these equations assume sample elasticity is constant, and don't account for rate-dependent friction.
     
-    To calculate strain rates during post-processing, we used the first derivative of a first order Savitzky-Golay filter (moving line fit) over a moving time window chosen for each step. For strain rates above $10^{-6} 1/s$, the window could be as short as 100 seconds, while the lowest strain rates require 10000 seconds. Strain rates chosen for flow law fits were the final point that was not influence by a disturbance or loading to the next stress. Wherever strain rate is plotted as a continuous function of time (S6-7), a single window length was chosen over the whole plot to best display data. 
-    
+    To calculate strain rates during post-processing, we used the first derivative of a first order Savitzky-Golay filter (moving line fit) over a moving time window chosen for each step. For strain rates above $10^{-6} 1/s$, the window could be as short as 100 seconds, while the lowest strain rates require 10000 seconds. Strain rates chosen for flow law fits were the final point that was not influence by a disturbance or loading to the next stress. Wherever strain rate is plotted as a continuous function of time (figure e.g. \ref{fig:CH2s_Load-Displacement}), a single window length was chosen over the whole plot to best display data. 
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{Figures/W2383_Creep_Comparison-w-Data.pdf}
+  \caption[Comparison of calibration data to reference Westerly granite tests]{a) Comparison of normalized stress in this work to data of \citet{brantut2012micromechanics}. b) Data recorded during the creep test on Westerly granite. Points denote measured strain rate after sample have settled to a constant rate. Acoustic emission (AE) data are counts/hits of events recorded during the experiment.
+  }
+  \label{fig:CH2s_Westerly_Supplement}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{Figures/Creep Plot 9-20 comparison Annotatedv0.2.pdf}
+  \caption[Compilation of our stress-strainrate points and other comparable tests]{
+  Compilation of other high pressure experimental antigorite deformation results plotted over results form the current study. Both cores \citep{hirauchi2020semi, Chernak2010, Escartin1997} and gouge \citep{Chernak2010, Proctor2016, Okazaki2016} are plotted.
+  }
+  \label{fig:CH2s_Data_Comparison_supplement}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{Figures/Keishi_W15190914.jpg}
+  \caption[Thin section image of SK-5 antigorite]{Thin section image (cross-polarized) of undeformed mesh texture. Compression of samples was in the vertical direction.
+  }
+  \label{fig:CH2s_ThinSection_Supplement}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{Figures/All_cutopen.pdf}
+  \caption[Macroscopic images of recovered antigorite creep specimens]{Images of antigorite core macrostructure. light/white portions of samples have shear microcracks.
+  }
+  \label{fig:CH2s_Macrostructure_Supplement}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{Figures/W2424_zoom005.pdf}
+  \caption[SEM image of sheet curvature at 550C]{Gentle curvature of sheets recovered from 550°C sample.
+  }
+  \label{fig:CH2s_550C_Kinks_Supplement}
+\end{figure}
 
 \subsection{Hardening During Stress Steps} \label{CH2s_hardening_discussion}
 
@@ -166,21 +166,21 @@
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/W2447_StrainrateStrainStress.pdf}
-  \caption{Experiment data from 200°C experiment. black->stress; red->strainrate; cyan->strain (log scale).
+  \caption[Experiment data from 200°C experiment]{Experiment data from 200°C experiment. black->stress; red->strainrate; cyan->strain (log scale).
   }
   \label{fig:CH2s_Load-Displacement}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/W2447_1700MPa_LVDT2_trace_wlines.pdf}
-  \caption{Load and Displacement plotted against time to show strain rate evolution during a stress step. Data is taken from the last portion of the curve. Rate changes by approximately a factor of 2.
+  \caption[Load and Displacement plotted against time to show strain rate evolution during a stress step]{Load and Displacement plotted against time to show strain rate evolution during a stress step. Data is taken from the last portion of the curve. Rate changes by approximately a factor of 2.
   }
   \label{fig:CH2s_Load-Time-Fast}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/W2526_720MPa_LVDT2_trace_wlines.pdf}
-  \caption{Load and Displacement plotted against time to show strain rate evolution during a stress step. For "low" stresses, the displacement resolution limits determination of strain rate 
+  \caption[Load and Displacement plotted against time to show strain rate evolution during a low stress step]{Load and Displacement plotted against time to show strain rate evolution during a stress step. For "low" stresses, the displacement resolution limits determination of strain rate 
   }
   \label{fig:CH2s_Load-Time-Slow}
 \end{figure}
@@ -188,14 +188,14 @@
 %Greg thought these leave too much to interpretation
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/W2521_stress_strainrate_vs_strain.pdf}
-  \caption{Hardening of antigorite at room temperature where rate change and stress are plotted against strain. Decay appears to be approximately log-linear.
+  \caption[Hardening of antigorite at room temperature vs. strain]{Hardening of antigorite at room temperature where rate change and stress are plotted against strain. Decay appears to be approximately log-linear.
   }
   \label{fig:CH2s_Strainrate-Strain}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/W2521_stress_strainrate_vs_time.pdf}
-  \caption{Hardening of antigorite at room temperature where rate change and stress are plotted against time.
+  \caption[Hardening of antigorite at room temperature vs. stress]{Hardening of antigorite at room temperature where rate change and stress are plotted against time.
   }
   \label{fig:CH2s_Strainrate-Time}
 \end{figure}
@@ -205,19 +205,20 @@
 \subsection{Uncertainty introduced due to hardening} \label{CH2s_hardening_uncertainty}
     The ratio of initial/final strain seems to be similar at most strains. This makes ratio/increment (hardening slope) much larger at small strain. Hardening literature plots the change as $d\sigma/d\epsilon$ vs. $\sigma$ \citep{kocks2003physics}. It's unclear if that's appropriate for materials with pressure-dependent strength. 
     
-    To assess the potential uncertainty introduced into the flow law by choosing final instead of initial strain rates, we re-plotted the fit for initial strain rates (Figure \ref{fig:CH2s_Hardening_Uncertainty}). Because change is a similar factor of ~2 for most steps, the fit exponent and Peirels stresses don’t change significantly while pre-exponential and activation energy change by ~5\%. An example with the same exponents and peierls stress is plotted in Figure S10.
+    To assess the potential uncertainty introduced into the flow law by choosing final instead of initial strain rates, we re-plotted the fit for initial strain rates (Figure \ref{fig:CH2s_Hardening_Uncertainty}). Because change is a similar factor of ~2 for most steps, the fit exponent and Peierls stresses don’t change significantly while pre-exponential and activation energy change by ~5\%. An example with the same exponents and peierls stress is plotted in Figure \ref{fig:CH2s_Fitcompare-moredata}.
 
     In addition, our creep data can be compared to other antigorite deformation studies at similar temperatures and pressures \ref{fig:CH2s_Data_Comparison_supplement}. Some of the comparable studies use antigorite gouge instead of cores, which is noted. Despite widely varying methodology, recorded stress/strainrate is similar to other studies, except where samples are highly aligned of deformation is highly localized.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/Final-Initial Fit Comparison.png}
-  \caption{Comparison of Peirels' fits of Final (Blue, lower), and initial (orange, higher) strain rates at each stress step.}
+  \caption[Comparison of hardening error in Peierls' fits]{Comparison of Peirels' fits of Final (Blue, lower), and initial (orange, higher) strain rates at each stress step.}
   \label{fig:CH2s_Hardening_Uncertainty}
 \end{figure}
 
 \subsection{Flow Law Fit Methodology} \label{CH2s_flowlawfit}
-    A Peierls' flow law was fit to stress vs. log(strainrate) using a Markov-chain Monte-Carlo (MCMC-NUTS) optimizer due to the small local discontinuities in the fit. Results with errors are presented in Table SXX1 and figure S\ref{fig:CH2s_KDE_plot}.
+    A Peierls' flow law was fit to stress vs. log(strainrate) using a Markov-chain Monte-Carlo (MCMC-NUTS) optimizer due to the small local discontinuities in the fit. Results with errors are presented in Table \ref{tab:CH2s_FitTab} and figure S\ref{fig:CH2s_KDE_plot}.
     \begin{table}[ht]
+    \caption{Peierls creep fit results \label{tab:CH2s_FitTable}}
     \begin{tabular}{lllll}
     \hline
                & Mean   & Standard Deviation    & hdi\_2.5\% & hdi\_97.5\% \\
@@ -242,7 +243,7 @@
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/AtgVisc_12-2-20wpeierls_comparison_1to1.pdf}
-  \caption{Comparison of fits for fixed exponent p,q combinations before and after slow data is added to the dataset (for illustration). Slow strain rate data has a very strong effect on extrapolated viscosity.}
+  \caption[Peierls' Fit improvement with low strain rate data]{Comparison of fits for fixed exponent p,q combinations before and after slow data is added to the dataset (for illustration). Slow strain rate data has a very strong effect on extrapolated viscosity.}
   \label{fig:CH2s_Fitcompare-moredata}
 \end{figure}
 
@@ -257,7 +258,7 @@
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Sections/Chapter2/Figures/Proposal_WaxCombo_small_clip.pdf}
-  \caption{Tests comparing old mitre ring seals to new carbide bushing seal friction during run-in through paraffin wax, and during deformation in contact with the grade 360 brass. Improvement in both static friction and rate dependent friction is 3-5x. Viscosity of run-in or “hit” material affects friction determination (lower zoomed rate steps).
+  \caption[Friction testing of the modified carbide bushing in paraffin wax]{Tests comparing old mitre ring seals to new carbide bushing seal friction during run-in through paraffin wax, and during deformation in contact with the grade 360 brass. Improvement in both static friction and rate dependent friction is 3-5x. Viscosity of run-in or “hit” material affects friction determination (lower zoomed rate steps).
   }
   \label{fig:CH2s_Brass-Wax}
 \end{figure}
@@ -265,20 +266,20 @@
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/WC-FS_oil_HT.pdf}
-  \caption{Elastic tests of fused silica at room temperature in hydraulic oil and a solid salt assembly at 700°C with traditional packing rings. Despite the differences in friction and hit quality, load and displacement data match at high loads indicating correct calibration of our load and displacement transducers in both new and old assemblies.}
+  \caption[Elastic testing of fused silica at room temperature and 700°C]{Elastic tests of fused silica at room temperature in hydraulic oil and a solid salt assembly at 700°C with traditional packing rings. Despite the differences in friction and hit quality, load and displacement data match at high loads indicating correct calibration of our load and displacement transducers in both new and old assemblies.}
   \label{fig:CH2s_WC-FS_elastic}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{Sections/Chapter2/Figures/Thermal Model with TC_bp1 - Copy.pdf}
-    \caption{Thermal model results. Methods are detailed in Moarefvand et al (in press)}
+    \caption[Thermal model results]{Thermal model results. Methods are detailed in Moarefvand et al (in press)}
     \label{fig:CH2s_ThermalModel}
 \end{figure}
 
 
 \begin{longtable}[c]{| m{0.65in} | m{0.65in} | c | c | c | c | c |}
-    \caption{test \label{tab:CH2s_CreepFitPoints}}\\
+    \caption[List of creep data used in Peierls' flow law]{Creep data \label{tab:CH2s_CreepFitPoints}}\\
 
     %\centering
     %\begin{tabular}{m{0.65in} m{0.65in} m{0.55in} m{0.55in} m{0.55in} m{0.45in} m{0.55in}}

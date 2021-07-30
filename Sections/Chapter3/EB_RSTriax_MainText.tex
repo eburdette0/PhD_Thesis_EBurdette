@@ -1,33 +1,35 @@
 % short article version of triaxial angle paper
 
-\documentclass{article}
-\usepackage{amsmath, amssymb, graphics, setspace, parskip}
-\usepackage{graphicx}
+\documentclass[main.tex]{subfiles}
+%\usepackage{graphicx}
 
-\usepackage{geometry}
+%\usepackage{geometry}
 %\geometry{letterpaper, margin=1in}
 %\newcounter{page}
 
 \begin{document}
 
+
+\doublespacing
+
 \section{Abstract}
-    Confined saw-cut fault stability is not only a function of frictional rate parameters, but also fault angle, friction coefficient, and external forces resisting movement of the fault. We re-derive a relationship which experimentalists can use to assess stick-slip stability between different machines and experiments on the same material. As Dieterich + Linker 1992 found,very high angle and very low angle faults are theoretically less stable.
+    Confined saw-cut fault stability is not only a function of frictional rate parameters, but also fault angle, friction coefficient, and external forces resisting movement of the fault. We re-derive a relationship which experimentalists can use to assess stick-slip stability between different machines and experiments on the same material. As \citet{Dieterich1992a} found, very high angle and very low angle faults are theoretically less stable.
     Experimental conditions also affect stability. Confining resistance is only mildly stabilizing, while fault parallel shear resistance is strongly stabilizing. Friction between pistons is surprisingly destabilizing because it substantially increases normal stress. Low and high angle natural faults are predicted to be unusually unstable, even though they rarely rupture due to the large stresses required.
 
 \begin{figure}[h]
     \includegraphics[width=0.25\textwidth]{Figures/D&L Stablilty High Angle Reflect.pdf}
-    \caption{A modified version of system from Dieterich + Linker 1992 at a high angle to illustrate the loose definition of the stiffness K. The sign convention for the angle follows Karato 2008 for clarity. (maybe move to supplement for publication)}
+    \caption[A high angle version of Figure 1 from \citet{Dieterich1992a}]{A modified version of system from \citet{Dieterich1992a} at a high angle to illustrate the loose definition of the stiffness K. The sign convention for the angle follows \citet{karato2008deformation} for clarity. (maybe move to supplement for publication)}
     \label{fig:DL1992_highangle}
 \end{figure}
 
 \section{Introduction}
-Friction is an important tectonic control relevant for crustal strength, faulting, and earthquakes. Standard methods for studying friction involve pressing two blocks together with gouge material in between and controlling their shear displacement (direct shear configuration). In unconfined geometry this is relatively simple to accomplish directly with hydraulic rams. For confined (triaxial) stress conditions present in the earth due to overlying rock, a hydrostatic pressure must be applied and this is commonly accomplished with a gas or soft solid surrounding the sample compressed in a cylindrical pressure vessel. For friction studies two matched pistons are cut at some angle $\psi$ and pressed together with gouge in between (Figure \ref{fig:Geometry}). Shear stress is applied by increasing axial force $\sigma_1$. In this configuration there is geometric coupling between shear stress and normal stress that prevents direct use of mechanical stability relations formulated for constant normal stress. Studying earthquake materials at relevant confining pressures requires the use of triaxial confined saw-cut piston geometry, despite its complexity. Here we present stability conditions for saw-cut triaxial samples following the similar example set by Deiterich and Linker (1992) and include cases for several common sources of experimental error.
+Friction is an important tectonic control relevant for crustal strength, faulting, and earthquakes. Standard methods for studying friction involve pressing two blocks together with gouge material in between and controlling their shear displacement (direct shear configuration). In unconfined geometry this is relatively simple to accomplish directly with hydraulic rams. For confined (triaxial) stress conditions present in the earth due to overlying rock, a hydrostatic pressure must be applied and this is commonly accomplished with a gas or soft solid surrounding the sample compressed in a cylindrical pressure vessel. For friction studies two matched pistons are cut at some angle $\psi$ and pressed together with gouge in between (Figure \ref{fig:CH3_Geometry}). Shear stress is applied by increasing axial force $\sigma_1$. In this configuration there is geometric coupling between shear stress and normal stress that prevents direct use of mechanical stability relations formulated for constant normal stress. Studying earthquake materials at relevant confining pressures requires the use of triaxial confined saw-cut piston geometry (Figure \ref{fig:CH3_Geometry}), despite its complexity. Here we present stability conditions for saw-cut triaxial samples following the similar example set by \citet{Dieterich1992a} and include cases for several common sources of experimental error.
 
 
-\begin{figure}[h]
+\begin{figure}
     \includegraphics[width=\textwidth]{Figures/Triax_Diagram_Only.pdf}
-    \caption{Geometry of a triaxially confined gouge sample between two shear pistons with a schematic spring element to represent machine stiffness included. Confining stress is labeled $\sigma_3$ and axial stress is labelled $\sigma_1$. The sign convention for the angle follows Karato 2008 instead of Deiterich 1992.}
-    \label{fig:Geometry}
+    \caption[Geometry of triaxial displacement, stresses, and stiffness]{Geometry of a triaxially confined gouge sample between two shear pistons with a schematic spring element to represent machine stiffness included. Confining stress is labeled $\sigma_3$ and axial stress is labelled $\sigma_1$. The sign convention for the angle follows \citet{karato2008deformation} instead of \citet{Dieterich1992a}}
+    \label{fig:CH3_Geometry}
 \end{figure}
 
 \section{Stability of Triaxial Samples}
@@ -41,7 +43,7 @@ K_{ax,stable} \geq \frac{2}{\cos(\psi) \sin(2\psi)}\frac{\sigma_3}{1-\mu_0\tan(\
 
 
 
-This relationship shares terms with the relationship derived in D+L1992, but also explicitly describes a measurable machine stiffness $K_{ax}$ and has normal stress $\sigma_n$ in terms of measurable quantities $\sigma_3$ and $\mu_0$ (Figure \ref{fig:MainStabCompare}) The conversions are written here and the full derivation can be found in the supplement.
+This relationship shares terms with the relationship derived in \citet{Dieterich1992a}, but also explicitly describes a measurable machine stiffness $K_{ax}$ and has normal stress $\sigma_n$ in terms of measurable quantities $\sigma_3$ and $\mu_0$ (Figure \ref{fig:CH3_MainStabCompare}) The conversions are written here and the full derivation can be found in the supplement.
 
 \begin{equation}
     K_{D+L1992}=\frac{d\tau}{d\delta}=\frac{d\sigma_1}{dx}\frac{\sin(2\psi)}{2}\cos{\psi}
@@ -51,16 +53,16 @@ This relationship shares terms with the relationship derived in D+L1992, but als
     \sigma_n=\frac{\sigma_3}{1-\mu_0\tan(\psi)}
 \end{equation}
 
-The unstable regimes of the new relationship shares the characteristic of fault locking above angles ${\psi>arctan(\frac{1}{\mu_0})}$. In addition it has an asymptote as fault angle ($\psi$) approaches 0. This is due to reduced shear stresses generated by axial loads at these low angles effectively reducing shear compliance. This effect could also be important in natural settings for low angle faults.
+The unstable regimes of the new relationship shares the characteristic of fault locking above angles ${\psi>arctan(\frac{1}{\mu_0})}$ (Figure \ref{fig:CH3_MainStabCompare}). In addition it has an asymptote as fault angle ($\psi$) approaches 0. This is due to reduced shear stresses generated by axial loads at these low angles effectively reducing shear compliance. This effect could also be important in natural settings for low angle faults.
 
 %figure 2
-\begin{figure}[h]
+\begin{figure}
     \includegraphics[width=\textwidth]{Figures/vsD&L Stablilty AngleCombo.pdf}
-    \caption{
+    \caption[Plot of critical stiffness vs. angle]{
     \textbf{a)} Plot of pressure normalized critical stiffness vs angle in a triaxial apparatus ($\mu_0=0.6, A=0.05, B=0.1$)
     \textbf{b)} Plot of  critical stiffness of each apparatus effect relative to standard critical stiffness
     }
-    \label{fig:MainStabCompare}
+    \label{fig:CH3_MainStabCompare}
 \end{figure}
 
 
@@ -77,7 +79,7 @@ When this is used in the derivation it results in both changes in steady state n
     K_{ ax} \geq \frac{2}{\cos(\psi)}\sigma_{n,ss}\frac{(B-A)}{D_c}\frac{1}{\left(1-\mu_r\right)\sin(2\psi)-\left(\mu_0-\alpha \right)\left(1-\cos
     (2\psi)+\mu_r(1+\cos(2\psi))\right)}
 \end{equation}
-Both of these quantities are greater (less stable) than their standard counterparts and a friction coefficient of 0.1 will double required stiffness for 30 degree faults (Figure \ref{fig:MainStabCompare}) .
+Both of these quantities are greater (less stable) than their standard counterparts and a friction coefficient of 0.1 will double required stiffness for 30 degree faults (Figure \ref{fig:CH3_MainStabCompare}) .
 
 \subsection{Effect of Confining Resistance}
 Some triaxial apparatuses use weak solids around their samples. This can be easily represented by a linear viscosity applied to resist thrusting:
@@ -96,7 +98,7 @@ K_{ax} \geq
 \frac{1}{D_c}
 \left(2\sigma_{n,ss}(B-A) -\mu_0\eta\dot{\delta}_{ss}\sin(\psi)(1+\sin(2\psi)+\cos(2\psi))\right)
 \end{equation}
-The resulting stability has higher normal stress, but also terms resisting high speed fault movement so in most cases confining resistance does not substantially affect fault stability (Figure \ref{fig:MainStabCompare}).
+The resulting stability has higher normal stress, but also terms resisting high speed fault movement so in most cases confining resistance does not substantially affect fault stability (Figure \ref{fig:CH3_MainStabCompare}).
 
 \subsection{Effect of Shear Drag}
 Not all faults have homogeneous surfaces, and some may have viscous pressure-insensitive patches that can easily be represented by a linear viscous term ($\eta\dot{\delta}$) added to shear stress. The effect opposes velocity weakening and stabilizes faults.
@@ -106,7 +108,7 @@ Not all faults have homogeneous surfaces, and some may have viscous pressure-ins
 \begin{equation}
 K_{ ax} \geq \frac{1}{\cos(\psi)\sin(2\psi)}\frac{1}{1-(\mu_0-\alpha)\tan(\psi)}\frac{1}{D_c}\left(2\sigma_{n,ss}(B-A) -2\eta \dot{\delta}_{ss}\right)
 \end{equation}
-The stabilization provided by some viscous strengthening can be very strong and is especially effective on shallow faults due to their low shear stresses (\ref{fig:MainStabCompare}).
+The stabilization provided by some viscous strengthening can be very strong and is especially effective on shallow faults due to their low shear stresses (\ref{fig:CH3_MainStabCompare}).
 
 
 
@@ -123,18 +125,18 @@ Many laboratory friction testing machines have pistons in contact with one anoth
 \end{equation}
 The two resulting terms for effective slip stiffness counteract each other.  They also always have different orders which allows the possibility of transitional stability.
 
-The most important effect to note is that steady-state shear stress controls the first term. If starting load is too high, effective stress will only increase during unloading and the fault will always be unstable (Figure \ref{fig:Offset_plots}).
+The most important effect to note is that steady-state shear stress controls the first term. If starting load is too high, effective stress will only increase during unloading and the fault will always be unstable (Figure \ref{fig:CH3_Offset_plots}).
 
 %figure 3
-\begin{figure}[h]
+\begin{figure}
     \includegraphics[width=0.75\textwidth]{Figures/AreaOffsetStability_conststress_relax-mod.pdf}
-    \caption{
+    \caption[Area offset effects on triaxial stability]{
     \textbf{a)} Constant applied shear stress at two levels vs s ($K_{\tau,s}=3$)
     \textbf{b)} Resulting shear stress derivatives split into area reduction contribution (dotted), machine stiffness change (solid), and the resulting instantaneous combined stiffness (dashed)
-    \textbf{c)} Relaxation shear stress vs s (machine=thin, area corrected=thick) for three different machine stiffnesses (3 GPa (black), 1.2 GPa (grey), and 0.6 GPa (red))
-    \textbf{d)} Relaxation area corrected instantaneous stiffness vs s
+    \textbf{c)} Relaxation shear stress vs s (machine=thin, area corrected=thick) for three different machine stiffnesses (3 GPa/mm (black), 1.2 GPa/mm (grey), and 0.6 GPa/mm (red)) on a quarter inch diameter sample with a 45 degree fault.
+    \textbf{d)} Relaxation area corrected instantaneous stiffness vs s.
     }
-    \label{fig:Offset_plots}
+    \label{fig:CH3_Offset_plots}
 \end{figure}
 
 \section{Implications}
@@ -157,20 +159,20 @@ Observing instability in the laboratory is important for understanding earthquak
 
 
 \subsection{Natural Implications}
-Low angle normal faults are a tempting candidate to apply the stability calculations derived here, but we can only address one portion of the puzzle: propensity for dynamic rupture (earthquakes). If a fault is described as a thin elastic sheet as in Forsyth 1992 then the derived relationship would hold and low angle faults would be substantially less stable. In natural faults low angle portions of the fault tend to be near the brittle-ductile transition (cite) where no seismicity would be expected, but the instability of low fault angles could cause ruptures to propagate deep into the crust generating large earthquakes (mentioned briefly in Wernicke 1995). 
-[obviously a weakening mechanism is needed, but their response amplitudes are all controlled by stiffness and therefore angle, and we could point to thermal pressurization or silica gel weakening]
+Low angle normal faults are a tempting candidate to apply the stability calculations derived here, but we can only address one portion of the puzzle: propensity for dynamic rupture (earthquakes). If a fault is described as a thin elastic sheet as in \citet{forsyth1992finite} then the derived relationship would hold and low angle faults would be substantially less stable. In natural faults low angle portions of the fault tend to be near the brittle-ductile transition (cite) where no seismicity would be expected, but the instability of low fault angles could cause ruptures to propagate deep into the crust generating large earthquakes (mentioned briefly in \citet{wernicke1995low}). 
+[obviously a weakening mechanism is needed, but their response amplitudes are all controlled by stiffness and therefore angle. We could point to thermal pressurization or silica gel weakening]
 
-Reverse faults are similar to the laboratory setup and should be very unstable at steep dip angles close to the frictional lock-up. The relationships derived above would hold for the low coefficients of friction required for steeply dipping faults to fail and rupture. It is possible the frictional instability explains the secondary peak at high dip observed in compilations of large magnitude reverse fault earthquakes (Sibson and Xie 1998). 
+Reverse faults are similar to the laboratory setup and should be very unstable at steep dip angles close to the frictional lock-up. The relationships derived above would hold for the low coefficients of friction required for steeply dipping faults to fail and rupture. It is possible the frictional instability explains the secondary peak at high dip observed in compilations of large magnitude reverse fault earthquakes \citep{sibson1998dip}. 
 
-Some elusive aspects of strike-slip faults could be be explained if their stiffness can be simplified into a representation parallel to their compression axis. The San Andreas fault provides one example where some fault segments trend in anomalous P-shear directions (Moore and Byerlee 1991). All the off-strike fault traces would be more unstable because they are at high and low angles to the predominantly N-S compression. N-leaning segments would tend to be less affected because of the asymmetry of the stability curve, while W-leaning segments could be strongly affected as they are closer to the high-normal stress lock-up angle. Mineralogy of the area is known to be complex with weak anisotropic clays (Lockner et al 2011), so instability is unlikely to be the only cause for the existence of W-leaning segments.
+Some elusive aspects of strike-slip faults could be be explained if their stiffness can be simplified into a representation parallel to their compression axis. The San Andreas fault provides one example where some fault segments trend in anomalous P-shear directions \citep{moore1991comparative}. All the off-strike fault traces would be more unstable because they are at high and low angles to the predominantly N-S compression. N-leaning segments would tend to be less affected because of the asymmetry of the stability curve, while W-leaning segments could be strongly affected as they are closer to the high-normal stress lock-up angle. Mineralogy of the area is known to be complex with weak anisotropic clays \citep{lockner2011low}, so instability is unlikely to be the only cause for the existence of W-leaning segments.
  
 
 %figure 4
-\begin{figure}[h]
+\begin{figure}
     \includegraphics[width=0.4\textwidth]{Figures/Sibson-Xie1998F3.png}
-    \caption{Fault Angle vs. number for surveyed faults. mod from Sibson and Xie 1998
+    \caption[Fault Angle vs. number for surveyed faults]{Fault Angle vs. number for surveyed faults. Reproduced from \citet{sibson1998dip}.
     }
-    \label{fig:NaturalData}
+    \label{fig:CH3_NaturalData}
 \end{figure}
 
 
@@ -184,6 +186,19 @@ Some elusive aspects of strike-slip faults could be be explained if their stiffn
     \item Low and high angle natural faults are predicted to be unusually unstable, even though they rarely rupture due to the large stresses required.
 \end{enumerate}
 
+\acknowledgments
+ I would like to thank Jim Dieterich for kindly providing his notes from the original derivation.
+
+\clearpage
+
+\subfile{./EB_RSTriax_NormalStress_Derivation.tex}
+\subfile{./EB_RSTriax_Full_Derivation.tex}
+
+\clearpage
+
+\singlespacing
+%\bibliographystyle{apalike}
+%\bibliography{Feb19_refs_2.bib}
 
 
 \end{document}
