@@ -27,9 +27,12 @@
 
 %% To submit your paper:
 %\documentclass[draft,linenumbers]{agujournal2018}  %%%%%%%%%%switch this back for linenumbers
-\documentclass[draft]{agujournal2018}
-\usepackage{apacite}
-\usepackage{url} %this package should fix any errors with URLs in refs.
+%\documentclass[draft]{agujournal2018}
+%\usepackage{apacite}
+%\usepackage{url} %this package should fix any errors with URLs in refs.
+
+\documentclass[main.tex]{subfiles}
+
 
 %%%%%%%
 % \usepackage{trackchanges}
@@ -45,7 +48,7 @@
 % complete documentation is here: http://trackchanges.sourceforge.net/
 %%%%%%%
 
-\draftfalse
+%\draftfalse
 
 % Now, type in the journal name: \journalname{<Journal Name>}
 
@@ -74,7 +77,7 @@
 % Geohealth
 %
 
-\journalname{Journal of Geophysical Research}
+%\journalname{Journal of Geophysical Research}
 
 
 \begin{document}
@@ -91,7 +94,7 @@
 
 % Example: \title{This is a test title}
 
-\title{A Low Cost Fiber-Optic Displacement Sensor Designed For Use at High Pressure}
+%\title{A Low Cost Fiber-Optic Displacement Sensor Designed For Use at High Pressure}
 
 %% ------------------------------------------------------------------------ %%
 %
@@ -133,7 +136,7 @@
 
 % Example: \correspondingauthor{First and Last Name}{email@address.edu}
 
-\correspondingauthor{Eric Burdette}{eric\_burdette@brown.edu}
+%\correspondingauthor{Eric Burdette}{eric\_burdette@brown.edu}
 
 %% Keypoints, final entry on title page.
 
@@ -166,6 +169,9 @@
 
 %% \begin{abstract} starts the second page
 
+\doublespacing
+
+
 \begin{abstract}
 
 \end{abstract}
@@ -180,40 +186,65 @@
 \section{Introduction}
 Fiber optics allow direct measurement of sub-nanometer distances at extreme conditions which would otherwise be inaccessible to mechanical sensors like LVDTs. They also have the advantages in electrical interference immunity and no required additional mass. However, they lack the simplicity, reliability, and familiarity of electrical and magnetic displacement sensors. As a result laser displacement sensors are typically only found in exotic equipment with unusually low temperature, high speed, or high precision. A familiar example is the reflected red diode laser and detector used to measure position of atomic force microscopes.
 
-Deforming rocks presents a particularly challenging environment. Not only are required temperatures often above 300°C, but pressure above 200 MPa are commonly required to replicate conditions in the earth. The machines (Paterson-type, Griggs-type, D-DIA, Oxford Creep Rig, etc REFS!) designed to apply these pressures and temperatures require measurement compromises and exotic materials to accommodate common, reliable sensors. Each of these machines has a furnace which can reach 1200°C at its center, often inside a pressure vessel. Common sensors like LVDTs and strain gauges cannot survive this temperature and are placed either outside the pressure vessel, or far from the furnace with ceramic or steel connecting rods/pistons. This can introduce unacceptable error into measurements of low stresses and specimen strain rates sometimes approaching $1 \mu$m/day, especially when friction is included. These applications would benefit from inclusion of a simple, compact, low cost displacement sensor with resolution better than $1 \mu$m, which is achievable using an interferometer constructed with standard telecom fiber optic components.
+Deforming rocks presents a particularly challenging environment. Not only are required temperatures often above 300°C, but pressure above 200 MPa are commonly required to replicate conditions in the earth. The machines (Paterson-type, Griggs-type, D-DIA, Oxford Creep Rig, etc.) designed to apply these pressures and temperatures require measurement compromises and exotic materials to accommodate common, reliable sensors. Each of these machines has a furnace which can reach 1200°C at its center, often inside a pressure vessel. Common sensors like LVDTs and strain gauges cannot survive this temperature and are placed either outside the pressure vessel, or far from the furnace with ceramic or steel connecting rods/pistons. This can introduce unacceptable error into measurements of low stresses and specimen strain rates sometimes approaching $1 \mu$m/day, especially when friction is included. These applications would benefit from inclusion of a simple, compact, low cost displacement sensor with resolution better than $1 \mu$m, which is achievable using an interferometer constructed with standard telecom fiber optic components.
 
 Mass production of diode lasers has driven down cost to the point that a fiber-coupled, temperature stabilized laser diode system can be purchased for \$2000, while telecom fiber and detection equipment can be purchased for less than \$1000. Modulation, demodulation, and processing of laser intensity can be driven with common PC sound card equipment, bringing total cost to less than \$5000.
 
-Two interferometer types stand out for application to our displacement applications: Mach-Zender and Fabry-Perot. Designs for Mach-Zender interferometers are already common in free space laser-doppler vibrometers which could be fiber-coupled. Fabry-Perot designs are also common for strain/pressure sensing, and commercial fiber-coupled versions can be purchased for \$25,000. We describe a simpler version using laser intensity modulation.
+Two interferometer types stand out for application to our displacement applications: Mach-Zender and Fabry-Perot. Designs for Mach-Zender interferometers are already common in free space laser-doppler vibrometers which could be fiber-coupled.  Fabry-Perot designs are also common for strain/pressure sensing, and commercial fiber-coupled versions can be purchased for \$25,000. We describe a simpler version using laser intensity modulation.
 
-An external cavity Fabry-Perot interferometer modulates reflected/transmitted intensity due to mutual interference between standing waves established in a cavity with partially reflecting mirrors. The simple design which we use is outlined by Nowakowski 2016. The equation for intensity returning from the cavity is:
+An external cavity Fabry-Perot interferometer modulates reflected/transmitted intensity due to mutual interference between standing waves established in a cavity with partially reflecting mirrors. The simple design which we use is outlined by \citet{nowakowski2016highly}. The equation for intensity returning from the cavity is:
 \begin{equation}
     \frac{I_{refl}}{I_{inc}} = \frac{\left(1+R\right)^2}{2}\frac{1-\cos{\frac{4\pi}{\lambda}h}}{1+R^2-2R\cos{\frac{4\pi}{\lambda}h}}
 \end{equation}
 where I is incident and reflected intensity, R is reflectance of the cavity surfaces, h is cavity length, and $\lambda$ is laser wavelength. Note that intensity changes with both cavity length and wavelength on a period of half the incident wavelength.
 
-Nowakowski et al (2016) use a tunable wavelength laser ($\pm25$ nm) to oscillate wavelength at frequency f, and recover the reflected direct cavity response slope at f, while also recovering the curvature of the cavity response at frequency 2f. These signals are 90 degrees out of phase, so they can be separately demodulated and fed into an arctangent function to recover the phase of the cavity response, which is directly related to half the incident wavelength (See Kirkendall and Danridge 2004). Using a 1550 nm laser, 10 bit accuracy can measure a 1 nm cavity length change.
+\citet{nowakowski2016highly} use a tunable wavelength laser ($\pm25$ nm) to oscillate wavelength at frequency f, and recover the reflected direct cavity response slope at f, while also recovering the curvature of the cavity response at frequency 2f. These signals are 90 degrees out of phase, so they can be separately demodulated and fed into an arctangent function to recover the phase of the cavity response, which is directly related to half the incident wavelength \citep[See\ ][]{kirkendall2004overview}. Using a 1550 nm laser, 10 bit accuracy can measure a 1 nm cavity length change.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{Figures/EFPI_diagram.pdf}
+  \caption{Schematic of elements required for this EFPI system to measure load.}
+  \label{fig:CH4_LaserSystemSchematic}
+\end{figure}
 
 \section{Sensor Design and Machine Integration}
 
     \subsection{Interferometer System}
-        A schematic of the EFPI (External cavity Fabry-Perot Interferometer) implementation is presented in Figure \ref{fig:LaserSystemSchematic}. The system is comprised of a DFB laser controller (Koheron CTL200 with a QPhotonics qdfbld-1550-5), 2:1 FBT coupler, Fabry-Perot cavity (simplest form is a polished reflector and FC coupler terminated fiber), fiber coupled photodiode reciever (TTI TIA-950), and a digital-to analog/analog-to-digital converter on the same clock source with a signal processor (Digilent Eclypse Z7 FPGA or PC + sound card). A simple single frequency, current modulating laser is used instead of a tunable laser used by Nowakowsi et al 2016. The intensity and wavelength of the single-frequency laser changes with current. The wavelength-current coefficient is approximately 10 pm/mA, so the effective $\pm$25 mA modulation depth of the laser is enough to drive cavities greater than 5 mm long (Nowakowski et al 2016).
+        A schematic of the EFPI (External cavity Fabry-Perot Interferometer) implementation is presented in Figure \ref{fig:CH4_LaserSystemSchematic}. The system is comprised of a DFB laser controller (Koheron CTL200 with a QPhotonics qdfbld-1550-5), 2:1 FBT coupler, Fabry-Perot cavity (simplest form is a polished reflector and FC coupler terminated fiber), fiber coupled photodiode reciever (TTI TIA-950), and a digital-to analog/analog-to-digital converter on the same clock source with a signal processor (Digilent Eclypse Z7 FPGA or PC + sound card). A simple single frequency, current modulating laser is used instead of a tunable laser used by \citet{nowakowski2016highly}. The intensity and wavelength of the single-frequency laser changes with current. The wavelength-current coefficient is approximately 10 pm/mA, so the effective $\pm$25 mA modulation depth of the laser is enough to drive cavities greater than 5 mm long \citep{nowakowski2016highly}.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{Figures/EFPI_DSP-FPGA_schematic.pdf}
+  \caption{Schematic of the EFPI modulation and demodulation system implemented on a Digilent Eclypse Z7.}
+  \label{fig:CH4_ProcessingSchematic}
+\end{figure}
         
-        Processing of the cavity length can be performed in realtime by a PC or FPGA with the scheme illustrated in Figure \ref{fig:ProcessingSchematic}. Maximum tracking speed at 6 kHz modulation frequency (for a PC sound card sampling at 96kHz) is 0.5 mm/s, while maximum tracking speed at 6 MHz modulation frequency is ????? mm/s. Bandwidth is limited by filtering to 3 kHz and 1.525 MHz respectively. 
+        Processing of the cavity length can be performed in realtime by a PC or FPGA with the scheme illustrated in Figure \ref{fig:CH4_ProcessingSchematic}. Maximum tracking speed at 6 kHz modulation frequency (for a PC sound card sampling at 96kHz) is 0.5 mm/s, while maximum tracking speed at 6 MHz modulation frequency is ????? mm/s. Bandwidth is limited by filtering to 3 kHz and 1.525 MHz respectively. 
         
         Because the amplitude of the 2f curvature produced by current/wavelength change is a secondary effect, its amplitude is always lower than that of the fundamental modulation frequency. This leads to a slightly oval-shaped path when the two components are plotted against each other which can be corrected at system startup.
         
     \subsection{Implementation to Measure Internal Axial Stress in a Griggs-Type Apparatus}
-        Figure \ref{fig:GriggsImplementation} shows how a cavity can be introduced into the loading column of a Griggs-type rock deformation apparatus. Fiber is fed up a hole in the central column and glued into the base carbide. A cavity (tube) sits on top of the base carbide, and a polished carbide reflector is placed below the sample to be deformed. A 10mm alumina tube with an elastic modulus of 400 GPa should change length by 25 nm for a 1 MPa stress change, which is well within the detection capabilities of the EFPI setup.
+    
+\begin{figure}
+  \includegraphics[width=\textwidth]{Figures/Fullrig1_WLaser.pdf}
+  \caption{Schematic of implementation of the EFPI as a load cell in a Griggs-type high pressure deformation apparatus.}
+  \label{fig:CH4_GriggsImplementation}
+\end{figure}
+
+        Figure \ref{fig:CH4_GriggsImplementation} shows how a cavity can be introduced into the loading column of a Griggs-type rock deformation apparatus. Fiber is fed up a hole in the central column and glued into the base carbide. A cavity (tube) sits on top of the base carbide, and a polished carbide reflector is placed below the sample to be deformed. A 10mm alumina tube with an elastic modulus of 400 GPa should change length by 25 nm for a 1 MPa stress change, which is well within the detection capabilities of the EFPI setup.
         
-        A similar design was build by Blacic et al 1977 with excellent sensitivity. This design improves on their implementation by: improving immunity to pressure changes, improving immunity to vibration, and constructing the cavity from simple, inexpensive replaceable parts. The wide machined carbide pedestal of Blacic et al 1977 has axial area exposed to confining media which applies axial shortening force ~3x the axial deformation force, so small changes in pressure result in large cavity displacements that are indistinguishable from sample deformation loading. The cavity we implemented is the same diameter as the sample, so pressure changes can only affect its length through the Poisson effect. We improve noise immunity by using a terminated fiber glued directly underneath the cavity to avoid the external vibration influences (Blacic et al's cavity was 14.6 cm including a significant amount of metal that changes size with total apparatus load/vibration and changes in room temperature). Finally, the fiber ferrule, alumina tube, and polished carbide are standard parts from materials suppliers (McMaster-Carr, Thorlabs), while the carbide is EDM drilled after purchase. After use, glue is burned out of the base carbide and ferrule at 400°C, and another is inserted and glued in for the next use.
+        A similar design was built by \citet{blacic1977wide} with excellent sensitivity. This design improves on their implementation by: improving immunity to pressure changes, improving immunity to vibration, and constructing the cavity from simple, inexpensive replaceable parts. The wide machined carbide pedestal of \citet{blacic1977wide} has axial area exposed to confining media which applies axial shortening force ~3x the axial deformation force, so small changes in pressure result in large cavity displacements that are indistinguishable from sample deformation loading. The cavity we implemented is the same diameter as the sample, so pressure changes can only affect its length through the Poisson effect. We improve noise immunity by using a terminated fiber glued directly underneath the cavity to avoid the external vibration influences (\citet{blacic1977wide}'s cavity was 14.6 cm including a significant amount of metal that changes size with total apparatus load/vibration and changes in room temperature). Finally, the fiber ferrule, alumina tube, and polished carbide are standard parts from materials suppliers (McMaster-Carr, Thorlabs), while the carbide is EDM drilled after purchase. After use, glue is burned out of the base carbide and ferrule at 400°C, and another is inserted and glued in for the next use.
 
 \section{Results}
 
+\begin{figure}
+  \includegraphics[width=\textwidth]{Figures/W2534_75C.pdf}
+  \caption{Plot of load and external displacement records from an experiment deforming a 360 grade brass sample.}
+  \label{fig:CH4_Wax_LoadcellTest}
+\end{figure}
+
     \subsection{Mechanical Results}
-        For this testing, 1/4" cylinders of 360 grade brass were purchased from McMaster-Carr and deformed with the Griggs-type appratus inside a pressure vessel filled with melted paraffin wax at 150 MPa confining pressure. The lower portion of the loading column is jacketed in polyolefin to prevent wax from getting in between column elements. A gap is left between the top piston and an externally connected piston so that the sample and lower column do not interact with the external piston until it is advanced after pressurization.
+        For this testing, 1/4" cylinders of 360 grade brass were purchased from McMaster-Carr and deformed with the Griggs-type appratus inside a pressure vessel filled with melted paraffin wax at 150 MPa confining pressure. The lower portion of the loading column is jacketed in polyolefin to prevent wax from intruding in between column elements. A gap is left between the top piston and an externally connected piston so that the sample and lower column do not interact with the external piston until it is advanced after pressurization.
         
-        Results from our traditional external load measurement and the new internal load cell are plotted against externally measured piston displacement (Figure \ref{fig:Wax_LoadcellTest}). When the externally connected piston is out of contact with the sample, internal load does not change regardless of which direction the piston is moving. While the piston is in contact with the column, deforming the sample, there is a static, direction dependent offset as would be expected for frictional hysteresis due to the seals.
+        Results from our traditional external load measurement and the new internal load cell are plotted against externally measured piston displacement (Figure \ref{fig:CH4_Wax_LoadcellTest}). When the externally connected piston is out of contact with the sample, internal load does not change regardless of which direction the piston is moving. While the piston is in contact with the column, deforming the sample, there is a static, direction dependent offset as would be expected for frictional hysteresis due to the seals.
         
 
 \section{Conclusions}
@@ -228,375 +259,20 @@ Nowakowski et al (2016) use a tunable wavelength laser ($\pm25$ nm) to oscillate
 
 %Text here ===>>>
 
-%%
-
-%  Numbered lines in equations:
-%  To add line numbers to lines in equations,
-%  \begin{linenomath*}
-%  \begin{equation}
-%  \end{equation}
-%  \end{linenomath*}
-
-
-
-%% Enter Figures and Tables near as possible to where they are first mentioned:
-%
-% DO NOT USE \psfrag or \subfigure commands.
-%
-% Figure captions go below the figure.
-% Table titles go above tables;  other caption information
-%  should be placed in last line of the table, using
-% \multicolumn2l{$^a$ This is a table note.}
-%
-%----------------
-% EXAMPLE FIGURE
-%
-% \begin{figure}[h]
-% \centering
-% when using pdflatex, use pdf file:
-% \includegraphics[width=20pc]{figsamp.pdf}
-%
-% when using dvips, use .eps file:
-% \includegraphics[width=20pc]{figsamp.eps}
-%
-% \caption{Short caption}
-% \label{figone}
-%  \end{figure}
-%
-% ---------------
-% EXAMPLE TABLE
-%
-% \begin{table}
-% \caption{Time of the Transition Between Phase 1 and Phase 2$^{a}$}
-% \centering
-% \begin{tabular}{l c}
-% \hline
-%  Run  & Time (min)  \\
-% \hline
-%   $l1$  & 260   \\
-%   $l2$  & 300   \\
-%   $l3$  & 340   \\
-%   $h1$  & 270   \\
-%   $h2$  & 250   \\
-%   $h3$  & 380   \\
-%   $r1$  & 370   \\
-%   $r2$  & 390   \\
-% \hline
-% \multicolumn{2}{l}{$^{a}$Footnote text here.}
-% \end{tabular}
-% \end{table}
-
-%% SIDEWAYS FIGURE and TABLE
-% AGU prefers the use of {sidewaystable} over {landscapetable} as it causes fewer problems.
-%
-% \begin{sidewaysfigure}
-% \includegraphics[width=20pc]{figsamp}
-% \caption{caption here}
-% \label{newfig}
-% \end{sidewaysfigure}
-%
-%  \begin{sidewaystable}
-%  \caption{Caption here}
-% \label{tab:signif_gap_clos}
-%  \begin{tabular}{ccc}
-% one&two&three\\
-% four&five&six
-%  \end{tabular}
-%  \end{sidewaystable}
-
-%% If using numbered lines, please surround equations with \begin{linenomath*}...\end{linenomath*}
-%\begin{linenomath*}
-%\begin{equation}
-%y|{f} \sim g(m, \sigma),
-%\end{equation}
-%\end{linenomath*}
-
-%%% End of body of article
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Optional Appendix goes here
-%
-% The \appendix command resets counters and redefines section heads
-%
-% After typing \appendix
-%
-%\section{Here Is Appendix Title}
-% will show
-% A: Here Is Appendix Title
-%
-%\appendix
-%\section{Here is a sample appendix}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Optional Glossary, Notation or Acronym section goes here:
-%
-%%%%%%%%%%%%%%
-% Glossary is only allowed in Reviews of Geophysics
-%  \begin{glossary}
-%  \term{Term}
-%   Term Definition here
-%  \term{Term}
-%   Term Definition here
-%  \term{Term}
-%   Term Definition here
-%  \end{glossary}
-
-%
-%%%%%%%%%%%%%%
-% Acronyms
-%   \begin{acronyms}
-%   \acro{Acronym}
-%   Definition here
-%   \acro{EMOS}
-%   Ensemble model output statistics
-%   \acro{ECMWF}
-%   Centre for Medium-Range Weather Forecasts
-%   \end{acronyms}
-
-%
-%%%%%%%%%%%%%%
-% Notation
-%   \begin{notation}
-%   \notation{$a+b$} Notation Definition here
-%   \notation{$e=mc^2$}
-%   Equation in German-born physicist Albert Einstein's theory of special
-%  relativity that showed that the increased relativistic mass ($m$) of a
-%  body comes from the energy of motion of the body—that is, its kinetic
-%  energy ($E$)—divided by the speed of light squared ($c^2$).
-%   \end{notation}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%  ACKNOWLEDGMENTS
-%
-% The acknowledgments must list:
-%
-% >>>>	A statement that indicates to the reader where the data
-% 	supporting the conclusions can be obtained (for example, in the
-% 	references, tables, supporting information, and other databases).
-%
-% 	All funding sources related to this work from all authors
-%
-% 	Any real or perceived financial conflicts of interests for any
-%	author
-%
-% 	Other affiliations for any author that may be perceived as
-% 	having a conflict of interest with respect to the results of this
-% 	paper.
-%
-%
-% It is also the appropriate place to thank colleagues and other contributors.
-% AGU does not normally allow dedications.
-
-
 \acknowledgments
 
 
 %% ------------------------------------------------------------------------ %%
 %% References and Citations
 
-\bibliography{Feb19_refs_2.bib}
+%\bibliography{Feb19_refs_2.bib}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% BibTeX is preferred:
-%
-% \bibliography{<name of your .bib file>}
-%
-% no need to specify bibliographystyle
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\subfile{./EB_LaserLoadCell_SuppInfo.tex}
 
+\clearpage
 
-
-% Please use ONLY \citet and \citep for reference citations.
-% DO NOT use other cite commands (e.g., \cite, \citeyear, \nocite, \citealp, etc.).
-%% Example \citet and \citep:
-%  ...as shown by \citet{Boug10}, \citet{Buiz07}, \citet{Fra10},
-%  \citet{Ghel00}, and \citet{Leit74}.
-
-%  ...as shown by \citep{Boug10}, \citep{Buiz07}, \citep{Fra10},
-%  \citep{Ghel00, Leit74}.
-
-%  ...has been shown \citep [e.g.,][]{Boug10,Buiz07,Fra10}.
-
-\section{Figures}
-
-\begin{figure}[ht]
-  \includegraphics[width=\textwidth]{Figures/EFPI_diagram.pdf}
-  \caption{Schematic of elements required for this EFPI system to measure load.}
-  \label{fig:LaserSystemSchematic}
-\end{figure}
-
-\begin{figure}[ht]
-  \includegraphics[width=\textwidth]{Figures/EFPI_DSP-FPGA_schematic.pdf}
-  \caption{Schematic of the EFPI modulation and demodulation system implemented on a Digilent Eclypse Z7.}
-  \label{fig:ProcessingSchematic}
-\end{figure}
-
-\begin{figure}[ht]
-  \includegraphics[width=\textwidth]{Figures/Fullrig1_WLaser.pdf}
-  \caption{Schematic of implementation of the EFPI as a load cell in a Griggs-type high pressure deformation apparatus.}
-  \label{fig:GriggsImplementation}
-\end{figure}
-
-
-\begin{figure}[ht]
-  \includegraphics[width=\textwidth]{Figures/W2534_75C.pdf}
-  \caption{Plot of load and external displacement records from an experiment deforming a 360 grade brass sample.}
-  \label{fig:Wax_LoadcellTest}
-\end{figure}
-
-
-%%https://www.tablesgenerator.com/latex_tables
-
+\singlespacing
 
 
 \end{document}
-
-
-
-More Information and Advice:
-
-%% ------------------------------------------------------------------------ %%
-%
-%  SECTION HEADS
-%
-%% ------------------------------------------------------------------------ %%
-
-% Capitalize the first letter of each word (except for
-% prepositions, conjunctions, and articles that are
-% three or fewer letters).
-
-% AGU follows standard outline style; therefore, there cannot be a section 1 without
-% a section 2, or a section 2.3.1 without a section 2.3.2.
-% Please make sure your section numbers are balanced.
-% ---------------
-% Level 1 head
-%
-% Use the \section{} command to identify level 1 heads;
-% type the appropriate head wording between the curly
-% brackets, as shown below.
-%
-%An example:
-%\section{Level 1 Head: Introduction}
-%
-% ---------------
-% Level 2 head
-%
-% Use the \subsection{} command to identify level 2 heads.
-%An example:
-%\subsection{Level 2 Head}
-%
-% ---------------
-% Level 3 head
-%
-% Use the \subsubsection{} command to identify level 3 heads
-%An example:
-%\subsubsection{Level 3 Head}
-%
-%---------------
-% Level 4 head
-%
-% Use the \subsubsubsection{} command to identify level 3 heads
-% An example:
-%\subsubsubsection{Level 4 Head} An example.
-%
-%% ------------------------------------------------------------------------ %%
-%
-%  IN-TEXT LISTS
-%
-%% ------------------------------------------------------------------------ %%
-%
-% Do not use bulleted lists; enumerated lists are okay.
-% \begin{enumerate}
-% \item
-% \item
-% \item
-% \end{enumerate}
-%
-%% ------------------------------------------------------------------------ %%
-%
-%  EQUATIONS
-%
-%% ------------------------------------------------------------------------ %%
-
-% Single-line equations are centered.
-% Equation arrays will appear left-aligned.
-
-Math coded inside display math mode \[ ...\]
- will not be numbered, e.g.,:
- \[ x^2=y^2 + z^2\]
-
- Math coded inside \begin{equation} and \end{equation} will
- be automatically numbered, e.g.,:
- \begin{equation}
- x^2=y^2 + z^2
- \end{equation}
-
-
-% To create multiline equations, use the
-% \begin{eqnarray} and \end{eqnarray} environment
-% as demonstrated below.
-\begin{eqnarray}
-  x_{1} & = & (x - x_{0}) \cos \Theta \nonumber \\
-        && + (y - y_{0}) \sin \Theta  \nonumber \\
-  y_{1} & = & -(x - x_{0}) \sin \Theta \nonumber \\
-        && + (y - y_{0}) \cos \Theta.
-\end{eqnarray}
-
-%If you don't want an equation number, use the star form:
-%\begin{eqnarray*}...\end{eqnarray*}
-
-% Break each line at a sign of operation
-% (+, -, etc.) if possible, with the sign of operation
-% on the new line.
-
-% Indent second and subsequent lines to align with
-% the first character following the equal sign on the
-% first line.
-
-% Use an \hspace{} command to insert horizontal space
-% into your equation if necessary. Place an appropriate
-% unit of measure between the curly braces, e.g.
-% \hspace{1in}; you may have to experiment to achieve
-% the correct amount of space.
-
-
-%% ------------------------------------------------------------------------ %%
-%
-%  EQUATION NUMBERING: COUNTER
-%
-%% ------------------------------------------------------------------------ %%
-
-% You may change equation numbering by resetting
-% the equation counter or by explicitly numbering
-% an equation.
-
-% To explicitly number an equation, type \eqnum{}
-% (with the desired number between the brackets)
-% after the \begin{equation} or \begin{eqnarray}
-% command.  The \eqnum{} command will affect only
-% the equation it appears with; LaTeX will number
-% any equations appearing later in the manuscript
-% according to the equation counter.
-%
-
-% If you have a multiline equation that needs only
-% one equation number, use a \nonumber command in
-% front of the double backslashes (\\) as shown in
-% the multiline equation above.
-
-% If you are using line numbers, remember to surround
-% equations with \begin{linenomath*}...\end{linenomath*}
-
-%  To add line numbers to lines in equations:
-%  \begin{linenomath*}
-%  \begin{equation}
-%  \end{equation}
-%  \end{linenomath*}
-
-
-

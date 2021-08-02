@@ -486,10 +486,10 @@ width0pt\relax}\\*\noindent\ignorespaces}
 
 % % Formats bibliography, this .sty file needs to be entered here
 
-\RequirePackage{apacite}
-\let\cite\shortcite %xx So get et al. with three authors the first time.
-\let\citep\cite %xx A natbib command.
-\let\citet\citeA %xx Ditto.
+% \RequirePackage{apacite}
+% \let\cite\shortcite %xx So get et al. with three authors the first time.
+% \let\citep\cite %xx A natbib command.
+% \let\citet\citeA %xx Ditto.
 %\requirepackage{URL}
 
 %% end Bibliography, and References

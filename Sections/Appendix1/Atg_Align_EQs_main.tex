@@ -1,46 +1,17 @@
-% NSF proposal generation template style file.
-% based on latex stylefiles written by Stefan Llewellyn Smith and
-% Sarah Gille, with contributions from other collaborators.
-%
-\documentclass{proposalnsf}
-
-\usepackage{setspace} %for editing
-\usepackage{graphicx}
-\graphicspath{{./Figures/}}
-
-% See this file for a set of pre-defined journal abbreviations
-%\input{journal-abbreviations.tex} 
-
-\newcommand{\degrees}{$\!\!$\char23$\!$}
-\renewcommand{\refname}{\centerline{References cited}}
-
-% This handles hanging indents for publications
-\def\rrr#1\\{\par
-\medskip\hbox{\vbox{\parindent=2em\hsize=6.12in
-\hangindent=4em\hangafter=1#1}}}
-
-\def\baselinestretch{1}
-
+\documentclass[main.tex]{subfiles}
 
 \begin{document}
 
 
 
-% reset page numbering to 1.  This is helpful, since the text can only
-% be 15 pages, and reviewers will want to believe we've kept within
-% those limits
+\authors{Eric Burdette and Greg Hirth}
+\affiliation{1}{Department of Earth, Environmental and Planetary Sciences, Brown University, Providence, RI, USA}
 
-\pagenumbering{arabic}
-\renewcommand{\thepage} {P--\arabic{page}}
-
-\newpage
-\begin{center}
-{\Large{\bf Setting up Dehydration Earthquakes in Dehydrating Antigorite: Alignment (CPO) Controls Permeability and Fracture Toughness}}\\*[5mm]
-\end{center}
-Eric Burdette\\*[2mm]
-Department of Earth, Environmental, and Planetary Sciences\\
-Brown University\\*[20mm]
-
+\begin{keypoints}
+\item Antigorite was deformed at constant stress to low strain 
+\item Slip along basal planes and kinks allow plastic deformation
+\item Peierls creep laws describe deformation rheology well
+\end{keypoints}
 
 
 
@@ -55,19 +26,19 @@ Brown University\\*[20mm]
     
     Slabs descending into the mantle carry chemically bound liquids in the form of hydrous minerals.  Antigorite is an abundant and efficient mineral in the slab to carry this water.  Heating on the slab at depth along the geothermal gradient causes dehydration \citep{Hacker2003}. The subsequent water release is hypothesized to be a cause of dehydration melting that generates arc volcanism, a mechanism for decoupling of the downgoing slab to the convecting mantle, and the source for intermediate depth seismicity. The seismicity is thought to be due to reaction generated pore fluid pressure and velocity feedback on strength in the material \citep{Raleigh1965}, but this is poorly established experimentally at relevant pressures.\\
     
-    Several studies at low pressure have showed that antigorite can generate unstable dynamic rupture at pressure below 500 MPa [\cite{Raleigh1965}; \cite{Murrell1976}; \cite{Reinen1992}; \cite{Okazaki2015a}]. However, studies attempting to replicate the unstable behavior at pressure above 500 MPa have not produced acoustic emissions or dynamic rupture [\cite{Hilairet2007}; \cite{Chernak2010}; \cite{Chernak2011}; \cite{Proctor2015}; \cite{Ferrand}] even when stiffness was reduced by an order of magnitude, which strongly enhances shear weakening and activates shear heating, but slip rates only reach 40 um/s (\cite{Burdette2020}). Why is this?\\
+    Several studies at low pressure have showed that antigorite can generate unstable dynamic rupture at pressure below 500 MPa \citep{Raleigh1965, Murrell1976, Reinen1993, Okazaki2015}. However, studies attempting to replicate the unstable behavior at pressure above 500 MPa have not produced acoustic emissions or dynamic rupture \citep{Hilairet2007, Chernak2010, Chernak2011, Proctor2015, Ferrand2017} even when stiffness was reduced by an order of magnitude, which strongly enhances shear weakening and activates shear heating, but slip rates only reach 40 um/s (\cite{burdette2020enhanced}). Why is this?\\
     
-    Several recent studies focus on 'plastic' deformation mechanisms that allow antigorite to deform without increasing its volume (\cite{Escartin1997}\cite{David2020}\cite{Burdette2021}). This non-dilatant deformation is characterized by distributed shear sliding on mode 2 cracks whose displacement is limited by grain boundaries with sheets of a different orientation. \cite{Burdette2021} show the shear cracks at grain boundaries kink the next grain, and can tear it at high strain, generating gouge. In synchrotron studies (\cite{Hilairet2007}), tearing may be the primary deformation mechanism, amorphising more than 40\% of the sample (\cite{Amiguet2014}) figure 6. Low strain, and low strainrate experiments above 400°C (\cite{Burdette2021}) do not have significant damage, however, and show some recovery of the kinks as well as rotation of grains towards high shear stress orientations (CPO).\\
+    Several recent studies focus on 'plastic' deformation mechanisms that allow antigorite to deform without increasing its volume (\cite{Escartin1997, david2020sliding}). This non-dilatant deformation is characterized by distributed shear sliding on mode 2 cracks whose displacement is limited by grain boundaries with sheets of a different orientation. Data from chapter 2 shows the shear cracks at grain boundaries kink the next grain, and can tear it at high strain, generating gouge. In synchrotron studies (\cite{Hilairet2007}), tearing may be the primary deformation mechanism, amorphising more than 40\% of the sample \citep{amiguet2014deformation} figure 6. Low strain, and low strainrate experiments above 400°C (Figure \ref{fig:CH2_All_Antig_microstructure}) do not have significant damage, however, and show some recovery of the kinks as well as rotation of grains towards high shear stress orientations (CPO).\\
     
     The contrast in CPO and damage between high and low strain rate experiments sheds light on several unpublished results at low strain rate from our previous investigations gathered here. We were able to produce a dynamic earthquake-like slip event by slowly loading a gouge sample, and increasing temperature before it reached peak stress. We were also able to produce more rapid slip with a sample loaded quickly, but dehydrated at lower stress before significant plastic deformation occurred (in contrast to peak stress dehydration). A constant stress creep sample which produced a small, but dynamic slip event slightly above antigorite's dehydration temperature illustrates the development of an unstable fault moving through samples.\\
 
 
 \section{Methods}
-    Methods for material preparation and operation of temperature ramping dehydration experiments are detailed in chapter 1. Methods for material preparation and operation of stress stepping on solid antigorite cores are detailed in chapter 2. All experiments in this paper were run at 1 GPa confining pressure and used the modified compliance column \cite{Burdette2020}.
+    Methods for material preparation and operation of temperature ramping dehydration experiments are detailed in chapter 1. Methods for material preparation and operation of stress stepping on solid antigorite cores are detailed in chapter 2. All experiments in this paper were run at 1 GPa confining pressure and used the modified compliance column \cite{burdette2020enhanced}.
 
 \section{Results}
     \subsection{Mechanical Data}
-        Mechanical data was collected for successive dehydration experiments at 1 GPa, where loading displacement rate and strain at which dehydration was initiated varied (figure \ref{fig:Stress-time_yieldingDehyd}, figure \ref{fig:Stress-strain_yieldingDehydr}). Results of dehydration at peak stress with "fast" (1.8 um/s) loading are discussed in detail in chapter 1. The dehydration completes in \~400 seconds before the furnace has reached 700°C, and peak displacement rate is ~40 um/s. The displacement during dehydration is very large (10 mm) which activates shear heating.
+        Mechanical data was collected for successive dehydration experiments at 1 GPa, where loading displacement rate and strain at which dehydration was initiated varied (figure \ref{fig:A1_Stress-time_yieldingDehyd}, figure \ref{fig:A1_Stress-strain_yieldingDehydr}). Results of dehydration at peak stress with "fast" (1.8 um/s) loading are discussed in detail in chapter 1. The dehydration completes in \~400 seconds before the furnace has reached 700°C, and peak displacement rate is ~40 um/s. The displacement during dehydration is very large (10 mm) which activates shear heating.
         
         An intermediate experiment, where the sample dehydrated before reaching peak stress with "fast" loading is also displayed. It weakens more slowly, finishing around the 600 second time when the furnace reaches 700°C. Its peak displacement rate is 15 um/s, and shows no signs of stick-slip activity.
         
@@ -87,17 +58,17 @@ Brown University\\*[20mm]
 
 \section{Discussion}
     \subsection{Overcoming Anisotropic Toughness}
-        An unusual feature of sheet silicate deformation at high pressure is the dominance of shear cracking and linkage over dilatant wing crack bridging that causes failure in other brittle rocks. One might expect that shear crack bridging would generally be easier, but antigorite can reach strengths ~1/2 those of granites  at 1 GPa. Antigorite's strength comes from its unique mesh textures, where grains are often oriented with basal planes perpendicular to adjacent grains. The bridge between nearby grains oriented similarly, shear cracks would need to take multiple 90 degree turns, or penetrate the sheets of adjacent grains. When tested at room pressure, this structure gives antigorite unusually high tensile strength among rocks (\ref{David2020} via Brazilian tensile tests), demonstrating the toughening effect the mesh texture contributes.
+        An unusual feature of sheet silicate deformation at high pressure is the dominance of shear cracking and linkage over dilatant wing crack bridging that causes failure in other brittle rocks. One might expect that shear crack bridging would generally be easier, but antigorite can reach strengths ~1/2 those of granites  at 1 GPa. Antigorite's strength comes from its unique mesh textures, where grains are often oriented with basal planes perpendicular to adjacent grains. The bridge between nearby grains oriented similarly, shear cracks would need to take multiple 90 degree turns, or penetrate the sheets of adjacent grains. When tested at room pressure, this structure gives antigorite unusually high tensile strength among rocks \citep[][\ via Brazilian tensile tests]{david2020sliding}, demonstrating the toughening effect the mesh texture contributes.
         
-        In-situ, the shear cracks impinging on perpendicular grains results in kinks, whose structures are discussed in chapter 2. At high strains, instead of fracturing and sliding the poorly oriented grains, new kinks form elsewhere in samples at high confining pressures. This results in highly distributed deformation in high shear stress orientations (Chapter 2, figure 200°C).
+        In-situ, the shear cracks impinging on perpendicular grains results in kinks, whose structures are discussed in chapter 2. At high strains, instead of fracturing and sliding the poorly oriented grains, new kinks form elsewhere in samples at high confining pressures. This results in highly distributed deformation in high shear stress orientations (Chapter 2, figure \ref{fig:CH2_All_Antig_microstructure}).
         
-        At the 550°C in creep experiments, very few kinks are recovered and grains appear "bent" and rotated from their original orientation with no additional porosity appearing. It is easy to imagine how a stress-concentrating feature could generate an aligned strain localized zone above 550°C if it were given enough time to propagate through the sample. The fact that ductile features do not dominate previous experiments at this temperature (\cite{Chernak2010}; \cite{Proctor2016}) suggests that there is still some hardening that occurs, and if driven at "fast" strain rates the samples will tear grains to form a brittle fault along alignment set up during loading.
+        At the 550°C in creep experiments, very few kinks are recovered and grains appear "bent" and rotated from their original orientation with no additional porosity appearing. It is easy to imagine how a stress-concentrating feature could generate an aligned strain localized zone above 550°C if it were given enough time to propagate through the sample. The fact that ductile features do not dominate previous experiments at this temperature \citep{Chernak2010, Proctor2016} suggests that there is still some hardening that occurs, and if driven at "fast" strain rates the samples will tear grains to form a brittle fault along alignment set up during loading.
         
         
     \subsubsection{Brittle-Ductile Path and Rate Dependence}
         This series of experiments describe a path through the brittle-ductile transition in antigorite that preserves/promotes a key element for dynamic slip of antigorite: low permeability. 
         
-        At high strain rates, gouge experiments have very little time to close porosity and linked permeable paths. As samples harden past towards peak stress, grains are torn and paths between porosity are opened. In addition, the hardening promotes some distribution of deformation around a fault instead of strong localization onto a single fault. The large amount of stored energy (+50\%) at peak stress with a large amount of ground, amorphous antigorite gouge in the fault core contributes to rapidpore-fluid pressure weakening and shear heating as slip progresses to high strain (figure \ref{fig:Stress-time_yieldingDehyd}). This structure is unlikely to exist in nature.
+        At high strain rates, gouge experiments have very little time to close porosity and linked permeable paths. As samples harden past towards peak stress, grains are torn and paths between porosity are opened. In addition, the hardening promotes some distribution of deformation around a fault instead of strong localization onto a single fault. The large amount of stored energy (+50\%) at peak stress with a large amount of ground, amorphous antigorite gouge in the fault core contributes to rapidpore-fluid pressure weakening and shear heating as slip progresses to high strain (figure \ref{fig:A1_Stress-time_yieldingDehyd}). This structure is unlikely to exist in nature.
         
         If gouge samples are ramped to stress "fast" but not loaded to peak stress, deformation does not distribute onto a wide fault core, but instead onto several narrow faults. The fast ramping to stress does not allow time to align sheets or close porosity so permeability remains high. The stored energy in the machine is lower at lower starting stress for dehydration, and it lacks gouge to react quickly so it weakens more slowly and still does not generate stick-slip events.
         
@@ -113,67 +84,56 @@ Brown University\\*[20mm]
 
 \singlespacing % back to single spaced
 
-\newpage
-\pagenumbering{arabic}
-\renewcommand{\thepage} {R--\arabic{page}}
-
-\bibliography{Feb19_refs_jabmod.bib}
-\bibliographystyle{jponew}
-
-\newpage
-\pagenumbering{arabic}
-\renewcommand{\thepage} {F--\arabic{page}}
-
-\begin{figure}[ht]
-  \includegraphics[width=\textwidth]{Stiff_Press_schem1.png}
+\begin{figure}
+  \includegraphics[width=\textwidth]{Sections/Appendix1/Figures/Pc_stiffnessPlot.png}
   \caption{Confining pressure and corresponding apparatus stiffness for studies of antigorite dehydration mechanical behavior. D-DIA studies referenced are \cite{Hilairet2007} and \cite{Gasc2011}.  Griggs apparatus studies referenced are \cite{Chernak2011}, \cite{Proctor2015}, and \cite{Okazaki2016}. Gas Rig experiments referenced are \cite{Okazaki2015} and \cite{Murrell1976}.}
-  \label{fig:StiffnessvsP}
+  \label{fig:A1_StiffnessvsP}
 \end{figure}
 
 
-\begin{figure}[ht]
+\begin{figure}
   \includegraphics[width=\textwidth]{Figures/Compaction_plan_edit-dots_w2235.pdf}
   \caption{Differential stress and sample displacement are shown for two dehydration experiments at 1 GPa confining pressure. The experiment from previous work is allowed to reach peak stress ("Shear Heating"), and another preliminary experiment is dehydrated before reaching yield ("Stick-Slip").  Labels indicate time of dehydration. Numbered stress levels indicate peak stress for each experiment.}
-  \label{fig:Stress-strain_yieldingDehydr}
+  \label{fig:A1_Stress-strain_yieldingDehydr}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}
   \includegraphics[width=\textwidth]{Figures/Pre-Yield_Comparison_w2235added.pdf}
   \caption{Load-time data from shear heating (post-yield dehydration), and preliminary stick-slip runs (pre-yield dehydration). Temperature was ramped from 400 \(^o\)C to 700 \(^o\)C over 600 seconds to initiate dehydration. Sample displacement speed is noted for the pre-yield run at the time when stick-slip occurred.}
-  \label{fig:Stress-time_yieldingDehydr}
+  \label{fig:A1_Stress-time_yieldingDehydr}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}
   \includegraphics[width=\textwidth]{Figures/Full Sample_W2375vsW2296.pdf}
   \caption{Broad microstructure comparison of a sample loaded to peak stress, dehydrated, then interrupted partway through the dehydration temperature ramp and a sample dehydrated before yielding. Note differences in damage and faulting.}
-  \label{fig:Full_Sample_Compare}
+  \label{fig:A1_Full_Sample_Compare}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}
   \includegraphics[width=\textwidth]{Figures/W2446_Stress-Strainrate-time.pdf}
   \caption{Load-strainrate-time data from creep experiment W2446. The sample creeps at rates above $10^{-7}$ 1/s even at a stress of 500 MPa. Note the late stick-slip event outlined in grey.}
-  \label{fig:Stress-Strainrate-time_W2446}
+  \label{fig:A1_Stress-Strainrate-time_W2446}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}
   \includegraphics[width=\textwidth]{Figures/W2446_Stress-Strainrate-time Zoom.pdf}
   \caption{Load-time data showing the rapid stick-slip event in experiment W2446. The 12 MPa load drop happens in a single sample interval at 10Hz recording rate. Corresponding microstructure and a relict fracture is shown in figure \ref{fig:}}
-  \label{fig:Stress-Strainrate-time_W2446_zoom}
+  \label{fig:A1_Stress-Strainrate-time_W2446_zoom}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}
   \includegraphics[width=\textwidth]{Figures/W2446_Fault_collage.pdf}
   \caption{a) SEM image of dehydrating creep sample W2446. Sub-image locations are noted by black boxes. b) Image of a rough fault section where poorly aligned grains are torn and bent back to form fault gouge. c) smooth section of the fault with no grains penetrating into the fault core and no visible gouge.}
-  \label{fig:Creep_W2446_collage}
+  \label{fig:A1_Creep_W2446_collage}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}
   \includegraphics[width=\textwidth]{Figures/W2296_zoom_006.jpg}
   \caption{SEM Image of reaction on the smooth fault surface from pre-yield experiment W2296. Location is noted in larger Figure \ref{fig:}}
-  \label{fig:Full_Sample_Compare}
+  \label{fig:A1_Full_Sample_Compare}
 \end{figure}
 
-
+\clearpage
 
 \end{document}
  
