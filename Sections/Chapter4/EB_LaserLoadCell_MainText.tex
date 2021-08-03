@@ -173,6 +173,8 @@
 
 
 \begin{abstract}
+Deforming rocks presents a particularly challenging test environment. Not only are required temperatures often above 300°C, but pressures above 200 MPa are commonly required to replicate conditions in the earth. The machines (Paterson-type, Griggs-type, D-DIA, Oxford Creep Rig, etc.) designed to apply these pressures and temperatures require measurement compromises and exotic materials to accommodate common, reliable sensors. Each of these machines has a furnace which can reach 1200°C at its center, often inside a pressure vessel. Common sensors like LVDTs and strain gauges cannot survive this temperature and are placed either outside the pressure vessel, or far from the furnace with ceramic or steel connecting rods/pistons. This can introduce unacceptable error into measurements of low stresses and specimen deformation rates sometimes as low as 1 μm/day, especially when friction is included. These applications would benefit from inclusion of a simple, compact, low cost displacement sensor with resolution better than 1 μm, which is achievable using an interferometer constructed with standard telecom fiber optic components.
+We have adapted designs for external cavity Fabry-Perot interferometer to build a high accuracy (0.1 MPa, 2 nm) displacement/load sensor using standard telecom fiber/lasers and a disposable sensing head. The total equipment cost is less than \$5000.  The design was tested inside a Griggs pressure vessel to measure loads at 700°C.  A benefit of using telecom equipment is very large bandwidth. Using an FPGA for digital signal processing, bandwidth can easily reach 100 kHz, measuring speeds up to 20 mm/s. A small modification of the light path allows a vibrometer to be constructed, unlocking significantly higher speed/bandwidth (10 MHz).
 
 \end{abstract}
 
@@ -217,7 +219,7 @@ where I is incident and reflected intensity, R is reflectance of the cavity surf
   \label{fig:CH4_ProcessingSchematic}
 \end{figure}
         
-        Processing of the cavity length can be performed in realtime by a PC or FPGA with the scheme illustrated in Figure \ref{fig:CH4_ProcessingSchematic}. Maximum tracking speed at 6 kHz modulation frequency (for a PC sound card sampling at 96kHz) is 0.5 mm/s, while maximum tracking speed at 6 MHz modulation frequency is ????? mm/s. Bandwidth is limited by filtering to 3 kHz and 1.525 MHz respectively. 
+        Processing of the cavity length can be performed in realtime by a PC or FPGA with the scheme illustrated in Figure \ref{fig:CH4_ProcessingSchematic}. Maximum tracking speed at 6 kHz modulation frequency (for a PC sound card sampling at 96kHz) is 0.5 mm/s, while maximum tracking speed at 1.5 MHz modulation frequency is ???? mm/s. Bandwidth is limited by filtering to 3 kHz and 400 kHz respectively. 
         
         Because the amplitude of the 2f curvature produced by current/wavelength change is a secondary effect, its amplitude is always lower than that of the fundamental modulation frequency. This leads to a slightly oval-shaped path when the two components are plotted against each other which can be corrected at system startup.
         

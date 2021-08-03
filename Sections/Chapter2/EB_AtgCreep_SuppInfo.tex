@@ -216,14 +216,14 @@
 \end{figure}
 
 \subsection{Flow Law Fit Methodology} \label{CH2s_flowlawfit}
-    A Peierls' flow law was fit to stress vs. log(strainrate) using a Markov-chain Monte-Carlo (MCMC-NUTS) optimizer due to the small local discontinuities in the fit. Results with errors are presented in Table \ref{tab:CH2s_FitTab} and figure S\ref{fig:CH2s_KDE_plot}.
+    A Peierls' flow law was fit to stress vs. log(strainrate) using a Markov-chain Monte-Carlo (MCMC-NUTS) optimizer due to the small local discontinuities in the fit. Results with errors are presented in Table \ref{tab:CH2s_FitTable} and figure S\ref{fig:CH2s_KDE_plot}.
     \begin{table}[ht]
     \caption{Peierls creep fit results \label{tab:CH2s_FitTable}}
     \begin{tabular}{lllll}
     \hline
                & Mean   & Standard Deviation    & hdi\_2.5\% & hdi\_97.5\% \\
     \hline
-    lnA  ln(1/s)        & 7.048  & 0.103 & 6.845      & 7.247       \\
+    lnA  ln(1/s)        & -7.048  & 0.103 & 6.845      & 7.247       \\
     Ea (kJ)         & 111.287 & 1.236  & 108.879     & 113.702      \\
     Tau\_p (GPa)      & 2.537  & 0.032 & 2.477      & 2.601       \\
     q          & 1.585  & 0.04  & 1.508      & 1.662       \\
@@ -258,7 +258,7 @@
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Sections/Chapter2/Figures/Proposal_WaxCombo_small_clip.pdf}
-  \caption[Friction testing of the modified carbide bushing in paraffin wax]{Tests comparing old mitre ring seals to new carbide bushing seal friction during run-in through paraffin wax, and during deformation in contact with the grade 360 brass. Improvement in both static friction and rate dependent friction is 3-5x. Viscosity of run-in or “hit” material affects friction determination (lower zoomed rate steps).
+  \caption[Friction testing of the modified carbide bushing in paraffin wax]{Plots of differential stress and displacement data from experiments deforming grade 360 (leaded) brass. Assemblies have no furnace, and all confining media is paraffin wax. Samples were first pressurized to 300 MPa. Then the piston was advanced towards the sample, retracted, heated, and advanced again repeatedly. Retraction is plotted as thin dotted lines. Hysteresis between advancing and advancing stresses is a measure of seal friction (30 MPa new carbide, 140 MPa old packing ring). Rate steps were completed while retracting far from the sample to measure rate dependent friction.
   }
   \label{fig:CH2s_Brass-Wax}
 \end{figure}

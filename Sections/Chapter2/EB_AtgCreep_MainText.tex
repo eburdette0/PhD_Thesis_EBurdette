@@ -170,7 +170,7 @@
 \doublespacing
 
 \begin{abstract}
-A redesigned Griggs-type assembly and apparatus was used to deform antigorite under constant stress creep  conditions at low temperature, low strain rate, and high pressure. Antigorite was deformed at constant temperatures between 75°C and 550°C, acquiring 8-12 rheology results per temperature. The microstructure of samples recovered after deformation highlights the importance of kinks to antigorite plasticity. Rheology data is optimally fit with a barrier-controlled plasticity law whose mechanisms agree physically with a kink-limited glide/slip deformation mechanism. When applied to natural settings, the extrapolated viscosity agrees well with predictions from subduction models.
+A redesigned Griggs-type assembly and apparatus was used to deform antigorite under constant stress creep  conditions at low temperature, low strain rate, and high pressure (1 GPa). Antigorite was deformed at constant temperatures between 75°C and 550°C, acquiring 8-12 rheology results per temperature. The microstructure of samples recovered after deformation highlights the importance of kinks to antigorite plasticity. Rheology data is optimally fit with a barrier-controlled plasticity law whose mechanisms agree physically with a kink-limited glide/slip deformation mechanism. When applied to natural settings, the extrapolated viscosity agrees well with predictions from subduction models.
 
 
 \end{abstract}
@@ -279,7 +279,8 @@ A redesigned Griggs-type assembly and apparatus was used to deform antigorite un
     \subsection{Flow Law}
         Reduction of the stress sensitivity/stress exponent with increasing temperature is consistent with exponential low temperature plasticity or “barrier controlled” creep laws where the “barrier height” is lowered by thermal activation.  Microstructural observations suggest the barrier mechanism involves kinking of the antigorite grains.  That law has the form \citep{frost1982deformation}:
         \begin{equation}
-            \dot{\epsilon}=A\exp\left(
+            \dot{\epsilon}=A\left(\frac{\sigma}{\mu}\right)^2
+                \exp\left(
                 \frac{-\Delta G}{RT}\left(
                     1-\left(\frac{\sigma}{\tau_p}
                         \right)^p
@@ -339,6 +340,7 @@ A redesigned Griggs-type assembly and apparatus was used to deform antigorite un
 We thank Nicolas Bantut and Emmanuel David for helpful discussions. We would also like to thank Hannah Rabinowitz for encouragement and assistance upgrading the apparatus. In additions we thank Keishi Okazaki collected the antigorite used in this study.
 
 \subfile{./EB_AtgCreep_SuppInfo.tex}
+\clearpage
 \subfile{./EB_AtgCreep_x620Appendix.tex}
 
 
