@@ -152,7 +152,7 @@
 %  Each must be 100 characters or less with no special characters or punctuation
 
 \begin{keypoints}
-\item Seal friction limits stress resolution in high pressure deformation experiments without synchrotron imaging. Internal load measurement resolves this limitation.
+\item Seal friction limits stress resolution in high pressure deformation experiments. Internal load measurement resolves this limitation.
 \item The cell operates by measuring displacement of an elastic cavity. It is compact and can survive temperatures up to 700°C
 \item Implementation is simple, requiring at minimum a PC, 96kHz sound card, telecom modulated DFB laser, and a photodiode.
 \end{keypoints}
@@ -186,43 +186,62 @@ We have adapted designs for external cavity Fabry-Perot interferometer to build 
 
 
 \section{Introduction}
-Fiber optics allow direct measurement of sub-nanometer distances at extreme conditions which would otherwise be inaccessible to mechanical sensors like LVDTs. They also have the advantages in electrical interference immunity and no required additional mass. However, they lack the simplicity, reliability, and familiarity of electrical and magnetic displacement sensors. As a result laser displacement sensors are typically only found in exotic equipment with unusually low temperature, high speed, or high precision. A familiar example is the reflected red diode laser and detector used to measure position of atomic force microscopes.
-
-Deforming rocks presents a particularly challenging environment. Not only are required temperatures often above 300°C, but pressure above 200 MPa are commonly required to replicate conditions in the earth. The machines (Paterson-type, Griggs-type, D-DIA, Oxford Creep Rig, etc.) designed to apply these pressures and temperatures require measurement compromises and exotic materials to accommodate common, reliable sensors. Each of these machines has a furnace which can reach 1200°C at its center, often inside a pressure vessel. Common sensors like LVDTs and strain gauges cannot survive this temperature and are placed either outside the pressure vessel, or far from the furnace with ceramic or steel connecting rods/pistons. This can introduce unacceptable error into measurements of low stresses and specimen strain rates sometimes approaching $1 \mu$m/day, especially when friction is included. These applications would benefit from inclusion of a simple, compact, low cost displacement sensor with resolution better than $1 \mu$m, which is achievable using an interferometer constructed with standard telecom fiber optic components.
-
-Mass production of diode lasers has driven down cost to the point that a fiber-coupled, temperature stabilized laser diode system can be purchased for \$2000, while telecom fiber and detection equipment can be purchased for less than \$1000. Modulation, demodulation, and processing of laser intensity can be driven with common PC sound card equipment, bringing total cost to less than \$5000.
-
-Two interferometer types stand out for application to our displacement applications: Mach-Zender and Fabry-Perot. Designs for Mach-Zender interferometers are already common in free space laser-doppler vibrometers which could be fiber-coupled.  Fabry-Perot designs are also common for strain/pressure sensing, and commercial fiber-coupled versions can be purchased for \$25,000. We describe a simpler version using laser intensity modulation.
-
-An external cavity Fabry-Perot interferometer modulates reflected/transmitted intensity due to mutual interference between standing waves established in a cavity with partially reflecting mirrors. The simple design which we use is outlined by \citet{nowakowski2016highly}. The equation for intensity returning from the cavity is:
-\begin{equation}
-    \frac{I_{refl}}{I_{inc}} = \frac{\left(1+R\right)^2}{2}\frac{1-\cos{\frac{4\pi}{\lambda}h}}{1+R^2-2R\cos{\frac{4\pi}{\lambda}h}}
-\end{equation}
-where I is incident and reflected intensity, R is reflectance of the cavity surfaces, h is cavity length, and $\lambda$ is laser wavelength. Note that intensity changes with both cavity length and wavelength on a period of half the incident wavelength.
-
-\citet{nowakowski2016highly} use a tunable wavelength laser ($\pm25$ nm) to oscillate wavelength at frequency f, and recover the reflected direct cavity response slope at f, while also recovering the curvature of the cavity response at frequency 2f. These signals are 90 degrees out of phase, so they can be separately demodulated and fed into an arctangent function to recover the phase of the cavity response, which is directly related to half the incident wavelength \citep[See\ ][]{kirkendall2004overview}. Using a 1550 nm laser, 10 bit accuracy can measure a 1 nm cavity length change.
+    Fiber optics allow direct measurement of sub-nanometer distances at extreme conditions which would otherwise be inaccessible to mechanical sensors like LVDTs. Other advantages include immunity in electrical interference and no requirement of additional mass. However, fiber optics lack the simplicity, reliability, and familiarity of electrical and magnetic displacement sensors. As a result laser displacement sensors are typically only found in exotic equipment at unusually low temperature, high speed, or high precision. A familiar example is the reflected red diode laser and detector used to measure position of atomic force microscopes.
+    
+    Rock deformation presents a particularly challenging measurement environment. Not only are specimen temperatures often above 300°C, but pressure above 200 MPa is commonly required to replicate conditions in the earth. The machines (Paterson-type, Griggs-type, D-DIA, Oxford Creep Rig, etc.) designed to apply these pressures and temperatures require measurement compromises to accommodate common, reliable sensors. Each of these machines has a furnace which can reach 1200°C at its center, often inside a pressure vessel. Common sensors like LVDTs and strain gauges cannot survive this temperature and are placed either outside the pressure vessel, or far from the furnace with ceramic or steel connecting rods/pistons. These compromises can introduce unacceptable error into measurements of low stresses and specimen strain rates that approach $1 \mu$m/day, especially when uncertainty due to friction is included. These applications would benefit from inclusion of a simple, compact, low cost displacement sensor with resolution better than $1 \mu$m, which is achievable using an interferometer constructed with standard telecom fiber optic components.
+    
+    Mass production of diode lasers has driven down cost to the point that a fiber-coupled, temperature stabilized laser diode system can be purchased for \$2000, while telecom fiber and detection equipment can be purchased for less than \$1000. Modulation, demodulation, and processing of laser intensity can be driven with common PC sound card equipment, bringing total cost to less than \$5000.
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/EFPI_diagram.pdf}
-  \caption{Schematic of elements required for this EFPI system to measure load.}
+  \caption{Schematic of elements required for this EFPI (External cavity Fabry-Perot Interferometer) system to measure load.}
   \label{fig:CH4_LaserSystemSchematic}
+\end{figure}
+
+    Two interferometer types stand out for application to our displacement applications: Mach-Zender and Fabry-Perot. Designs for Mach-Zender interferometers are already common in free space laser-doppler vibrometers which could be fiber-coupled.  Fabry-Perot designs are also common for strain/pressure sensing, and commercial fiber-coupled versions can be purchased for \$25,000. We describe a simpler version using laser intensity modulation.
+    
+    An external cavity Fabry-Perot interferometer (EFPI) modulates reflected/transmitted intensity due to mutual interference between standing waves established in a cavity with partially reflecting mirrors. The simple design which we use is outlined by \citet{nowakowski2016highly}. The equation for intensity returning from the cavity is:
+    \begin{equation}
+        \frac{I_{refl}}{I_{inc}} = \frac{\left(1+R\right)^2}{2}\frac{1-\cos{\frac{4\pi}{\lambda}h}}{1+R^2-2R\cos{\frac{4\pi}{\lambda}h}}
+    \end{equation}
+    where I is incident and reflected intensity, R is reflectance of the cavity surfaces, h is cavity length, and $\lambda$ is laser wavelength. Note that intensity changes with both cavity length and wavelength on a period of half the incident wavelength.
+    
+    \citet{nowakowski2016highly} use a tunable wavelength laser ($\pm25$ nm) to oscillate wavelength at frequency f, and recover the reflected direct cavity response slope at f, while also recovering the curvature of the cavity response at frequency 2f. These signals are 90 degrees out of phase, so they can be separately demodulated and fed into an arctangent function to recover the phase of the cavity response, which is directly related to half the incident wavelength \citep[See\ ][]{kirkendall2004overview}. A system using a 1550 nm laser with 10 bit phase accuracy can measure a 1 nm cavity length change over a range of several centimeters.
+
+\begin{figure}
+  \includegraphics[width=\textwidth]{Figures/EFPI_DSP-FPGA_schematic.pdf}
+  \caption{Schematic of the EFPI (External cavity Fabry-Perot Interferometer) modulation and demodulation system implemented on a Digilent Eclypse Z7 FPGA.}
+  \label{fig:CH4_ProcessingSchematic}
 \end{figure}
 
 \section{Sensor Design and Machine Integration}
 
     \subsection{Interferometer System}
-        A schematic of the EFPI (External cavity Fabry-Perot Interferometer) implementation is presented in Figure \ref{fig:CH4_LaserSystemSchematic}. The system is comprised of a DFB laser controller (Koheron CTL200 with a QPhotonics qdfbld-1550-5), 2:1 FBT coupler, Fabry-Perot cavity (simplest form is a polished reflector and FC coupler terminated fiber), fiber coupled photodiode reciever (TTI TIA-950), and a digital-to analog/analog-to-digital converter on the same clock source with a signal processor (Digilent Eclypse Z7 FPGA or PC + sound card). A simple single frequency, current modulating laser is used instead of a tunable laser used by \citet{nowakowski2016highly}. The intensity and wavelength of the single-frequency laser changes with current. The wavelength-current coefficient is approximately 10 pm/mA, so the effective $\pm$25 mA modulation depth of the laser is enough to drive cavities greater than 5 mm long \citep{nowakowski2016highly}.
-
+        A schematic of the EFPI implementation is presented in Figure \ref{fig:CH4_LaserSystemSchematic}. The system is comprised of a DFB laser controller (Koheron CTL200 with a QPhotonics qdfbld-1550-5), 2:1 FBT coupler, Fabry-Perot cavity (simplest form is a polished reflector and FC coupler terminated fiber), fiber coupled photodiode reciever (TTI TIA-950), and a digital-to analog/analog-to-digital converter on the same clock source with a signal processor (Digilent Eclypse Z7 FPGA or PC + sound card). A simple single frequency, current modulating laser is used instead of a tunable laser used by \citet{nowakowski2016highly}. The intensity and wavelength of the single-frequency laser changes with current. The wavelength-current coefficient is approximately 10 pm/mA, so the effective $\pm$25 mA modulation depth of the laser is enough to interrogate cavities greater than 5 mm long \citep{nowakowski2016highly}.
+        
+        Processing of the cavity length can be performed in realtime by a PC or FPGA with the scheme illustrated in Figure \ref{fig:CH4_ProcessingSchematic}. Maximum tracking speed at 6 kHz modulation frequency (for a PC sound card sampling at 96kHz) is 2 mm/s, while maximum tracking speed at 1.5 MHz modulation frequency is 300 mm/s. Bandwidth is limited by filtering to 3 kHz and 400 kHz respectively. 
+        
+        Because the amplitude of the 2f cavity response produced by current/wavelength modulation is a secondary effect, its amplitude is always lower than that of the fundamental modulation frequency. This leads to a slightly acircular path when the two components are plotted against each other (Figure \ref{fig:CH4_circle_plot}) which can be corrected at system startup \citep[e.g. ][]{nowakowski2016highly}.
 \begin{figure}
-  \includegraphics[width=\textwidth]{Figures/EFPI_DSP-FPGA_schematic.pdf}
-  \caption{Schematic of the EFPI modulation and demodulation system implemented on a Digilent Eclypse Z7.}
-  \label{fig:CH4_ProcessingSchematic}
+  \includegraphics[width=\textwidth]{Sections/Chapter4/Figures/fvs2f+plot.pdf}
+  \caption[Plot of the amplitude of modulation frequency f and 2*f for reflector movement]{Plot of recorded amplitudes at the carrier frequency against two times the carrier frequency returning from the Fabry-Perot cavity during movement of a reflector attached to a piezoelectric actuator.}
+  \label{fig:CH4_circle_plot}
+\end{figure} 
+        
+    \subsection{Bench Testing}
+        Simple Bench tests were performed to demonstrate simple applications of the displacement sensing capability. A polished fiber was aimed at a reflector attached to either a piezoelectric actuator, a speaker cone, or a micrometer.
+\begin{figure}
+  \includegraphics[width=\textwidth]{Sections/Chapter4/Figures/Piezo_bench_4.5um.pdf}
+  \caption[Triangle wave driven piezo actuator displacement recorded with the EFPI]{Displacement of a reflector attached to a piezoelectric actuator measured by the EFPI system. Differences while displacement decreases are due to frictional hysteresis.}
+  \label{fig:CH4_triange_test}
+\end{figure} 
+\begin{figure}
+  \includegraphics[width=\textwidth]{Sections/Chapter4/Figures/Piezo_bench_4.5um_step.pdf}
+  \caption[Plot of step response of a piezo actuator and amplifier]{Plot of step response of the piezoelectric actuator and its amplifier to an instantaneous command voltage change.}
+  \label{fig:CH4_piezo_step_response}
 \end{figure}
-        
-        Processing of the cavity length can be performed in realtime by a PC or FPGA with the scheme illustrated in Figure \ref{fig:CH4_ProcessingSchematic}. Maximum tracking speed at 6 kHz modulation frequency (for a PC sound card sampling at 96kHz) is 0.5 mm/s, while maximum tracking speed at 1.5 MHz modulation frequency is ???? mm/s. Bandwidth is limited by filtering to 3 kHz and 400 kHz respectively. 
-        
-        Because the amplitude of the 2f curvature produced by current/wavelength change is a secondary effect, its amplitude is always lower than that of the fundamental modulation frequency. This leads to a slightly oval-shaped path when the two components are plotted against each other which can be corrected at system startup.
-        
+        The piezoelectric actuator (Physik Instrumente PI-840.30) was driven in both a triangle wave and square wave configuration. Results of the triangle wave driving are plotted in figure \ref{fig:CH4_triange_test}. Surprisingly, the records reveal frictional hysteresis during unloading (similar to the behavior of the spring system of \citet{burdette2020enhanced}). The step response of the actuator is limited to approximately 1kHz by the amplification system, and is displayed in figure \ref{fig:CH4_piezo_step_response}. The sensor resonance is reported to be 10kHz (which is above the amplifier response), so there is no observed resonant ringing associated with the step. The largest measured speed of the actuator is 8 $nm/\mu s$ (8 mm/s). 
+
     \subsection{Implementation to Measure Internal Axial Stress in a Griggs-Type Apparatus}
     
 \begin{figure}
@@ -231,9 +250,9 @@ where I is incident and reflected intensity, R is reflectance of the cavity surf
   \label{fig:CH4_GriggsImplementation}
 \end{figure}
 
-        Figure \ref{fig:CH4_GriggsImplementation} shows how a cavity can be introduced into the loading column of a Griggs-type rock deformation apparatus. Fiber is fed up a hole in the central column and glued into the base carbide. A cavity (tube) sits on top of the base carbide, and a polished carbide reflector is placed below the sample to be deformed. A 10mm alumina tube with an elastic modulus of 400 GPa should change length by 25 nm for a 1 MPa stress change, which is well within the detection capabilities of the EFPI setup.
+        Figure \ref{fig:CH4_GriggsImplementation} shows how a cavity can be introduced into the loading column of a Griggs-type rock deformation apparatus. Fiber is fed up a hole in the central column and glued into the base carbide. An EFPI cavity is formed by placing an alumina tube on top of the base carbide, with a polished carbide reflector at its end, below the sample to be deformed. A 10mm alumina tube with an elastic modulus of 400 GPa will change length by 25 nm for a 1 MPa stress change, which is well within the detection capabilities of the EFPI system.
         
-        A similar design was built by \citet{blacic1977wide} with excellent sensitivity. This design improves on their implementation by: improving immunity to pressure changes, improving immunity to vibration, and constructing the cavity from simple, inexpensive replaceable parts. The wide machined carbide pedestal of \citet{blacic1977wide} has axial area exposed to confining media which applies axial shortening force ~3x the axial deformation force, so small changes in pressure result in large cavity displacements that are indistinguishable from sample deformation loading. The cavity we implemented is the same diameter as the sample, so pressure changes can only affect its length through the Poisson effect. We improve noise immunity by using a terminated fiber glued directly underneath the cavity to avoid the external vibration influences (\citet{blacic1977wide}'s cavity was 14.6 cm including a significant amount of metal that changes size with total apparatus load/vibration and changes in room temperature). Finally, the fiber ferrule, alumina tube, and polished carbide are standard parts from materials suppliers (McMaster-Carr, Thorlabs), while the carbide is EDM drilled after purchase. After use, glue is burned out of the base carbide and ferrule at 400°C, and another is inserted and glued in for the next use.
+        A similar design was built by \citet{blacic1977wide} with excellent sensitivity. Our design improves on their implementation by: improving immunity to pressure changes, improving immunity to vibration, and constructing the cavity from simple, inexpensive replaceable parts. The wide machined carbide pedestal of \citet{blacic1977wide} has an axial area exposed to confining media which applies axial shortening force \~3x the axial deformation force. Thus, small changes in pressure result in large cavity displacements that are indistinguishable from sample deformation loading. The cavity we implemented has the same diameter as the sample, so pressure changes can only affect its length through the Poisson effect. We improve noise immunity by using a terminated fiber glued directly underneath the cavity to avoid external vibration influences. \citet{blacic1977wide}'s cavity was 14.6 cm including a significant amount of metal that changes size with total apparatus load/vibration and changes in room temperature. Finally, the fiber ferrule, alumina tube, and polished carbide are standard parts from materials suppliers (McMaster-Carr, Thorlabs), while the carbide is EDM drilled after purchase. After use, glue is burned out of the base carbide and ferrule at 400°C, and another is inserted and glued in for the next use.
 
 \section{Results}
 
@@ -244,7 +263,7 @@ where I is incident and reflected intensity, R is reflectance of the cavity surf
 \end{figure}
 
     \subsection{Mechanical Results}
-        For this testing, 1/4" cylinders of 360 grade brass were purchased from McMaster-Carr and deformed with the Griggs-type appratus inside a pressure vessel filled with melted paraffin wax at 150 MPa confining pressure. The lower portion of the loading column is jacketed in polyolefin to prevent wax from intruding in between column elements. A gap is left between the top piston and an externally connected piston so that the sample and lower column do not interact with the external piston until it is advanced after pressurization.
+        For calibration, 1/4" cylinders of 360 grade brass were purchased from McMaster-Carr and deformed with the Griggs-type appratus inside a pressure vessel filled with melted paraffin wax at 150 MPa confining pressure. The lower portion of the loading column is jacketed in polyolefin to prevent wax from intruding in between column elements. A gap is left between the top piston and an externally connected piston so that the sample and lower column do not interact with the external piston until it is advanced after pressurization.
         
         Results from our traditional external load measurement and the new internal load cell are plotted against externally measured piston displacement (Figure \ref{fig:CH4_Wax_LoadcellTest}). When the externally connected piston is out of contact with the sample, internal load does not change regardless of which direction the piston is moving. While the piston is in contact with the column, deforming the sample, there is a static, direction dependent offset as would be expected for frictional hysteresis due to the seals.
         
@@ -262,7 +281,7 @@ where I is incident and reflected intensity, R is reflectance of the cavity surf
 %Text here ===>>>
 
 \acknowledgments
-
+We would like to thank Steve Kidder for purchasing the initial DFB laser controller. We would also like to thank Doug T. Smith at NIST for his helpful advice when attempting to replicate designs from \citet{nowakowski2016highly}.
 
 %% ------------------------------------------------------------------------ %%
 %% References and Citations

@@ -160,7 +160,7 @@
 
 \subsection{Hardening During Stress Steps} \label{CH2s_hardening_discussion}
 
-    It is important to note that within strain steps samples clearly harden over time (S\ref{fig:CH2s_Load-Time-Fast}). This is expected to some extent from other descriptions/results of brittle creep and high temperature creep tests where primary, secondary, and tertiary creep phases can be identified. For westerly granite calibration tests (S\ref{fig:CH2s_Westerly_Supplement}), at each step samples clearly reach constant strain rates after relatively small strains (~0.2\%). Post-processing of antigorite data shows that it may continue to harden over similar 0.2\% strain steps (depicted in data for W2447-200 (S\ref{fig:CH2s_Load-Time-Fast})). This decay is not obvious in live displays of data because it requires more processing power to smooth and compute than our rig control PC has available. 
+    It is important to note that within strain steps samples harden over time (S\ref{fig:CH2s_Load-Time-Fast}). This is expected to some extent from other descriptions/results of brittle creep and high temperature creep tests where primary, secondary, and tertiary creep phases can be identified. For westerly granite calibration tests (S\ref{fig:CH2s_Westerly_Supplement}), at each step samples clearly reach constant strain rates after relatively small strains (~0.2\%). Post-processing of antigorite data shows that it may continue to harden over similar 0.2\% strain steps (depicted in data for W2447-200 (S\ref{fig:CH2s_Load-Time-Fast})). This decay is not obvious in live displays of data because it requires more processing power to smooth and compute than our rig control PC has available. 
     
     The observed rate decay appears to be linear when plotted as either log(strain rate) vs. strain (S\ref{fig:CH2s_Strainrate-Strain}) and log(strain rate) vs. time (S\ref{fig:CH2s_Strainrate-Time}). The strain rate decreases by approximately a factor of 2 over 0.2\% strain as can be observed in the included strain-time plots for W2447-200 (S\ref{fig:CH2s_Load-Time-Fast}), and the decay during hydraulic oil confined experiment W2521-75 (S\ref{fig:CH2s_Strainrate-Strain}). (Data is FIR decimated by a factor of 100 to 0.1Hz for these plots).
 
@@ -205,45 +205,59 @@
 \subsection{Uncertainty introduced due to hardening} \label{CH2s_hardening_uncertainty}
     The ratio of initial/final strain seems to be similar at most strains. This makes ratio/increment (hardening slope) much larger at small strain. Hardening literature plots the change as $d\sigma/d\epsilon$ vs. $\sigma$ \citep{kocks2003physics}. It's unclear if that's appropriate for materials with pressure-dependent strength. 
     
-    To assess the potential uncertainty introduced into the flow law by choosing final instead of initial strain rates, we re-plotted the fit for initial strain rates (Figure \ref{fig:CH2s_Hardening_Uncertainty}). Because change is a similar factor of ~2 for most steps, the fit exponent and Peierls stresses don’t change significantly while pre-exponential and activation energy change by ~5\%. An example with the same exponents and peierls stress is plotted in Figure \ref{fig:CH2s_Fitcompare-moredata}.
+    To assess the potential uncertainty introduced into the flow law by choosing final instead of initial strain rates, we re-plotted the fit for initial strain rates. Because change is a similar factor of ~2 for most steps, the fit exponent and Peierls stresses don’t change significantly while pre-exponential and activation energy change by ~5\%. % An example with the same exponents and peierls stress is plotted in Figure \ref{fig:CH2s_Hardening_Uncertainty}.
 
-    In addition, our creep data can be compared to other antigorite deformation studies at similar temperatures and pressures \ref{fig:CH2s_Data_Comparison_supplement}. Some of the comparable studies use antigorite gouge instead of cores, which is noted. Despite widely varying methodology, recorded stress/strainrate is similar to other studies, except where samples are highly aligned of deformation is highly localized.
+    In addition, our creep data can be compared to other antigorite deformation studies at similar temperatures and pressures \ref{fig:CH2s_Data_Comparison_supplement}. Some of the comparable studies use antigorite gouge instead of cores, which is noted. Despite widely varying methodology, recorded stress/strainrate is similar to other studies, except where samples are highly aligned or deformation is highly localized.
 
-\begin{figure}
-  \includegraphics[width=\textwidth]{Figures/Final-Initial Fit Comparison.png}
-  \caption[Comparison of hardening error in Peierls' fits]{Comparison of Peirels' fits of Final (Blue, lower), and initial (orange, higher) strain rates at each stress step.}
-  \label{fig:CH2s_Hardening_Uncertainty}
-\end{figure}
+% \begin{figure}
+%   \includegraphics[width=\textwidth]{Figures/Final-Initial Fit Comparison.png}
+%   \caption[Comparison of hardening error in Peierls' fits]{Comparison of Peirels' fits of Final (Blue, lower), and initial (orange, higher) strain rates at each stress step.}
+%   \label{fig:CH2s_Hardening_Uncertainty}
+% \end{figure}
 
 \subsection{Flow Law Fit Methodology} \label{CH2s_flowlawfit}
-    A Peierls' flow law was fit to stress vs. log(strainrate) using a Markov-chain Monte-Carlo (MCMC-NUTS) optimizer due to the small local discontinuities in the fit. Results with errors are presented in Table \ref{tab:CH2s_FitTable} and figure S\ref{fig:CH2s_KDE_plot}.
+    A Peierls' flow law was fit to stress vs. log(strainrate) using a Markov-chain Monte-Carlo (MCMC-NUTS) optimizer due to the small local discontinuities in the fit. Results with errors are presented in Table \ref{tab:CH2s_FitTable} and distributions of the posterior are plotted in figure S\ref{fig:CH2s_KDE_plot}.
+    % \begin{table}[ht] % old!
+    % \caption{Peierls creep fit results \label{tab:CH2s_FitTable}}
+    % \begin{tabular}{lllll}
+    % \hline
+    %           & Mean   & Standard Deviation    & hdi\_2.5\% & hdi\_97.5\% \\
+    % \hline
+    % lnA  ln(1/s)        & -7.048  & 0.103 & 6.845      & 7.247       \\
+    % Ea (kJ)         & 111.287 & 1.236  & 108.879     & 113.702      \\
+    % Tau\_p (GPa)      & 2.537  & 0.032 & 2.477      & 2.601       \\
+    % q          & 1.585  & 0.04  & 1.508      & 1.662       \\
+    % $sigma_{obs}$ & 0.2    & 0.019 & 0.167      & 0.24       
+    % \end{tabular}
+    % \end{table}
+    
     \begin{table}[ht]
     \caption{Peierls creep fit results \label{tab:CH2s_FitTable}}
     \begin{tabular}{lllll}
     \hline
                & Mean   & Standard Deviation    & hdi\_2.5\% & hdi\_97.5\% \\
     \hline
-    lnA  ln(1/s)        & -7.048  & 0.103 & 6.845      & 7.247       \\
-    Ea (kJ)         & 111.287 & 1.236  & 108.879     & 113.702      \\
-    Tau\_p (GPa)      & 2.537  & 0.032 & 2.477      & 2.601       \\
-    q          & 1.585  & 0.04  & 1.508      & 1.662       \\
-    $sigma_{obs}$ & 0.2    & 0.019 & 0.167      & 0.24       
+    lnA ln(1/s) & -0.624 & 0.118 & -0.393 & -0.859 \\
+    Ea (J) & 86283.744 & 1444.382 & 83395.443 & 89076.417 \\
+    T\_p (GPa) & 2.416 & 0.044 & 2.330 & 2.502 \\
+    q & 1.177 & 0.048 & 1.081 & 1.268 \\
+    $sigma_{obs}$ & 0.215 & 0.020 & 0.176 & 0.255 \\  
     \end{tabular}
     \end{table}
     
     \begin{figure}
-      \includegraphics[width=\textwidth]{Figures/MCMC_KDE_Matrix1.png}
-      \caption{KDE plot of parameter density for the MCMC fit.}
+      \includegraphics[width=\textwidth]{Sections/Chapter2/Figures/MCMC_KDE_Matrix_StressSquared.png}
+      \caption{Posterior probability density functions in parameter space for the MCMC fit.}
       \label{fig:CH2s_KDE_plot}
     \end{figure}
     
     Low stress data have a larger influence on the extrapolated fit because they define the transition between stress and temperature activation dominated regions of the Peierls law. The start of this transition can be seen in the slight curvature of the fit around points at 480°C in figure \ref{fig:CH2_Mechanical_combo}. In the flow law, the region is defined by exponents p, q, and normalization factor $\tau_p$.
-    Changes in the curvature have a very large effect on extrapolated viscosity. In this case  uncertainty in extrapolated viscosity decreases by 5 orders of magnitude when data at low stress is added to the fit (figure S\ref{fig:CH2s_Fitcompare-moredata}).
+    Changes in the curvature have a very large effect on extrapolated certainty of extrapolated viscosity. In this case feasible extrapolated viscosity decreases by several orders of magnitude when data at low stress is added to the fit (figure S\ref{fig:CH2s_Fitcompare-moredata}), and best fit confidence intervals shrink by an order of magnitude (figure \ref{fig:CH2_Mechanical_combo}).
     
 
 \begin{figure}
-  \includegraphics[width=\textwidth]{Figures/AtgVisc_12-2-20wpeierls_comparison_1to1.pdf}
-  \caption[Peierls' Fit improvement with low strain rate data]{Comparison of fits for fixed exponent p,q combinations before and after slow data is added to the dataset (for illustration). Slow strain rate data has a very strong effect on extrapolated viscosity.}
+  \includegraphics[width=\textwidth]{Sections/Chapter2/Figures/AtgVisc_StressSq_compare_1to1.pdf}
+  \caption[Peierls' Fit improvement with low strain rate data]{Comparison of fits for fixed exponent p,q combinations before and after slow strain  rate data is added to the dataset (for illustration). Slow strain rate data has a very strong effect on extrapolated viscosity.}
   \label{fig:CH2s_Fitcompare-moredata}
 \end{figure}
 

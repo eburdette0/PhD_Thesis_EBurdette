@@ -110,13 +110,13 @@ Partial derivatives at steady state are:
     \frac{\partial F}{\partial \sigma_n}= \mu_0\
 \end{equation}
 
-State derivatives are more complex. We need to solve in terms of $\delta$ and $\theta$ so we rearrange normal stress relations in terms to substitute into (\ref{eq:C3_S2}2).
+State derivatives are more complex. We need to solve in terms of $\delta$ and $\theta$ so we rearrange normal stress relations in terms to substitute into (\ref{eq:C3_S2}).%2).
 
-We use the time derivatives of (\ref{eq:C3_S3}3), (\ref{eq:C3_S5}5), and (\ref{eq:C3_S10}10) to find the normal stress time derivative (numerator in (\ref{eq:C3_S2}2)):
+We use the time derivatives of (\ref{eq:C3_S3}), (\ref{eq:C3_S5}), and (\ref{eq:C3_S10}) to find the normal stress time derivative (numerator in (\ref{eq:C3_S2})):
 \begin{equation} \label{eq:C3_S14}
     \dot{\sigma_n}=K_{ ax}\left(\dot{\delta}_{ss}-\dot{\delta}\right)\sin(\psi)\sin(2\psi)/2
 \end{equation}
-Using (\ref{eq:C3_S5}5), (\ref{eq:C3_S1}1), and assuming $\theta =\theta_{ss}$ at the time we perturb the system (denominator in (2)):
+Using (\ref{eq:C3_S5}), (\ref{eq:C3_S1}), and assuming $\theta =\theta_{ss}$ at the time we perturb the system (denominator in (\ref{eq:C3_S2})):
 \begin{equation} \label{eq:C3_S15}
     \frac{1}{\sigma_n}=\frac{1}{\sigma_3}-\frac{\tan(\psi)}{\sigma
     _3}\left(\mu_0+\text{Aln}\left(\frac{\dot{\delta}}{\dot{\delta}_{ss}}\right)\right)
@@ -136,9 +136,9 @@ Then partial derivatives are:
     \frac{\partial G}{\partial \sigma_n}=0
 \end{equation}
 
-((\ref{eq:C3_S17}17) is unintuitive until we consider that we substituted (14) whose steady state value is 0)
+((\ref{eq:C3_S17}) is unintuitive until we consider that we substituted (14) whose steady state value is 0)
 
-We would like to solve for only the 2x2 system $\delta$ and $\theta$ so we need relationships for  $\hat{\tau} \text{ and } \hat{\sigma}$ in terms of shear displacement $\hat{\delta}$. Using (\ref{eq:C3_S3}3),(\ref{eq:C3_S5}5), and (\ref{eq:C3_S8}8):
+We would like to solve for only the 2x2 system $\delta$ and $\theta$ so we need relationships for  $\hat{\tau} \text{ and } \hat{\sigma}$ in terms of shear displacement $\hat{\delta}$. Using (\ref{eq:C3_S3}),(\ref{eq:C3_S5}), and (\ref{eq:C3_S8}):
 
 \begin{equation} \label{eq:C3_S19}
     \hat{\tau} =K_{ax}\cos(\psi)\left(-\hat{\delta}\right) \sin(2\psi)/2
@@ -149,7 +149,7 @@ We would like to solve for only the 2x2 system $\delta$ and $\theta$ so we need 
     \hat{\sigma_n} = K_{ax}\sin(\psi)\left(-\hat{\delta}\right) \sin(2\psi)/2
 \end{equation}
 
-Using those in (\ref{eq:C3_S6}6) we get:
+Using those in (\ref{eq:C3_S6}) we get:
 
 \begin{equation} \label{eq:C3_S21}
     K_{ax} \cos(\psi)
@@ -190,7 +190,7 @@ which reduces to
 \end{equation}
 
 
-Now we can solve (\ref{eq:C3_S7}7). Note that we need to substitute for $\dot{\hat{\delta}}$:
+Now we can solve (\ref{eq:C3_S7}). Note that we need to substitute for $\dot{\hat{\delta}}$:
 
 \begin{equation} \label{eq:C3_S25}
     \dot{\hat{\theta}} 
@@ -260,7 +260,7 @@ Friction between a guided axial piston and a shear piston sliding horizontally d
     (2\psi)+\mu_r(1+\cos(2\psi))\right)}
 \end{equation}
 
-This is greater (less stable) than (\ref{eq:C3_S15}15) with $\mu_r>0$, and reduces to (\ref{eq:C3_S15}15) when $\mu_r=0$. In practice the piston contact friction may be larger than bending stiffness of axial forcing rods so this may not be dominant in all cases.
+This is greater (less stable) than (\ref{eq:C3_S15}) with $\mu_r>0$, and reduces to (\ref{eq:C3_S15}) when $\mu_r=0$. In practice the piston contact friction may be larger than bending stiffness of axial forcing rods so this may not be dominant in all cases.
 
 %%
 \subsection{Confining Resistance}
@@ -354,7 +354,7 @@ The triaxial piston geometry has a significant limitation in that area of contac
 \begin{equation} \label{eq:C3_S48}
     s(\delta)=\frac{\delta}{d_0/\sin{\psi}}
 \end{equation}
-
+ 
 The area fraction can then be calculated as:
 
 \begin{equation} \label{eq:C3_S49}
@@ -363,41 +363,42 @@ The area fraction can then be calculated as:
 
 We refer to this function as $f(s(\delta))$. For two squares (direct shear) the function is $1-s$. The area correction causes stress to increase with increasing displacement even though apparent force is decreasing. 
 
-At any time given a load (fault shear stress $\tau$ here) there will be an increase in effective load due to area reduction and a decrease in applied load due to spring unloading. The magnitude of these two contributions changes with displacement.
-
-In a simple case where steady-state load is fixed:
+Given a load (fault shear stress $\tau$ here) there will be an increase in effective load due to area reduction and a decrease in applied load due to spring unloading with displacement. The magnitude of these two contributions changes with displacement.
+ %p12 and p50 calculation book. 2020
+In a simple case where steady-state load is fixed (constant axial stress):
 \begin{equation} \label{eq:C3_S50}
-    K_{\tau,s}=\frac{d\tau_{spring}}{ds}=\frac{d\tau}{dF}\frac{dF}{dx}\frac{dx}{d\delta}\frac{d\delta}{ds}=K_{ax}*\frac{\sin{2\psi}}{2}\cos{\psi}\frac{d_0}{\sin{\psi}}
+    K_{d\tau,ds}=\frac{d\tau_{spring}}{ds}=\frac{d\tau}{dF}\frac{dF}{dx}\frac{dx}{d\delta}\frac{d\delta}{ds}=K_{ax}*\frac{\sin{2\psi}}{2}\cos{\psi}\frac{d_0}{\sin{\psi}}
 \end{equation}
 \begin{equation} \label{eq:C3_S51}
-    K_{\tau,s, unloading}=K_{\tau,s}/f(s)
+    K_{d\tau,ds, fault}=K_{d\tau,ds}/f(s)
 \end{equation}
-
 \begin{equation} \label{eq:C3_S52}
-    \tau_{eff}=\tau_{ss}/f(s)
+    \tau_{fault}=\tau_{ss}/f(s)
 \end{equation}
 \begin{equation} \label{eq:C3_S53}
-    \frac{d\tau_{eff}}{ds}=\tau_{ss}*\frac{-1}{f^2}\frac{df}{ds}
+    \frac{d\tau_{fault}}{ds}=\tau_{ss}*\frac{-1}{f^2}\frac{df}{ds}
 \end{equation}
 
 \begin{equation} \label{eq:C3_S54}
-    K_{obs} = -K_{\tau,s, unloading}+\frac{d\tau_{eff}}{ds}
+    K_{obs} = -K_{d\tau,ds, fault}+\frac{d\tau_{fault}}{ds}
 \end{equation}
 
-These two terms have opposite signs (load decrease and increase, respectively) so they compete to control stability over fault displacement. Fixed variables are spring stiffness, fault length, fault angle, and $\sigma_3$. Note that long faults are inherently more stable here ($d_0/\sin{\psi}$).
-Also note how the effective fault stiffness is affected by current load in the latter set of equations $\tau_{control}$. This dependence on current load will cause slipping faults to stabilize if stiffness is high.
+These two terms have opposite signs (a stress decrease and increase, respectively) so they compete to control stability vs. fault displacement. Fixed variables are spring stiffness, fault length, fault angle, and $\sigma_3$. Note that long faults are inherently more stable here ($d_0/\sin{\psi}$, equation \ref{eq:C3_S50}).
+Also note how the effective fault stiffness is affected by current load in the latter set of equations $\tau_{ss}$. This dependence on current load will cause slipping faults to stabilize if stiffness is high.
 
 For the particular case of relaxation, stress evolves as:
-\begin{equation} \label{eq:C3_S55} %no double counting here
-    \tau_{elastic}(s)=\tau_{0}-K_{\tau,s}*s
+\begin{equation} \label{eq:C3_S55} % gaurantee no double counting here
+    \tau_{\sigma_1}(s)=\tau_{\sigma_1, ss}-K_{d\tau,ds}*(s-s_{ss})
 \end{equation}
+These quantities are all conversions from axial stress and directly related to axial stress at constant confining pressure. To incorporate area change on the fault we again calculate the 'effective'/'real' shear stress for the reduced area as a function:
 \begin{equation} \label{eq:C3_S56}
-    \tau_{eff}=\tau_{elastic}(s)/f(s)
+    \tau_{fault}=\tau_{\sigma_1}(s)/f(s)
 \end{equation}
+We then take the derivative with respect to s and use the product rule to find:
 \begin{equation} \label{eq:C3_S57}
-    \frac{d\tau_{eff}}{ds}(s)=\tau_{elastic}(s)*\frac{-1}{f^2}\frac{df}{ds}-K_{\tau,s}/f(s)
+    \frac{d\tau_{fault}}{ds}(s)=\tau_{\sigma_1}(s)*\frac{-1}{f^2}\frac{df}{ds}-K_{d\tau,ds}/f(s)
 \end{equation}
-Many cases are more stable than constant stress because spring/applied stress is much lower at large displacement.
+Many cases are more stable than constant stress because spring/applied stress decreases at large displacement.
 
 
 

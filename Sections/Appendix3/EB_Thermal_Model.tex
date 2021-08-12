@@ -1,0 +1,47 @@
+\documentclass[main.tex]{subfiles}
+
+
+\begin{document}
+\section{Thermal Model Notes}
+    Thermal modeling of a Griggs-type assembly is detailed in Moarefvand et al. (in press). Solutions to the steady-state heat equation are straightforward with modern finite element solvers (e.g. MATLAB PDEmodeler), and can be easily verified with analytical solutions to simple problems such as stacked cylinders with fixed temperature at each end and radial sleeves with a central heat source. Some work was completed for piston cylinders both experimental \citep{watson2002mapping} and numerical \citep{hernlund2006numerical, schilling2004temperature} . Previous work has not examined a few of the realistic concerns of high pressure assemblies. These are:
+    \begin{enumerate}
+        \item Inadequate water cooling
+        \item Salt thermal conductivity
+        \item Temperature dependent graphite resistivity
+        \item Compression of the assembly
+    \end{enumerate}
+    
+    \subsection{Water Cooling}
+        Previous models typically used fixed temperature boundary conditions. The fixed temperatures are often not measured because they are at an interface between a plate with water channels and the top or bottom face of the pressure vessel. They are also often very close to the edge of the pressurized assembly rather than at the walls of water cooling channels to save computational time.
+        In assemblies with low thermal conductivity along their central axis, most of the lost heat leaves by transferring radially to high conductivity materials at the ends of the furnace (e.g. copper washers/electrodes). Some assemblies have higher axial thermal conductivity than radial thermal conductivity at their ends, which causes axial heat to penetrate relatively deep into the support plates which must be solid under volume of the pressure vessel.
+        
+        In Griggs assemblies the top of assemblies has relatively high axial and radial thermal thermal conductivity, with a large cooling channel directly on the pressure vessel for setups without end loading. The bottom of the assembly is traditionally made of a 1/2 inch tungsten carbide electrode surrounded by a 1 inch outer diameter ceramic (pyrophyllite or MACOR) which has low effective radial thermal conductivity. Water channels in original baseplates have a single 1/8 inch ID copper water tube tasked with removing all heat flowing out the bottom of the assembly. This difference in heat removal capacity causes the hot zone to be lower in the vessel than symmetric assemblies, and can heat the baseplate above 200°C, decreasing its strength. Supporting information in chapter 4 shows the effect of a simple reversal of materials to a central alumina piston and an outer steel ring, reducing baseplate temperatures by 100°C. 
+        
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{Sections/Chapter2/Figures/Thermal Model with TC_bp1 - Copy.pdf}
+            \caption[Thermal model results]{Thermal model results. Methods are detailed in Moarefvand et al (in press)}
+            \label{fig:A3_ThermalModel}
+        \end{figure}
+        
+    \subsection{Salt thermal conductivity}
+        Salt makes up the bulk of the 'hot zone' in Griggs assemblies so its properties have a disproportionate effect on thermal structure of the assembly. NaCl and KCl have similar conductivites of 4 W/m/K at 700°C and 1 GPa, while those of KBr and KI are roughly half that. CsCl thermal conductivity is approximately 1 W/m/k, near that of pyrophyllite and MACOR \citep{andersson1985thermal}.  By switching salt outside the furnace from NaCl to KBr, required power to reach a given sample temperature decreases by 25\% and pressure vessel temperature decreases by as much as 80°C. CsCl would be a further improvement but its cost is higher.
+        Thermal uniformity around the sample assembly is best when using NaCl or KCl. CaF2 has higher thermal conductivity, but possible fluoride contamination is hazardous. MgO is another excellent choice, but it is be better used with a small fraction (15\%) of salt to reduce its strength.
+        
+    \subsection{Temperature dependent graphite resistivity}
+        Graphite has well documented electrical resistivity that is dependent on temperature. Resistivity reaches a minimum fractional resistance 0.6 of its room temperature value at 700°C, and slowly rises back to its original value around 2800°C \citep{okada2017review}. Joule heating in Griggs assemblies depends directly on this resistivity, and the decrease serves to spread heat generation. A thermally conductive sleeve inside the furnace (as is used in many experiments above 1000°C) can further improve uniformity.
+        
+    \subsection{Compression of the assembly}
+        Distortion of the assembly is also often not accounted for. Salts (even those hydrostatically pressed to 200 MPa) typically have 3-6 \% porosity that is collapsed when assemblies are pressurised, and elastically compress once material is densified. In models, this would result in higher power per volume, increasing temperature and moving hot zones up to a millimeter. This could be compensated in reality by increasing thermal conductivity with temperature.
+    
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{Sections/Appendix3/Figures/NaCsCl Section - Copy.pdf}
+            \caption[Section of partial melt salt assembly quenched from 850°C]{A section of an assembly quenched from 850°C, impregnated with epoxy, and sectioned to determine temperate profiles. Original NaCl grains were large and are visible in the sample. Microstructural features are noted. Phase diagrams are reproduced from \citet{kim1972effect}}
+            \label{fig:A3_NaCsClQuench}
+        \end{figure}
+        
+    \subsection{Temperature profile measurement}
+        Temperature distribution in the assembly is very difficult to accurately measure because of this compaction (thermocouples have uncertain positions). Chemical methods are employed above 1200°C, but most experiments in Griggs rigs are completed at lower temperature when salt is not completely molten. We made an attempt to quench an assembly filled with a Na-CsCl (75:25 molar) partial melt \citep{kim1972effect}. Despite cooling from 850°C to 100°C in a minute, fractionation apparently occurred and a dendritic-lathe-granular (ingot) solidification texture developed (figure \ref{fig:A3_NaCsClQuench}). The contours of these regions outline temperature-time transitions along heat flow contours which roughly match model positions and asymmetry, but do not give quantitative temperatures. Future activity will focus on magnesite-dolomite reactions which can be used at 800°C.
+        
+\end{document}

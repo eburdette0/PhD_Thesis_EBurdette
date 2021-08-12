@@ -147,7 +147,7 @@ University PhD Thesis Class]
  
 % For the final version use 1.3 times the normal baseline-to-baseline skip
 % However if this is a draft we use single spacing to save some trees
-\def\single@spacing{\def\baselinestretch{1}}
+\def\single@spacing{\def\baselinestretch{1.2}}
 \def\final@spacing{\def\baselinestretch{1.2}}
 \if@draft\single@spacing\else\final@spacing\fi
  
@@ -312,6 +312,9 @@ University PhD Thesis Class]
 % We don't really want the preface sections to appear in the TOC
 %\def\prefacesection#1{\cleardoublepage\chapter*{#1}}
 
+
+
+
 \long
 \def\afterpreface{
   \cleardoublepage
@@ -335,6 +338,36 @@ University PhD Thesis Class]
   \pagenumbering{arabic}\pagestyle{myheadings}}
 
 
+%%%%%%%%%%Chapter formatting
+\def\@makechapterhead#1{%
+  \vspace*{20\p@}%
+  {\parindent \z@ \centering
+    \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter
+        \huge\bfseries 
+        \scshape
+        \@chapapp\space \thechapter
+        \par\nobreak
+%        \vskip 20\p@
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \Large \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+\def\@schapter#1{\@makeschapterhead{#1}\@afterheading}
+\def\@makeschapterhead#1{%
+  \vspace*{20\p@}%
+  {\parindent \z@ \centering
+    \normalfont
+    \scshape
+    \interlinepenalty\@M
+    \Large \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+  
+%%
 
 
 
