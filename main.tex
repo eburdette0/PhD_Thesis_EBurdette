@@ -4,14 +4,16 @@
 
 %\usepackage{Sections/CV/simplecv} %for CV section
 \usepackage{Preamble}
-
+\usepackage{hyperref}
+%\usepackage{pdfpages}
+\usepackage{geometry}
 
   
 \begin{document}
     \frontmatter
     % \title{\Huge Experimental Deformation Methods' Influence on Antigorite Creep and Dehydration Behavior\\
     %  \Large Mechanical and Numerical Design of a Griggs-Type Apparatus to Better Represent the Earth.}
-    \title{\Huge \textbf{ Advances in Experimental Methods and Apparatus Design Applied to Investigate the Creep and Dehydration Behavior of Antigorite Serpentinite}} %Greg's title
+    \title{\Huge \textbf{Advances in Experimental Methods and Apparatus Design Applied to Investigate the Creep and Dehydration Behavior of Antigorite Serpentinite}} %Greg's title
     \author{Eric Burdette}
     \degrees{B.~S., University of Minnesota - Twin Cities, 2013}
     \dept{Earth, Environmental, and Planetary Sciences}
@@ -23,27 +25,38 @@
     \reader{(Yan Liang)}
     \reader{(Nick Beeler)}
     \dean{(Andrew G. Campbell)}
-    %\abstract{What an abstract!}
-    %\abstractpage
-    %\abstractpage
+    
+    % \clearpage
+    % \abstract{
+    % \subfile{./abstract.tex}}
+    % \clearpage
+
     \beforepreface
+    \savegeometry{main1}
+    \newgeometry{lmargin=.75in,tmargin=0in}
     \prefacesection{Curriculum Vita}
-        % \begin{figure}
-        %     \centering
-        %     \includegraphics{Sections/CV/Simple_CV_EB.pdf}
-        %     \label{fig:my_label}
-        % \end{figure}
+        %\includepdf[pages=-]{./CV/Simple_CV_EB (1).pdf}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics{Sections/CV/Simple_CV_EB (2).pdf}
+            \label{fig:my_label}
+        \end{figure}
+    \restoregeometry{}
         
     \prefacesection{Acknowledgements}
         \subfile{Sections/Acknowledgements/Acknowledgements.tex}
 
     \afterpreface
 
-    \chapter{Introduction}
-        \subfile{Sections/Introduction/Introduction.tex}
-    
     \mainmatter
-    
+
+    \chapter*{Introduction}
+    \addcontentsline{toc}{chapter}{Introduction}
+        \subfile{Sections/Introduction/Introduction.tex}
+
+
+    \setlength{\parindent}{4em}
+
     \chapter{Enhanced Dehydration Weakening of Antigorite Driven by Slow Shear Heating: Insights from High-Pressure Experiments with a Modified Apparatus Stiffness}
         \subfile{Sections/Chapter1/ShearHeating_maintext.tex}
         %\subfile{Sections/Chapter1/ShearHeating_suppinfo.tex} %these are called in each file

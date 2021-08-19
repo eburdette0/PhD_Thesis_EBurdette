@@ -283,7 +283,7 @@ University PhD Thesis Class]
   \make@sigline{\reader@two}{\@secondreaderfrom}
   \ifnum\@readers>2 \\[.30in]\make@sigline{\reader@three}{\@thirdreaderfrom}\fi
   \ifnum\@readers>3 \\[.30in]\make@sigline{\reader@four}{\@fourthreaderfrom}\fi
-  \\[.5in]\centerline{Approved by the Graduate Council}\\[.5in]
+  \\[.3in]\centerline{Approved by the Graduate Council}\\[.3in]
   \make@sigline{\@dean}{Dean of the Graduate School}
   \def\baselinestretch{\old@stretch}\selectfont
   \clearpage\thispagestyle{empty}\setcounter{page}{2}\cleardoublepage
