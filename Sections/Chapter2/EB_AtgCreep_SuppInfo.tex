@@ -131,7 +131,7 @@
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/Creep Plot 9-20 comparison Annotatedv0.2.pdf}
-  \caption[Compilation of our stress-strainrate points and other comparable tests]{
+  \caption[Compilation of our stress-strain rate points and other comparable tests]{
   Compilation of other high pressure experimental antigorite deformation results plotted over results form the current study. Colors of points denotes temperature for all points. Both cores \citep{hirauchi2020semi, Chernak2010, Escartin1997} and gouge \citep{Chernak2010, Proctor2016, Okazaki2016} are plotted.
   }
   \label{fig:CH2s_Data_Comparison_supplement}
@@ -162,18 +162,18 @@
 
     During individual stress steps samples harden over time (S\ref{fig:CH2s_Load-Time-Fast}). Hardening is expected to some extent from other descriptions/results of brittle creep and high temperature creep tests where primary, secondary, and tertiary creep phases can be identified. For westerly granite calibration tests (S\ref{fig:CH2s_Westerly_Supplement}), at each step samples reach constant strain rates after relatively small strains (~0.2\%). Post-processing of antigorite data shows that it may continue to harden over similar 0.2\% strain steps (depicted in data for W2447-200 (S\ref{fig:CH2s_Load-Time-Fast})). This decay is not obvious in live displays of data because it requires more processing power to smooth and compute than our rig control PC has available. 
     
-    The observed rate decay appears to be linear when plotted as either log(strain rate) vs. strain (S\ref{fig:CH2s_Strainrate-Strain}) and log(strain rate) vs. time (S\ref{fig:CH2s_Strainrate-Time}). The strain rate decreases by approximately a factor of 2 over 0.2\% strain as can be observed in the included strain-time plots for W2447-200 (S\ref{fig:CH2s_Load-Time-Fast}), and the decay during hydraulic oil confined experiment W2521-75 (S\ref{fig:CH2s_Strainrate-Strain}). (Data is FIR decimated by a factor of 100 to 0.1Hz for these plots).
+    The observed rate decay appears to be linear when plotted as either log(strain rate) vs. strain (\ref{fig:CH2s_Strainrate-Strain}) and log(strain rate) vs. time (\ref{fig:CH2s_Strainrate-Time}). The strain rate decreases by approximately a factor of 2 over 0.2\% strain as can be observed in the included strain-time plots for W2447-200 (\ref{fig:CH2s_Load-Time-Fast}), and the decay during hydraulic oil confined experiment W2521-75 (\ref{fig:CH2s_Strainrate-Strain}). (Data is FIR decimated by a factor of 100 to 0.1Hz for these plots).
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/W2447_StrainrateStrainStress.pdf}
-  \caption[Experiment data from 200°C experiment]{Experiment data from 200°C experiment. black->stress; red->strainrate; cyan->strain (log scale).
+  \caption[Experiment data from 200°C creep experiment]{Experiment data from 200°C experiment. black->stress; red->strainrate; cyan->strain (log scale).
   }
   \label{fig:CH2s_Load-Displacement}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/W2447_1700MPa_LVDT2_trace_wlines.pdf}
-  \caption[Load and Displacement plotted against time to show strain rate evolution during a stress step]{Load and Displacement plotted against time to show strain rate evolution during a stress step. Data is taken from the last portion of the curve. Rate changes by approximately a factor of 2.
+  \caption[Load and displacement plotted against time to show strain rate evolution during a stress step]{Load and Displacement plotted against time to show strain rate evolution during a stress step. Data is taken from the last portion of the curve. Rate changes by approximately a factor of 2.
   }
   \label{fig:CH2s_Load-Time-Fast}
 \end{figure}
@@ -205,7 +205,7 @@
 \subsection{Uncertainty introduced due to hardening} \label{CH2s_hardening_uncertainty}
     The ratio of initial/final strain seems to be similar at most stress steps. This makes ratio/increment (hardening slope) much larger at small strain. Hardening literature plots the change as $d\sigma/d\epsilon$ vs. $\sigma$ \citep{kocks2003physics}. It's unclear if that's appropriate for materials with pressure-dependent strength. 
     
-    To assess the potential uncertainty introduced into the flow law by choosing final instead of initial strain rates, we re-plotted the fit for initial strain rates. Because change is a similar factor of ~2 for most steps, the fit exponent and Peierls stresses don’t change significantly while pre-exponential and activation energy change by ~5\%. % An example with the same exponents and peierls stress is plotted in Figure \ref{fig:CH2s_Hardening_Uncertainty}.
+    To assess the potential uncertainty introduced into the flow law by choosing final instead of initial strain rates, we re-plotted the fit for initial strain rates. Because change is a similar factor of ~2 for most steps, the fit exponent and athermal flow  stresses don’t change significantly while pre-exponential and activation energy change by ~5\%. % An example with the same exponents and peierls stress is plotted in Figure \ref{fig:CH2s_Hardening_Uncertainty}.
 
     In addition, our creep data can be compared to other antigorite deformation studies at similar temperatures and pressures \ref{fig:CH2s_Data_Comparison_supplement}. Some of the comparable studies use antigorite gouge instead of cores, which is noted. Despite widely varying methodology, recorded stress/strainrate is similar to other studies, except where samples are highly aligned or deformation is highly localized.
 
@@ -216,7 +216,7 @@
 % \end{figure}
 
 \subsection{Flow Law Fit Methodology} \label{CH2s_flowlawfit}
-    A Peierls' flow law was fit to stress vs. log(strainrate) using a Markov-chain Monte-Carlo (MCMC-NUTS) optimizer due to the small local discontinuities in the fit. Results with errors are presented in Table \ref{tab:CH2s_FitTable} and distributions of the posterior are plotted in figure S\ref{fig:CH2s_KDE_plot}.
+    A low temperature plasticity flow law was fit to stress vs. log(strainrate) using a Markov-chain Monte-Carlo (MCMC-NUTS) optimizer due to the small local discontinuities in the fit. Results with errors are presented in Table \ref{tab:CH2s_FitTable} and distributions of the posterior are plotted in figure S\ref{fig:CH2s_KDE_plot}.
     % \begin{table}[ht] % old!
     % \caption{Peierls creep fit results \label{tab:CH2s_FitTable}}
     % \begin{tabular}{lllll}
@@ -232,7 +232,7 @@
     % \end{table}
     
     \begin{table}[ht]
-    \caption{Peierls creep fit results \label{tab:CH2s_FitTable}}
+    \caption{Low temperature plasticity creep fit results \label{tab:CH2s_FitTable}}
     \begin{tabular}{lllll}
     \hline
                & Mean   & Standard Deviation    & hdi\_2.5\% & hdi\_97.5\% \\
@@ -257,7 +257,7 @@
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Sections/Chapter2/Figures/AtgVisc_StressSq_compare_1to1.pdf}
-  \caption[Peierls' Fit improvement with low strain rate data]{Comparison of fits for fixed exponent p,q combinations before and after slow strain  rate data is added to the dataset (for illustration). Slow strain rate data has a very strong effect on extrapolated viscosity.}
+  \caption[Low temperature plasticity fit improvement with low strain rate data]{Comparison of fits for fixed exponent p,q combinations before and after slow strain  rate data is added to the dataset (for illustration). Slow strain rate data has a very strong effect on extrapolated viscosity.}
   \label{fig:CH2s_Fitcompare-moredata}
 \end{figure}
 
@@ -265,7 +265,7 @@
 
     Several tests were completed to compare the new carbide bushing seal to the old mitre ring seal. We first deformed 360 grade brass rod, cut to simulate samples and confined by paraffin wax. The assembly was externally heated using hot water (same method as low temperature metal assembly), and repeatedly "hit" at different temperatures. (Figure \ref{fig:CH2s_Brass-Wax}) 
     We found that the squeezing force measured during “run-in”/"hit"  roughly follows predictions for “squeeze flow” rheometry. When the viscosity of the squeezed fluid decreases (in this case by heating the wax), the force for a given piston separation decreases.
-    There is also a hysteresis with piston direction that does not vary significantly with temperature or distance between the sample and advancing piston. This appears to be primarily bearing friction applied by the packing ring. When we change to the carbide bushing, the size of the hysteresis loop decreases by a factor of ~5x.
+    There is also a hysteresis with piston direction that does not vary significantly with temperature or distance between the sample and advancing piston. This appears to be primarily bearing friction applied by the packing ring. When we change to the carbide bushing, the size of the hysteresis loop decreases by a factor of 5x.
     Finally, rate dependence was explored with steps in the nearly fluid confining wax. Rate changes have a smaller effect with the carbide bushing (~2 MPa/10x strain rate), and do not have the small displacement dependent stress peaks the older mitre ring induces.
     
     To further test the ability to match the results of high temperature assemblies to room temperature assemblies, we loaded fused silica at 700°C in a standard, mitre-ring assembly and in a hydraulically confined assembly at low pressure (Figure \ref{fig:CH2s_WC-FS_elastic}). The results compare well, with the elastic modulus of the fused silica at high temperature matching the elastic modulus at low temperature. This indicates that we can compare all assemblies used in this study to each other and older results at similar conditions.
