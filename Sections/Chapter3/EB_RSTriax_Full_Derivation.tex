@@ -18,8 +18,8 @@
 % \end{figure}
 
 
-\section{Supplement - Full Derivations}
-While the relations derived by \citet{Dieterich1992a} cover one aspect of the coupling of shear and normal stress to find a value of friction for the rate-state equation, the stiffness of the machine is ambiguously defined. Here we repeat their derivation and include the derivation of axial to shear compliance.
+\section{Supplemental Derivation of Stability Relationships}
+While the relations derived by \citet{Dieterich1992a} cover one aspect of the coupling of shear and normal stress to find a value of friction for the rate-state equation, the stiffness of the machine is ambiguously defined. Here we repeat their derivation and include the derivation of axial to shear stiffness.
 
 \begin{figure}
     \includegraphics[width=\textwidth]{Figures/Triax_Diagram_Only.pdf}
@@ -264,7 +264,7 @@ This is greater (less stable) than (\ref{eq:C3_S15}) with $\mu_r>0$, and reduces
 
 %%
 \subsection{Confining Resistance}
-Another potential source of stabilization is resistance on the shear pistons expanding into the confining media. The resistance could be metal jacket stretching or deformation of the confining media. The formulation is simplified as a general linear velocity dependent resistance $\eta$ with scale included.
+Another potential source of stabilization is resistance on the shear pistons moving laterally into the confining media. The resistance could be metal jacket stretching or deformation of the confining media. The formulation is simplified as a general linear velocity dependent resistance $\eta$ with scale included.
 \begin{equation} \label{eq:C3_S35}
     \sigma_3'=\sigma_3+\eta\dot{\delta}\sin(\psi)
 \end{equation}
@@ -315,8 +315,8 @@ K_{ax} \geq
 The derived stiffness is lower (more stable), with the magnitude of the change roughly proportional to the ratio $\mu_0\eta\dot{\delta}_{ss}:2\sigma_{n,ss}(B-A)$. 
 
 %%
-\subsection{Shear Viscous Resistance}
-Another relevant scenario to consider is viscous support of the sample (Kelvin-Voight like), where a generalized velocity dependent term is added to shear stress, F. This doesn't change any of the geometric relationships, only the partial derivative of F and steady state. The schematic representation could be a fault with viscous patches or resistance that only generates shear traction (such as drag along the sides of shear pistons):
+\subsection{Shear Resistance}
+Another relevant scenario to consider is viscous support of the fault (Kelvin-Voight like), where a generalized velocity dependent term is added to shear stress, F. This doesn't change any of the geometric relationships, only the partial derivative of F and steady state. The schematic representation could be resistance that only generates shear traction (such as drag along the sides of shear pistons):
 \begin{equation} \label{eq:C3_S44}
 \tau =\sigma_n \left(\mu_0+\text{Aln}\left(\frac{\dot{\delta}}{\dot{\delta}_{ss}}\right)+\text{Bln}\left(\frac{\theta}{\theta_0}\right)\right)+\eta\dot{\delta}=F\left(\dot{\delta},\theta ,\sigma \right)
 \end{equation}
@@ -336,7 +336,7 @@ K_{ ax} \geq \frac{1}{\cos(\psi)\sin(2\psi)}\frac{1}{1-(\mu_0-\alpha)\tan(\psi)}
 
 No extra angular terms are present in the resulting stability condition because the resistance directly opposes fault motion regardless of direction and does not depend on normal stress.  Steady-state normal stress decreases with decreasing fault angle so at low fault angles the resistance term can be larger and completely stabilize the system.
 
-\subsection{Normal Faults}
+\subsection{Triaxial Extension}
 Normal faults will be addressed here without rotating geometry because stiffness is defined for axial stress $\sigma_1$. An extensional fault would have axial stress lower than confining stress, causing the friction coefficient to be negative. Rate dependence A and B do not change. The result is much lower required stiffness for stability at high fault angles due to reduced normal stress.
 
 The external effects can also be addressed with the change in sign required for confining viscosity and inter-piston friction (forces resist direction of movement). 
@@ -361,7 +361,7 @@ The area fraction can then be calculated as:
     f(s) = \frac{\text{Area}}{\text{Area}_0}= 1 - 1.2082 {s} - 0.19134 {s}^2 + 0.39461 {s}^3
 \end{equation}
 
-We refer to this function as $f(s(\delta))$. For two squares (direct shear) the function is $1-s$. The area correction causes stress to increase with increasing displacement even though apparent force is decreasing. 
+We refer to this function as $f(s(\delta))$. For two squares (direct shear) the function $f=1-s$. The area correction causes stress to increase with increasing displacement even though apparent force is decreasing. 
 
 Given a load (fault shear stress $\tau$ here) there will be an increase in effective load due to area reduction and a decrease in applied load due to spring unloading with displacement. The magnitude of these two contributions changes with displacement.
  %p12 and p50 calculation book. 2020

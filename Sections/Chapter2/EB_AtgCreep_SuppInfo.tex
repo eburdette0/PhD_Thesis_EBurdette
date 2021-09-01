@@ -108,7 +108,7 @@
 \subsection{Mechanical Data Calculations} \label{CH2s_mechcalcs}
     The Griggs apparatus has both external load and displacement sensors which need to be corrected to find load and displacement on the sample inside the pressure vessel. Differential stress is determined by subtracting a "hit point" stress (hydrostatic pressure+friction) from the externally measured load. Displacement is determined by subtracting displacement absorbed by the column in compression \citep{burdette2020enhanced}, and referenced relative to the "hit point".
     \begin{equation}
-        x_{sample} = x_{LVDT2} - \frac{\sigma_{1, external}}{k_{lower_column}}
+        x_{sample} = x_{LVDT2} - \frac{\sigma_{1, external}}{k_{lower/_column}}
     \end{equation}
     To calculate permanent/inelastic strain, elastic compression of the sample can also be removed:   
     \begin{equation}
@@ -120,7 +120,7 @@
     
     Note that these equations assume sample elasticity is constant, and don't account for rate-dependent friction.
     
-    To calculate strain rates during post-processing, we used the first derivative of a first order Savitzky-Golay filter (moving line fit) over a moving time window chosen for each step. For strain rates above $10^{-6} 1/s$, the window could be as short as 100 seconds, while the lowest strain rates require 10000 seconds. Strain rates chosen for flow law fits were the final point that was not influence by a disturbance or loading to the next stress. Wherever strain rate is plotted as a continuous function of time (figure e.g. \ref{fig:CH2s_Load-Displacement}), a single window length was chosen over the whole plot to best display data. 
+    To calculate strain rates during post-processing, we used the first derivative of a first order Savitzky-Golay filter (moving line fit) over a moving time window chosen for each step. For strain rates above $10^{-6} 1/s$, the window could be as short as 100 seconds, while the lowest strain rates require a 10000 second time window. Strain rates chosen for flow law fits were the final point that was not influenced by a disturbance or loading to the next stress. Wherever strain rate is plotted as a continuous function of time (e.g. figure \ref{fig:CH2s_Load-Displacement}), a single window length was chosen over the whole plot to best display data. 
 
 \begin{figure}
   \includegraphics[width=\textwidth]{Figures/W2383_Creep_Comparison-w-Data.pdf}
@@ -160,7 +160,7 @@
 
 \subsection{Hardening During Stress Steps} \label{CH2s_hardening_discussion}
 
-    It is important to note that within strain steps samples harden over time (S\ref{fig:CH2s_Load-Time-Fast}). This is expected to some extent from other descriptions/results of brittle creep and high temperature creep tests where primary, secondary, and tertiary creep phases can be identified. For westerly granite calibration tests (S\ref{fig:CH2s_Westerly_Supplement}), at each step samples clearly reach constant strain rates after relatively small strains (~0.2\%). Post-processing of antigorite data shows that it may continue to harden over similar 0.2\% strain steps (depicted in data for W2447-200 (S\ref{fig:CH2s_Load-Time-Fast})). This decay is not obvious in live displays of data because it requires more processing power to smooth and compute than our rig control PC has available. 
+    During individual stress steps samples harden over time (S\ref{fig:CH2s_Load-Time-Fast}). Hardening is expected to some extent from other descriptions/results of brittle creep and high temperature creep tests where primary, secondary, and tertiary creep phases can be identified. For westerly granite calibration tests (S\ref{fig:CH2s_Westerly_Supplement}), at each step samples reach constant strain rates after relatively small strains (~0.2\%). Post-processing of antigorite data shows that it may continue to harden over similar 0.2\% strain steps (depicted in data for W2447-200 (S\ref{fig:CH2s_Load-Time-Fast})). This decay is not obvious in live displays of data because it requires more processing power to smooth and compute than our rig control PC has available. 
     
     The observed rate decay appears to be linear when plotted as either log(strain rate) vs. strain (S\ref{fig:CH2s_Strainrate-Strain}) and log(strain rate) vs. time (S\ref{fig:CH2s_Strainrate-Time}). The strain rate decreases by approximately a factor of 2 over 0.2\% strain as can be observed in the included strain-time plots for W2447-200 (S\ref{fig:CH2s_Load-Time-Fast}), and the decay during hydraulic oil confined experiment W2521-75 (S\ref{fig:CH2s_Strainrate-Strain}). (Data is FIR decimated by a factor of 100 to 0.1Hz for these plots).
 
@@ -203,7 +203,7 @@
 
 
 \subsection{Uncertainty introduced due to hardening} \label{CH2s_hardening_uncertainty}
-    The ratio of initial/final strain seems to be similar at most strains. This makes ratio/increment (hardening slope) much larger at small strain. Hardening literature plots the change as $d\sigma/d\epsilon$ vs. $\sigma$ \citep{kocks2003physics}. It's unclear if that's appropriate for materials with pressure-dependent strength. 
+    The ratio of initial/final strain seems to be similar at most stress steps. This makes ratio/increment (hardening slope) much larger at small strain. Hardening literature plots the change as $d\sigma/d\epsilon$ vs. $\sigma$ \citep{kocks2003physics}. It's unclear if that's appropriate for materials with pressure-dependent strength. 
     
     To assess the potential uncertainty introduced into the flow law by choosing final instead of initial strain rates, we re-plotted the fit for initial strain rates. Because change is a similar factor of ~2 for most steps, the fit exponent and Peierls stresses don’t change significantly while pre-exponential and activation energy change by ~5\%. % An example with the same exponents and peierls stress is plotted in Figure \ref{fig:CH2s_Hardening_Uncertainty}.
 
